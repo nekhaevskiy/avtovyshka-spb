@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "check-types": "tsc",
     "cy:run": "cypress run",
     "prepare": "husky install",
     "test": "start-server-and-test start http://localhost:3000 cy:run"
