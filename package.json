@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "pretest:e2e:run": "yarn build",
+    "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
+    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cy:open",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "check-types": "tsc",
-    "cy:run": "cypress run",
-    "prepare": "husky install",
-    "test": "start-server-and-test start http://localhost:3000 cy:run"
+    "lint": "next lint",
+    "validate": "yarn check-types && yarn lint && yarn build"
   },
   "dependencies": {
     "next": "11.0.0",
@@ -18,16 +22,21 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.6",
     "@types/react": "17.0.11",
+    "autoprefixer": "^10.2.6",
     "cypress": "^7.5.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.11.3",
     "husky": "^6.0.0",
     "lint-staged": ">=10",
+    "postcss": "^8.3.5",
     "prettier": "2.3.1",
     "start-server-and-test": "^1.12.5",
+    "tailwindcss": "^2.2.4",
     "typescript": "4.3.4"
   },
   "config": {
