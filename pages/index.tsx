@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { ContactBar } from '../components';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>
           Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской
@@ -16,6 +17,10 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <header>
+        <ContactBar />
+      </header>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -70,6 +75,6 @@ export default function Home() {
           </span>
         </a>
       </footer>
-    </div>
+    </>
   );
 }
