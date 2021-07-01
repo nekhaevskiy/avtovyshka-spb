@@ -3,4 +3,3 @@
 
 yarn lint
 yarn test:e2e:run
-yarn build
