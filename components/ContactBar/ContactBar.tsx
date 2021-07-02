@@ -25,7 +25,6 @@ function ContactBar() {
         href="tel:+79910009111"
         className="pl-5 py-2 sm:mx-4 font-medium text-base whitespace-nowrap bg-no-repeat bg-phone"
         style={{ backgroundPosition: '1px 52%' }}
-        data-testid="main-phone"
       >
         +7 <b className="text-red-500">(991)</b> 000-91-11
       </a>
