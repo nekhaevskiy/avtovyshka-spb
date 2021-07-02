@@ -3,5 +3,6 @@
   "cSpell.words": ["avtovyshka", "tailwindcss"],
   "editor.codeActionsOnSave": {
     "source.organizeImports": true
-  }
+  },
+  "editor.rulers": [100]
 }
