@@ -23,7 +23,7 @@ function ContactBar() {
 
       <a
         href="tel:+79910009111"
-        className="pl-5 py-2 sm:mx-4 font-medium text-base bg-no-repeat bg-phone"
+        className="pl-5 py-2 sm:mx-4 font-medium text-base whitespace-nowrap bg-no-repeat bg-phone"
         style={{ backgroundPosition: '1px 52%' }}
         data-testid="main-phone"
       >
@@ -32,7 +32,7 @@ function ContactBar() {
 
       <a
         href="tel:+78123515151"
-        className="hidden md:block pl-5 py-2 mx-4 font-medium text-base bg-no-repeat bg-phone"
+        className="hidden md:block pl-5 py-2 mx-4 font-medium text-base whitespace-nowrap bg-no-repeat bg-phone"
         style={{ backgroundPosition: '1px 52%' }}
       >
         +7 (812) 351-51-51
@@ -40,13 +40,13 @@ function ContactBar() {
 
       <a
         href="mailto:suedima@rambler.ru"
-        className="hidden sm:block pl-5 py-2 mx-4 font-medium text-base bg-no-repeat bg-email"
+        className="hidden sm:block pl-5 py-2 mx-4 font-medium text-base whitespace-nowrap bg-no-repeat bg-email"
         style={{ backgroundPosition: '1px 52%' }}
       >
         suedima@rambler.ru
       </a>
 
-      <span className="hidden lg:block pl-5 py-2 mx-4 font-medium text-base">
+      <span className="hidden lg:block pl-5 py-2 mx-4 font-medium text-base whitespace-nowrap">
         Работаем круглосуточно
       </span>
     </div>
