@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { ContactBar } from '../components';
+import { ContactBar, NavBar } from '../components';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -20,6 +20,7 @@ export default function Home() {
 
       <header>
         <ContactBar />
+        <NavBar />
       </header>
 
       <main className={styles.main}>

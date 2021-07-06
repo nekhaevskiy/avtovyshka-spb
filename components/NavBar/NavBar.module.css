@@ -1,0 +1,46 @@
+.menuBtn,
+.menuBtn::before,
+.menuBtn::after {
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background-color: currentColor;
+  transition-property: top, left, height, transform;
+  transition-duration: 0.25s;
+  transform-origin: 0% 50%;
+}
+
+.menuBtn {
+  top: 50%;
+  left: 2px;
+}
+
+.menuBtn::before {
+  content: '';
+  top: -7px;
+  left: 0;
+}
+
+.menuBtn::after {
+  content: '';
+  top: 7px;
+  left: 0;
+}
+
+.menuBtnOpened {
+  composes: menuBtn;
+  height: 0;
+  background-color: transparent;
+}
+
+.menuBtnOpened::before {
+  transform: rotate(45deg);
+  top: -10px;
+  left: 4px;
+}
+
+.menuBtnOpened::after {
+  transform: rotate(-45deg);
+  top: 7px;
+  left: 4px;
+}

@@ -1,3 +1,4 @@
-import { ContactBar } from './ContactBar/ContactBar';
+import { ContactBar } from './ContactBar';
+import { NavBar } from './NavBar/NavBar';
 
-export { ContactBar };
+export { ContactBar, NavBar };
