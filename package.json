@@ -4,17 +4,19 @@
   "private": true,
   "scripts": {
     "prepare": "husky install",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "pretest:e2e:run": "yarn build",
-    "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
-    "test:e2e:dev": "start-server-and-test dev http://localhost:3000 cy:open",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "check-types": "tsc",
-    "lint": "next lint",
-    "validate": "yarn check-types && yarn lint && yarn build"
+    "lint": "yarn lint:css && yarn lint:js",
+    "lint:css": "stylelint '**/*.css'",
+    "lint:js": "next lint",
+    "cy:open": "cypress open",
+    "test": "start-server-and-test dev http://localhost:3000 cy:open",
+    "pretest:e2e:run": "yarn build",
+    "cy:run": "cypress run",
+    "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
+    "validate": "yarn lint && yarn test:e2e:run"
   },
   "dependencies": {
     "next": "11.0.0",
@@ -36,6 +38,10 @@
     "postcss": "^8.3.5",
     "prettier": "2.3.1",
     "start-server-and-test": "^1.12.5",
+    "stylelint": "^13.13.1",
+    "stylelint-config-css-modules": "^2.2.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
     "tailwindcss": "^2.2.4",
     "typescript": "4.3.4"
   },
@@ -49,6 +55,10 @@
       "eslint --cache --fix",
       "prettier --write"
     ],
-    "*.{css,json,md}": "prettier --write"
+    "*.{css}": [
+      "stylelint",
+      "prettier --write"
+    ],
+    "*.{json,md}": "prettier --write"
   }
 }

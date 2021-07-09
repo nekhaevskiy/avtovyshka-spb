@@ -1,8 +1,4 @@
 {
   "cSpell.language": "en,ru",
-  "cSpell.words": ["avtovyshka", "tailwindcss"],
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-  "editor.rulers": [100]
+  "cSpell.words": ["avtovyshka", "tailwindcss"]
 }
