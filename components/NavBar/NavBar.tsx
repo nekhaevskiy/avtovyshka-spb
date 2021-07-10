@@ -43,7 +43,7 @@ function NavBar() {
         </a>
       </Link>
 
-      <h1 className="md:flex-shrink-0 md:mx-4 md:w-60 text-3xl md:text-base md:leading-none text-center md:text-left text-red-500">
+      <h1 className="md:flex-shrink-0 md:mx-4 md:w-64 text-3xl md:text-base md:leading-none text-center md:text-left text-red-500">
         Аренда автовышки и автокрана
         <span className="hidden sm:block text-xl md:text-base md:leading-none">
           в Санкт-Петербурге и Ленинградской области
