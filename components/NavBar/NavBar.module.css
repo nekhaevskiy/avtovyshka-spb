@@ -99,9 +99,17 @@
   width: 100%;
   padding: 0.7rem 1rem;
   border-bottom: 1px solid rgb(243, 244, 246);
+  border-radius: 3px;
   font-weight: 500;
   font-size: 1rem;
   text-align: left;
+  transition-duration: 0.2s;
+  transition-property: background-color;
+}
+
+.menuItem:hover,
+.menuItem:focus {
+  background-color: #e5e7eb;
 }
 
 @media (min-width: 768px) {
@@ -185,6 +193,13 @@
   border-bottom: 1px solid rgb(243, 244, 246);
   font-size: 0.9rem;
   text-align: left;
+  transition-duration: 0.2s;
+  transition-property: background-color;
+}
+
+.subMenuItem:hover,
+.subMenuItem:focus {
+  background-color: #e5e7eb;
 }
 
 @media (min-width: 768px) {
