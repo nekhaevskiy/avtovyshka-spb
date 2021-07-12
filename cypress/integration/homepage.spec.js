@@ -80,6 +80,17 @@ describe('Homepage - Small mobiles', () => {
         cy.findByRole('navigation').should('not.exist');
       });
     });
+
+    it('closes the menu on click outside', () => {
+      cy.findByTestId('nav-bar').within(() => {
+        cy.findByRole('button', { name: 'Открыть меню' }).click();
+        cy.findByRole('navigation').should('be.visible');
+      });
+      cy.findByTestId('nav-bar').click();
+      cy.findByTestId('nav-bar').within(() => {
+        cy.findByRole('navigation').should('not.exist');
+      });
+    });
   });
 });
 
@@ -157,6 +168,17 @@ describe('Homepage - Tablets', () => {
         });
         cy.get('@subMenuBtn').click();
         cy.findByTestId('sub-menu').should('not.be.visible');
+      });
+    });
+
+    it('closes the sub-menu on click outside', () => {
+      cy.findByTestId('nav-bar').within(() => {
+        cy.findByRole('button', { name: 'Автопарк' }).click();
+        cy.findByTestId('sub-menu').should('be.visible');
+      });
+      cy.findByTestId('nav-bar').click();
+      cy.findByTestId('nav-bar').within(() => {
+        cy.findByRole('sub-menu').should('not.exist');
       });
     });
   });

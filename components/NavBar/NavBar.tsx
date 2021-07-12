@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { vehicles } from '../../data';
+import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
 import logoPic from './logo.svg';
 import styles from './NavBar.module.css';
@@ -12,6 +13,9 @@ function NavBar() {
   const menuEl = React.useRef<HTMLDivElement | null>(null);
   const subMenuEl = React.useRef<HTMLDivElement | null>(null);
   const windowWidth = useWindowWidth();
+
+  useOnClickOutside(menuEl, () => setMenuOpen(false));
+  useOnClickOutside(subMenuEl, () => setSubMenuOpen(false));
 
   const menuHeight = menuOpen && menuEl.current?.scrollHeight ? menuEl.current.scrollHeight : 0;
   const subMenuHeight =
