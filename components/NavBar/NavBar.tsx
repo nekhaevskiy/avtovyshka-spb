@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { vehicles } from '../../data';
+import { useWindowWidth } from '../../hooks/useWindowWidth';
 import logoPic from './logo.svg';
 import styles from './NavBar.module.css';
 
@@ -10,21 +11,11 @@ function NavBar() {
   const [subMenuOpen, setSubMenuOpen] = React.useState(false);
   const menuEl = React.useRef<HTMLDivElement | null>(null);
   const subMenuEl = React.useRef<HTMLDivElement | null>(null);
-  const [windowWidth, setWindowWidth] = React.useState<number>();
+  const windowWidth = useWindowWidth();
 
   const menuHeight = menuOpen && menuEl.current?.scrollHeight ? menuEl.current.scrollHeight : 0;
   const subMenuHeight =
     subMenuOpen && subMenuEl.current?.scrollHeight ? subMenuEl.current.scrollHeight : 0;
-
-  function updateWindowWidth() {
-    setWindowWidth(window.innerWidth);
-  }
-
-  React.useEffect(() => {
-    window.addEventListener('resize', updateWindowWidth);
-    updateWindowWidth();
-    return () => window.removeEventListener('resize', updateWindowWidth);
-  }, []);
 
   return (
     <div
