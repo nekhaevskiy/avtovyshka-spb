@@ -28,11 +28,11 @@ describe('Homepage - Small mobiles', () => {
   context('ContactBar', () => {
     it('shows the main phone', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: '+7 (991) 000-91-11' })
+        cy.findByRole('link', { name: contacts[0].text.join(' ') })
           .should('be.visible')
-          .and('have.attr', 'href', 'tel:+79910009111');
-        cy.findByRole('link', { name: '+7 (812) 351-51-51' }).should('not.exist');
-        cy.findByRole('link', { name: 'suedima@rambler.ru' }).should('not.exist');
+          .and('have.attr', 'href', contacts[0].link);
+        cy.findByRole('link', { name: contacts[1].text }).should('not.exist');
+        cy.findByRole('link', { name: contacts[2].text }).should('not.exist');
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
     });
@@ -110,11 +110,11 @@ describe('Homepage - Big mobiles', () => {
   context('ContactBar', () => {
     it('shows the main phone and the email', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: '+7 (991) 000-91-11' }).should('be.visible');
-        cy.findByRole('link', { name: '+7 (812) 351-51-51' }).should('not.exist');
-        cy.findByRole('link', { name: 'suedima@rambler.ru' })
+        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should('be.visible');
+        cy.findByRole('link', { name: contacts[1].text }).should('not.exist');
+        cy.findByRole('link', { name: contacts[2].text })
           .should('be.visible')
-          .and('have.attr', 'href', 'mailto:suedima@rambler.ru');
+          .and('have.attr', 'href', contacts[2].link);
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
     });
@@ -142,9 +142,11 @@ describe('Homepage - Tablets', () => {
   context('ContactBar', () => {
     it('shows only the contact items', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: '+7 (991) 000-91-11' }).should('be.visible');
-        cy.findByRole('link', { name: '+7 (812) 351-51-51' }).should('be.visible');
-        cy.findByRole('link', { name: 'suedima@rambler.ru' }).should('be.visible');
+        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should('be.visible');
+        cy.findByRole('link', { name: contacts[1].text })
+          .should('be.visible')
+          .and('have.attr', 'href', contacts[1].link);
+        cy.findByRole('link', { name: contacts[2].text }).should('be.visible');
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
     });
@@ -200,9 +202,9 @@ describe('Homepage - Laptops', () => {
   context('ContactBar', () => {
     it('shows the contact items and the note', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: '+7 (991) 000-91-11' }).should('be.visible');
-        cy.findByRole('link', { name: '+7 (812) 351-51-51' }).should('be.visible');
-        cy.findByRole('link', { name: 'suedima@rambler.ru' }).should('be.visible');
+        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should('be.visible');
+        cy.findByRole('link', { name: contacts[1].text }).should('be.visible');
+        cy.findByRole('link', { name: contacts[2].text }).should('be.visible');
         cy.findByText('Работаем круглосуточно').should('be.visible');
       });
     });

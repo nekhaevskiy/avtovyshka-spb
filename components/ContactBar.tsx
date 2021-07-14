@@ -1,3 +1,5 @@
+import { contacts } from '../data/contacts';
+
 function ContactBar() {
   return (
     <>
@@ -6,27 +8,28 @@ function ContactBar() {
         data-testid="contact-bar"
       >
         <a
-          href="tel:+79910009111"
+          href={contacts[0].link}
           className="pl-5 py-1 sm:mx-4 font-medium text-base whitespace-nowrap bg-no-repeat bg-phone"
           style={{ backgroundPosition: '1px 52%' }}
         >
-          +7 <b className="text-red-500">(991)</b> 000-91-11
+          {contacts[0].text[0]} <b className="text-red-500">{contacts[0].text[1]}</b>{' '}
+          {contacts[0].text[2]}
         </a>
 
         <a
-          href="tel:+78123515151"
+          href={contacts[1].link}
           className="hidden md:block pl-5 py-1 mx-4 font-medium text-base whitespace-nowrap bg-no-repeat bg-phone"
           style={{ backgroundPosition: '1px 52%' }}
         >
-          +7 (812) 351-51-51
+          {contacts[1].text}
         </a>
 
         <a
-          href="mailto:suedima@rambler.ru"
+          href={contacts[2].link}
           className="hidden sm:block pl-5 py-1 mx-4 font-medium text-base whitespace-nowrap bg-no-repeat bg-email"
           style={{ backgroundPosition: '1px 52%' }}
         >
-          suedima@rambler.ru
+          {contacts[2].text}
         </a>
 
         <span className="hidden lg:block pl-5 py-1 mx-4 font-medium text-base whitespace-nowrap">
