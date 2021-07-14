@@ -47,7 +47,7 @@ function NavBar() {
         </span>
       </h1>
 
-      <div ref={menuWrapperEl}>
+      <div ref={menuWrapperEl} className="md:ml-auto md:-mr-4">
         <button
           type="button"
           className="md:hidden absolute -top-9 right-4 w-7 h-7 text-gray-800"
