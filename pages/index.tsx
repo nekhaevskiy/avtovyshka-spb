@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { ContactBar, NavBar } from '../components';
+import React from 'react';
+import { ContactBar, IntroCarousel, NavBar } from '../components';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -19,7 +20,9 @@ export default function Home() {
         <NavBar />
       </header>
 
-      <main className={styles.main}>
+      <main>
+        <IntroCarousel />
+
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>

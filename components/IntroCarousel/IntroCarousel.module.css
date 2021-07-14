@@ -1,0 +1,13 @@
+.dots :global .BrainhubCarousel__dot {
+  opacity: 1;
+}
+
+.dots :global .BrainhubCarousel__dot::before {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(209, 213, 219);
+}
+
+.dots :global .BrainhubCarousel__dot--selected::before {
+  background-color: rgb(239, 68, 68);
+}

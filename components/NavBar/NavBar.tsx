@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { vehicles } from '../../data';
+import { vehicles } from '../../data/vehicles';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
 import logoPic from './logo.svg';

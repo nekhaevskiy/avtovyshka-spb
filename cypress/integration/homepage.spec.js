@@ -1,7 +1,8 @@
 /// <reference types="cypress" />
 /// <reference types="@testing-library/cypress" />
 
-import { vehicles } from '../../data';
+import { contacts } from '../../data/contacts';
+import { vehicles } from '../../data/vehicles';
 
 describe('Homepage - Small mobiles', () => {
   beforeEach(() => {
@@ -90,6 +91,12 @@ describe('Homepage - Small mobiles', () => {
       cy.findByTestId('nav-bar').within(() => {
         cy.findByRole('navigation').should('not.exist');
       });
+    });
+  });
+
+  context('IntroCarousel', () => {
+    it("doesn't exist", () => {
+      cy.findByTestId('intro-carousel').should('not.exist');
     });
   });
 });
@@ -213,6 +220,35 @@ describe('Homepage - Laptops', () => {
         cy.findByRole('link', { name: 'Фото' }).should('be.visible');
         cy.findByRole('link', { name: 'Отзывы' }).should('be.visible');
         cy.findByRole('link', { name: 'Контакты' }).should('be.visible');
+      });
+    });
+  });
+
+  context('IntroCarousel', () => {
+    it('renders all vehicles', () => {
+      vehicles.forEach((vehicle, i) => {
+        cy.findByTestId('intro-carousel').within(() => {
+          cy.findByText(i + 1).click();
+        });
+        cy.findByTestId(vehicle.path).within(() => {
+          cy.findByRole('heading', { name: vehicle.fullName.join(' ') }).should('be.visible');
+          const priceText = vehicle.priceHalfShift
+            ? `от ${vehicle.priceHalfShift} ₽/полсмены`
+            : `от ${vehicle.priceFullShift} ₽/смена`;
+          cy.findByText(priceText).should('be.visible');
+          cy.findByRole('link', { name: 'Подробнее' })
+            .should('be.visible')
+            .and('have.attr', 'href', vehicle.path);
+          cy.findByRole('link', { name: contacts[0].text.join(' ') })
+            .should('be.visible')
+            .and('have.attr', 'href', contacts[0].link);
+          cy.findByRole('link', { name: contacts[1].text })
+            .should('be.visible')
+            .and('have.attr', 'href', contacts[1].link);
+          cy.findByRole('link', { name: contacts[2].text })
+            .should('be.visible')
+            .and('have.attr', 'href', contacts[2].link);
+        });
       });
     });
   });

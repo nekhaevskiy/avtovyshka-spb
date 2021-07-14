@@ -19,12 +19,14 @@
     "validate": "yarn lint && yarn test:ci"
   },
   "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.4",
     "next": "11.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@testing-library/cypress": "^7.0.6",
+    "@types/brainhubeu__react-carousel": "^2.0.3",
     "@types/react": "17.0.11",
     "autoprefixer": "^10.2.6",
     "cypress": "^7.5.0",
