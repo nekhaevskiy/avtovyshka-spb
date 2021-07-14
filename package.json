@@ -19,15 +19,16 @@
     "validate": "yarn lint && yarn test:ci"
   },
   "dependencies": {
-    "@brainhubeu/react-carousel": "^2.0.4",
     "next": "11.0.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-slick": "0.28.1",
+    "slick-carousel": "1.8.1"
   },
   "devDependencies": {
     "@testing-library/cypress": "^7.0.6",
-    "@types/brainhubeu__react-carousel": "^2.0.3",
     "@types/react": "17.0.11",
+    "@types/react-slick": "0.23.5",
     "autoprefixer": "^10.2.6",
     "cypress": "^7.5.0",
     "cz-conventional-changelog": "3.3.0",

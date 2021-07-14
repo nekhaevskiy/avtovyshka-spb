@@ -1,13 +1,16 @@
-.dots :global .BrainhubCarousel__dot {
-  opacity: 1;
+.carousel :global .slick-dots {
+  bottom: -1.75rem;
 }
 
-.dots :global .BrainhubCarousel__dot::before {
-  width: 10px;
-  height: 10px;
-  background-color: rgb(209, 213, 219);
+.carousel :global .slick-dots li button::before {
+  font-size: 10px;
 }
 
-.dots :global .BrainhubCarousel__dot--selected::before {
-  background-color: rgb(239, 68, 68);
+.carousel :global .slick-dots li button:hover::before,
+.carousel :global .slick-dots li button:focus::before {
+  color: rgb(239, 68, 68);
+}
+
+.carousel :global .slick-dots li.slick-active button::before {
+  color: rgb(239, 68, 68);
 }

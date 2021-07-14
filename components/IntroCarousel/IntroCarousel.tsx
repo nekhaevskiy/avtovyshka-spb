@@ -1,7 +1,8 @@
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 import Link from 'next/link';
 import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
@@ -16,7 +17,7 @@ function Slide({ vehicle }: Props) {
     <article
       className="w-full text-white bg-gray-500 bg-center bg-no-repeat bg-cover"
       style={{ backgroundImage: `url(${vehicle.introCarouselPath})` }}
-      data-testid={vehicle.path}
+      data-testid="slide"
     >
       <div className="flex justify-between p-14 bg-black bg-opacity-50">
         <div>
@@ -68,8 +69,6 @@ function Slide({ vehicle }: Props) {
   );
 }
 
-const slides = vehicles.map((vehicle) => <Slide vehicle={vehicle} key={vehicle.path} />);
-
 function IntroCarousel() {
   const [value, setValue] = React.useState(0);
   const windowWidth = useWindowWidth();
@@ -79,9 +78,12 @@ function IntroCarousel() {
   }
 
   return windowWidth && windowWidth >= 1024 ? (
-    <div className="xl:px-4 mx-auto max-w-6xl" data-testid="intro-carousel">
-      <Carousel value={value} onChange={onChange} slides={slides} />
-      <Dots className={styles.dots} value={value} onChange={onChange} number={slides.length} />
+    <div className="pb-7 xl:px-4 mx-auto max-w-6xl" data-testid="intro-carousel">
+      <Slider arrows={false} autoplay className={styles.carousel} dots lazyLoad="ondemand">
+        {vehicles.map((vehicle) => (
+          <Slide vehicle={vehicle} key={vehicle.path} />
+        ))}
+      </Slider>
     </div>
   ) : null;
 }
