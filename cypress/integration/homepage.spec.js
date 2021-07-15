@@ -103,6 +103,34 @@ describe('Homepage - Small mobiles', () => {
       cy.findByTestId('intro-carousel').should('not.exist');
     });
   });
+
+  context('VehicleFleet', () => {
+    it('shows the heading and the cards', () => {
+      cy.findByTestId('vehicle-fleet').within(() => {
+        cy.findByRole('heading', {
+          name: 'Наш автопарк автовышки и автокраны',
+        });
+        vehicles.forEach((vehicle) => {
+          cy.findByRole('img', { name: vehicle.name }).should('be.visible');
+          cy.findByRole('heading', { name: vehicle.fullName.join(' ') }).should(
+            'be.visible'
+          );
+          cy.findByRole('heading', { name: vehicle.fullName.join(' ') })
+            .parents('[data-testid="vehicle-card"]')
+            .within(() => {
+              vehicle.vehicleCard.specs.forEach((spec) => {
+                cy.findByText(spec[0]).should('be.visible');
+                cy.findByText(spec[1]).should('be.visible');
+              });
+              cy.findByText(`${vehicle.priceFullShift} ₽`).should('be.visible');
+              cy.findByRole('link', { name: 'Подробнее' })
+                .should('be.visible')
+                .and('have.attr', 'href', vehicle.path);
+            });
+        });
+      });
+    });
+  });
 });
 
 describe('Homepage - Big mobiles', () => {
