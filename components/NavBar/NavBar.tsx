@@ -19,9 +19,12 @@ function NavBar() {
   useOnClickOutside(menuWrapperEl, () => setMenuOpen(false));
   useOnClickOutside(subMenuWrapperEl, () => setSubMenuOpen(false));
 
-  const menuHeight = menuOpen && menuEl.current?.scrollHeight ? menuEl.current.scrollHeight : 0;
+  const menuHeight =
+    menuOpen && menuEl.current?.scrollHeight ? menuEl.current.scrollHeight : 0;
   const subMenuHeight =
-    subMenuOpen && subMenuEl.current?.scrollHeight ? subMenuEl.current.scrollHeight : 0;
+    subMenuOpen && subMenuEl.current?.scrollHeight
+      ? subMenuEl.current.scrollHeight
+      : 0;
 
   return (
     <div
@@ -53,14 +56,20 @@ function NavBar() {
           className="absolute -top-9 right-4 w-7 h-7 text-gray-800 md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span className="sr-only">{menuOpen ? 'Закрыть меню' : 'Открыть меню'}</span>
+          <span className="sr-only">
+            {menuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          </span>
           <span className={menuOpen ? styles.menuBtnOpened : styles.menuBtn} />
         </button>
 
         <nav
           className={menuOpen ? styles.menuOpened : styles.menu}
           ref={menuEl}
-          style={windowWidth && windowWidth < 768 ? { height: menuHeight } : undefined}
+          style={
+            windowWidth && windowWidth < 768
+              ? { height: menuHeight }
+              : undefined
+          }
         >
           <Link href="/">
             <a className={styles.menuItem} onClick={() => setMenuOpen(false)}>
@@ -70,14 +79,21 @@ function NavBar() {
           <div className={styles.subMenuWrapper} ref={subMenuWrapperEl}>
             {windowWidth && windowWidth < 768 ? (
               <Link href="/#vehicle-fleet">
-                <a className={styles.menuItem} onClick={() => setMenuOpen(false)}>
+                <a
+                  className={styles.menuItem}
+                  onClick={() => setMenuOpen(false)}
+                >
                   Автопарк
                 </a>
               </Link>
             ) : (
               <button
                 type="button"
-                className={subMenuOpen ? styles.menuItemExpanded : styles.menuItemCollapsed}
+                className={
+                  subMenuOpen
+                    ? styles.menuItemExpanded
+                    : styles.menuItemCollapsed
+                }
                 onClick={() => setSubMenuOpen(!subMenuOpen)}
               >
                 Автопарк
@@ -86,7 +102,11 @@ function NavBar() {
             <div
               className={subMenuOpen ? styles.subMenuOpened : styles.subMenu}
               ref={subMenuEl}
-              style={windowWidth && windowWidth >= 768 ? { height: subMenuHeight } : undefined}
+              style={
+                windowWidth && windowWidth >= 768
+                  ? { height: subMenuHeight }
+                  : undefined
+              }
               data-testid="sub-menu"
             >
               {vehicles.map((vehicle) => (

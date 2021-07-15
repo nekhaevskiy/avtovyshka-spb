@@ -12,7 +12,8 @@ function ContactBar() {
           className="pl-5 py-1 whitespace-nowrap text-base font-medium bg-phone bg-no-repeat sm:mx-4"
           style={{ backgroundPosition: '1px 52%' }}
         >
-          {contacts[0].text[0]} <b className="text-red-500">{contacts[0].text[1]}</b>{' '}
+          {contacts[0].text[0]}{' '}
+          <b className="text-red-500">{contacts[0].text[1]}</b>{' '}
           {contacts[0].text[2]}
         </a>
 

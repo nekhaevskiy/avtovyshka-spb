@@ -45,7 +45,8 @@ function Slide({ vehicle }: Props) {
             className="block mb-1 text-lg"
             style={{ backgroundPosition: '1px 52%' }}
           >
-            {contacts[0].text[0]} <b>{contacts[0].text[1]}</b> {contacts[0].text[2]}
+            {contacts[0].text[0]} <b>{contacts[0].text[1]}</b>{' '}
+            {contacts[0].text[2]}
           </a>
 
           <a
@@ -78,8 +79,17 @@ function IntroCarousel() {
   }
 
   return windowWidth && windowWidth >= 1024 ? (
-    <div className="mx-auto pb-7 max-w-6xl xl:px-4" data-testid="intro-carousel">
-      <Slider arrows={false} autoplay className={styles.carousel} dots lazyLoad="ondemand">
+    <div
+      className="mx-auto pb-7 max-w-6xl xl:px-4"
+      data-testid="intro-carousel"
+    >
+      <Slider
+        arrows={false}
+        autoplay
+        className={styles.carousel}
+        dots
+        lazyLoad="ondemand"
+      >
         {vehicles.map((vehicle) => (
           <Slide vehicle={vehicle} key={vehicle.path} />
         ))}

@@ -14,7 +14,10 @@ type PossibleEvent = {
 }[HandledEventsType];
 type Handler = (event: PossibleEvent) => void;
 
-function useOnClickOutside(ref: React.RefObject<HTMLElement>, handler: Handler) {
+function useOnClickOutside(
+  ref: React.RefObject<HTMLElement>,
+  handler: Handler
+) {
   React.useEffect(() => {
     function listener(event: PossibleEvent) {
       if (!ref.current || ref.current.contains(event.target as Node)) {

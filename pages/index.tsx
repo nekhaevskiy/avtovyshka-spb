@@ -7,7 +7,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской области</title>
+        <title>
+          Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской
+          области
+        </title>
         <meta
           name="description"
           content="Наша компания оказывает услуги по аренде автовышек и автокранов в Санкт-Петербурге и Ленинградской области"
@@ -28,7 +31,8 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.js</code>
+          Get started by editing{' '}
+          <code className={styles.code}>pages/index.js</code>
         </p>
 
         <div className={styles.grid}>
@@ -42,7 +46,10 @@ export default function Home() {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className={styles.card}
+          >
             <h2>Examples &rarr;</h2>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>

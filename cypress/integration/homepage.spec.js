@@ -22,7 +22,9 @@ describe('Homepage - Small mobiles', () => {
         'content',
         'Наша компания оказывает услуги по аренде автовышек и автокранов в Санкт-Петербурге и Ленинградской области'
       );
-    cy.document().get('head link[rel="icon"]').should('have.attr', 'href', '/favicon.ico');
+    cy.document()
+      .get('head link[rel="icon"]')
+      .should('have.attr', 'href', '/favicon.ico');
   });
 
   context('ContactBar', () => {
@@ -45,7 +47,9 @@ describe('Homepage - Small mobiles', () => {
           .should('be.visible')
           .and('have.attr', 'href', '/');
         cy.findByRole('img', { name: 'На главную' }).should('be.visible');
-        cy.findByRole('heading', { name: 'Аренда автовышки и автокрана' }).should('be.visible');
+        cy.findByRole('heading', {
+          name: 'Аренда автовышки и автокрана',
+        }).should('be.visible');
       });
     });
 
@@ -110,7 +114,9 @@ describe('Homepage - Big mobiles', () => {
   context('ContactBar', () => {
     it('shows the main phone and the email', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should('be.visible');
+        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should(
+          'be.visible'
+        );
         cy.findByRole('link', { name: contacts[1].text }).should('not.exist');
         cy.findByRole('link', { name: contacts[2].text })
           .should('be.visible')
@@ -142,7 +148,9 @@ describe('Homepage - Tablets', () => {
   context('ContactBar', () => {
     it('shows only the contact items', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should('be.visible');
+        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should(
+          'be.visible'
+        );
         cy.findByRole('link', { name: contacts[1].text })
           .should('be.visible')
           .and('have.attr', 'href', contacts[1].link);
@@ -157,7 +165,9 @@ describe('Homepage - Tablets', () => {
       cy.findByTestId('nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
         cy.findByRole('img', { name: 'На главную' }).should('be.visible');
-        cy.findByRole('button', { name: /(открыть|закрыть) меню/i }).should('not.exist');
+        cy.findByRole('button', { name: /(открыть|закрыть) меню/i }).should(
+          'not.exist'
+        );
         cy.findByRole('link', { name: 'Главная' }).should('be.visible');
         cy.findByRole('button', { name: 'Автопарк' }).should('be.visible');
         cy.findByRole('link', { name: 'Услуги' }).should('be.visible');
@@ -169,7 +179,9 @@ describe('Homepage - Tablets', () => {
 
     it('opens and closes the sub-menu', () => {
       cy.findByTestId('nav-bar').within(() => {
-        cy.findByRole('button', { name: 'Автопарк' }).as('subMenuBtn').should('be.visible');
+        cy.findByRole('button', { name: 'Автопарк' })
+          .as('subMenuBtn')
+          .should('be.visible');
         cy.findByTestId('sub-menu').should('not.be.visible');
         cy.get('@subMenuBtn').click();
         vehicles.forEach((vehicle) => {
@@ -202,7 +214,9 @@ describe('Homepage - Laptops', () => {
   context('ContactBar', () => {
     it('shows the contact items and the note', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should('be.visible');
+        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should(
+          'be.visible'
+        );
         cy.findByRole('link', { name: contacts[1].text }).should('be.visible');
         cy.findByRole('link', { name: contacts[2].text }).should('be.visible');
         cy.findByText('Работаем круглосуточно').should('be.visible');
@@ -215,7 +229,9 @@ describe('Homepage - Laptops', () => {
       cy.findByTestId('nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
         cy.findByRole('img', { name: 'На главную' }).should('be.visible');
-        cy.findByRole('button', { name: /(открыть|закрыть) меню/i }).should('not.exist');
+        cy.findByRole('button', { name: /(открыть|закрыть) меню/i }).should(
+          'not.exist'
+        );
         cy.findByRole('link', { name: 'Главная' }).should('be.visible');
         cy.findByRole('button', { name: 'Автопарк' }).should('be.visible');
         cy.findByRole('link', { name: 'Услуги' }).should('be.visible');
