@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -6,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
+import { LinkAsButton } from '../LinkAsButton';
 import styles from './IntroCarousel.module.css';
 
 interface Props {
@@ -33,11 +33,7 @@ function Slide({ vehicle }: Props) {
               ? `от ${vehicle.priceHalfShift} ₽/полсмены`
               : `от ${vehicle.priceFullShift} ₽/смена`}
           </p>
-          <Link href={vehicle.path}>
-            <a className="inline-block align-middle px-4 py-2 text-white whitespace-nowrap font-medium bg-red-500 hover:bg-red-700 rounded focus:outline-none shadow-md focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
-              Подробнее
-            </a>
-          </Link>
+          <LinkAsButton href={vehicle.path}>Подробнее</LinkAsButton>
         </div>
         <div className="text-right">
           <a
