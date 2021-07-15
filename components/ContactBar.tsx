@@ -4,7 +4,7 @@ function ContactBar() {
   return (
     <>
       <div
-        className="z-10 flex items-center justify-center pl-20 pr-11 w-full h-10 bg-white border-b border-gray-100 sm:px-0 md:fixed md:top-0"
+        className="z-10 flex items-center justify-center pl-20 pr-11 w-full h-10 bg-white border-b border-gray-300 sm:px-0 md:fixed md:top-0"
         data-testid="contact-bar"
       >
         <a
