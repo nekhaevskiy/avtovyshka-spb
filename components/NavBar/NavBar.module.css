@@ -109,7 +109,7 @@
 
 .menuItem:hover,
 .menuItem:focus {
-  background-color: #e5e7eb;
+  background-color: rgb(243, 244, 246);
 }
 
 @media (min-width: 768px) {
@@ -200,7 +200,7 @@
 
 .subMenuItem:hover,
 .subMenuItem:focus {
-  background-color: #e5e7eb;
+  background-color: rgb(243, 244, 246);
 }
 
 @media (min-width: 768px) {
