@@ -15,7 +15,7 @@ interface Props {
 function Slide({ vehicle }: Props) {
   return (
     <article
-      className="w-full text-white bg-gray-500 bg-center bg-no-repeat bg-cover"
+      className="w-full text-white bg-gray-500 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${vehicle.introCarouselPath})` }}
       data-testid="slide"
     >
@@ -34,7 +34,7 @@ function Slide({ vehicle }: Props) {
               : `от ${vehicle.priceFullShift} ₽/смена`}
           </p>
           <Link href={vehicle.path}>
-            <a className="inline-block px-4 py-2 font-medium text-white align-middle whitespace-nowrap bg-red-500 hover:bg-red-700 rounded shadow-md focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
+            <a className="inline-block align-middle px-4 py-2 text-white whitespace-nowrap font-medium bg-red-500 hover:bg-red-700 rounded focus:outline-none shadow-md focus:ring-2 focus:ring-red-400 focus:ring-opacity-75">
               Подробнее
             </a>
           </Link>
@@ -78,7 +78,7 @@ function IntroCarousel() {
   }
 
   return windowWidth && windowWidth >= 1024 ? (
-    <div className="pb-7 xl:px-4 mx-auto max-w-6xl" data-testid="intro-carousel">
+    <div className="mx-auto pb-7 max-w-6xl xl:px-4" data-testid="intro-carousel">
       <Slider arrows={false} autoplay className={styles.carousel} dots lazyLoad="ondemand">
         {vehicles.map((vehicle) => (
           <Slide vehicle={vehicle} key={vehicle.path} />

@@ -25,11 +25,11 @@ function NavBar() {
 
   return (
     <div
-      className="md:flex relative md:items-center p-4 md:py-0 lg:mx-auto lg:max-w-6xl"
+      className="relative p-4 md:flex md:items-center md:py-0 lg:mx-auto lg:max-w-6xl"
       data-testid="nav-bar"
     >
       <Link href="/">
-        <a className="absolute md:relative -top-8 md:top-auto left-0 md:left-auto md:flex-shrink-0 w-20 md:w-32 h-8 md:h-16">
+        <a className="absolute -top-8 left-0 w-20 h-8 md:relative md:left-auto md:top-auto md:flex-shrink-0 md:w-32 md:h-16">
           <Image
             src={logoPic}
             alt="На главную"
@@ -40,17 +40,17 @@ function NavBar() {
         </a>
       </Link>
 
-      <h1 className="md:flex-shrink-0 md:mx-4 md:w-64 text-3xl md:text-base md:leading-none text-center md:text-left text-red-500">
+      <h1 className="text-center text-red-500 text-3xl md:flex-shrink-0 md:mx-4 md:w-64 md:text-left md:text-base md:leading-none">
         Аренда автовышки и автокрана
-        <span className="hidden sm:block text-xl md:text-base md:leading-none">
+        <span className="hidden text-xl sm:block md:text-base md:leading-none">
           в Санкт-Петербурге и Ленинградской области
         </span>
       </h1>
 
-      <div ref={menuWrapperEl} className="md:ml-auto md:-mr-4">
+      <div ref={menuWrapperEl} className="md:-mr-4 md:ml-auto">
         <button
           type="button"
-          className="md:hidden absolute -top-9 right-4 w-7 h-7 text-gray-800"
+          className="absolute -top-9 right-4 w-7 h-7 text-gray-800 md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="sr-only">{menuOpen ? 'Закрыть меню' : 'Открыть меню'}</span>
