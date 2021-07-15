@@ -69,7 +69,7 @@ function NavBar() {
           </Link>
           <div className={styles.subMenuWrapper} ref={subMenuWrapperEl}>
             {windowWidth && windowWidth < 768 ? (
-              <Link href="/#car-fleet">
+              <Link href="/#vehicle-fleet">
                 <a className={styles.menuItem} onClick={() => setMenuOpen(false)}>
                   Автопарк
                 </a>

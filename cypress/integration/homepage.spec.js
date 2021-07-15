@@ -59,7 +59,7 @@ describe('Homepage - Small mobiles', () => {
           .and('have.attr', 'href', '/');
         cy.findByRole('link', { name: 'Автопарк' })
           .should('be.visible')
-          .and('have.attr', 'href', '/#car-fleet');
+          .and('have.attr', 'href', '/#vehicle-fleet');
         vehicles.forEach((vehicle) => {
           cy.findByRole('link', { name: vehicle.name })
             .should('be.visible')
