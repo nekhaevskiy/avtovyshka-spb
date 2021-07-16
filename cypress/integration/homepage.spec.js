@@ -131,6 +131,12 @@ describe('Homepage - Small mobiles', () => {
       });
     });
   });
+
+  context('About', () => {
+    it('shows the description of the company', () => {
+      cy.findByTestId('about').should('be.visible');
+    });
+  });
 });
 
 describe('Homepage - Big mobiles', () => {
