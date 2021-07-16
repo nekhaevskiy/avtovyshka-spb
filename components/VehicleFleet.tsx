@@ -1,5 +1,5 @@
+import { SectionHeading, VehicleCard } from '.';
 import { vehicles } from '../data/vehicles';
-import { VehicleCard } from './VehicleCard/VehicleCard';
 
 function VehicleFleet() {
   return (
@@ -9,12 +9,10 @@ function VehicleFleet() {
       id="vehicle-fleet"
     >
       <div className="mx-auto px-4 py-8 max-w-6xl">
-        <h2 className="mb-6 pb-3 text-gray-800 text-2xl font-bold border-b border-gray-300">
-          Наш автопарк{' '}
-          <small className="block text-gray-500 text-lg font-normal sm:inline-block sm:align-baseline">
-            автовышки и автокраны
-          </small>
-        </h2>
+        <SectionHeading
+          heading="Наш автопарк"
+          subheading="автовышки и автокраны"
+        />
         <div className="sm:flex sm:flex-wrap sm:items-stretch sm:justify-center sm:-mx-2 lg:justify-around">
           {vehicles.map((vehicle) => (
             <div

@@ -1,6 +1,6 @@
 import Image from 'next/image';
+import { LinkAsButton } from '..';
 import { Vehicle } from '../../data/vehicles';
-import { LinkAsButton } from '../LinkAsButton';
 
 interface Props {
   vehicle: Vehicle;

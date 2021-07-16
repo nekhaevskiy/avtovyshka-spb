@@ -2,10 +2,10 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
 import 'slick-carousel/slick/slick.css';
+import { LinkAsButton } from '..';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
-import { LinkAsButton } from '../LinkAsButton';
 import styles from './IntroCarousel.module.css';
 
 interface Props {
