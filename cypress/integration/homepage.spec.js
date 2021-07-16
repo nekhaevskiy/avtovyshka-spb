@@ -6,7 +6,6 @@ import { vehicles } from '../../data/vehicles';
 
 describe('Homepage - Small mobiles', () => {
   beforeEach(() => {
-    cy.viewport(320, 480);
     cy.visit('/');
   });
 
@@ -141,7 +140,7 @@ describe('Homepage - Small mobiles', () => {
 
 describe('Homepage - Big mobiles', () => {
   beforeEach(() => {
-    cy.viewport(640, 480);
+    cy.viewport('iphone-6+', 'landscape');
     cy.visit('/');
   });
 
@@ -175,7 +174,7 @@ describe('Homepage - Big mobiles', () => {
 
 describe('Homepage - Tablets', () => {
   beforeEach(() => {
-    cy.viewport(768, 1024);
+    cy.viewport('ipad-2');
     cy.visit('/');
   });
 
@@ -241,7 +240,7 @@ describe('Homepage - Tablets', () => {
 
 describe('Homepage - Laptops', () => {
   beforeEach(() => {
-    cy.viewport(1024, 1200);
+    cy.viewport('macbook-15');
     cy.visit('/');
   });
 
