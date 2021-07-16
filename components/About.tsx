@@ -1,7 +1,7 @@
 function About() {
   return (
     <section className="border-b border-gray-300" data-testid="about">
-      <div className="mx-auto p-4 max-w-6xl text-sm md:text-base">
+      <div className="mx-auto px-4 py-8 max-w-6xl text-sm md:text-base">
         <p className="mb-3 text-gray-800">
           Наша Компания - Ваш верный партнёр в области аренды спецтехники. Мы
           предлагаем аренду спецтехники как на одну смену, так и на длительный
