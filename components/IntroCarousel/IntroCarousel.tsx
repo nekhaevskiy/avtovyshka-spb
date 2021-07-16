@@ -76,7 +76,7 @@ function IntroCarousel() {
 
   return windowWidth && windowWidth >= 1024 ? (
     <div
-      className="mx-auto pb-7 max-w-6xl xl:px-4"
+      className="mx-auto pb-9 max-w-6xl xl:px-4"
       data-testid="intro-carousel"
     >
       <Slider
