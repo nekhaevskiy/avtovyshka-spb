@@ -10,7 +10,7 @@ function VehicleCard({ vehicle }: Props) {
   const { vehicleCard } = vehicle;
   return (
     <article
-      className="flex flex-col pb-5 pt-4 px-4 w-72 bg-white border border-gray-300 rounded"
+      className="flex flex-col pb-5 pt-4 px-4 max-w-xs h-full bg-white border border-gray-300 rounded shadow"
       data-testid="vehicle-card"
     >
       <div className="relative mb-2 w-full h-40">

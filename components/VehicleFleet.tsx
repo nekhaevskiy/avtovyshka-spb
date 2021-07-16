@@ -8,16 +8,21 @@ function VehicleFleet() {
       data-testid="vehicle-fleet"
       id="vehicle-fleet"
     >
-      <div className="mx-auto px-4 py-8 max-w-7xl">
+      <div className="mx-auto px-4 py-8 max-w-6xl">
         <h2 className="mb-6 pb-3 text-gray-800 text-2xl font-bold border-b border-gray-300">
           Наш автопарк{' '}
           <small className="block text-gray-500 text-lg font-normal sm:inline-block sm:align-baseline">
             автовышки и автокраны
           </small>
         </h2>
-        <div className="flex flex-col gap-4 items-center sm:flex-row sm:flex-wrap sm:items-stretch sm:justify-center xl:justify-between">
+        <div className="sm:flex sm:flex-wrap sm:items-stretch sm:justify-center sm:-mx-2 lg:justify-around">
           {vehicles.map((vehicle) => (
-            <VehicleCard key={vehicle.path} vehicle={vehicle} />
+            <div
+              className="mb-4 mx-auto max-w-xs sm:mx-2 sm:w-80"
+              key={vehicle.path}
+            >
+              <VehicleCard vehicle={vehicle} />
+            </div>
           ))}
         </div>
       </div>
