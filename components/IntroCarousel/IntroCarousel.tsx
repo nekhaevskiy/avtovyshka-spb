@@ -16,7 +16,7 @@ function Slide({ vehicle }: Props) {
   return (
     <article
       className="w-full text-white bg-gray-500 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${vehicle.introCarouselPath})` }}
+      style={{ backgroundImage: `url(${vehicle.introCarouselImage})` }}
       data-testid="slide"
     >
       <div className="flex justify-between p-14 bg-black bg-opacity-50">
