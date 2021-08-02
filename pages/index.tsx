@@ -5,6 +5,7 @@ import {
   ContactBar,
   IntroCarousel,
   NavBar,
+  Service,
   VehicleFleet,
 } from '../components';
 import styles from '../styles/Home.module.css';
@@ -33,6 +34,7 @@ export default function Home() {
         <IntroCarousel />
         <VehicleFleet />
         <About />
+        <Service />
 
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>

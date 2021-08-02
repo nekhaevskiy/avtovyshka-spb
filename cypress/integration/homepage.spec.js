@@ -2,6 +2,7 @@
 /// <reference types="@testing-library/cypress" />
 
 import { contacts } from '../../data/contacts';
+import { services } from '../../data/services';
 import { vehicles } from '../../data/vehicles';
 
 describe('Homepage - Small mobiles', () => {
@@ -134,6 +135,23 @@ describe('Homepage - Small mobiles', () => {
   context('About', () => {
     it('shows the description of the company', () => {
       cy.findByTestId('about').should('be.visible');
+    });
+  });
+
+  context('Service', () => {
+    it('shows the heading and all service items', () => {
+      cy.findByTestId('service').within(() => {
+        cy.findByRole('heading', { name: 'Что мы предлагаем' }).should(
+          'be.visible'
+        );
+        services.forEach((service) => {
+          cy.findByRole('img', { name: service.heading }).should('be.visible');
+          cy.findByRole('heading', { name: service.heading }).should(
+            'be.visible'
+          );
+          cy.findByText(service.text).should('be.visible');
+        });
+      });
     });
   });
 });
