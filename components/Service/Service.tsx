@@ -10,7 +10,7 @@ interface Props {
 
 function ServiceCard({ img, heading, text }: Props) {
   return (
-    <article className="p-4 text-center border border-gray-300 rounded shadow">
+    <article className="mb-4 mx-2 p-4 max-w-xs text-center border border-gray-300 rounded shadow">
       <Image src={img} alt={heading} width="50" height="50" />
       <h3 className="mb-2 mt-3 text-gray-800 text-xl font-bold">{heading}</h3>
       <p className="text-gray-800">{text}</p>
@@ -28,13 +28,12 @@ function Service() {
       <SectionHeading heading="Что мы предлагаем" />
       <div className="flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center sm:-mx-2 lg:items-stretch lg:justify-around">
         {services.map((service) => (
-          <div key={service.heading} className="mb-4 mx-2 max-w-xs">
-            <ServiceCard
-              heading={service.heading}
-              img={service.img}
-              text={service.text}
-            />
-          </div>
+          <ServiceCard
+            key={service.heading}
+            heading={service.heading}
+            img={service.img}
+            text={service.text}
+          />
         ))}
       </div>
     </section>
