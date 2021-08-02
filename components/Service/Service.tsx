@@ -12,7 +12,7 @@ function ServiceCard({ img, heading, text }: Props) {
   return (
     <article className="p-4 text-center border border-gray-300 rounded shadow">
       <Image src={img} alt={heading} width="50" height="50" />
-      <h3 className="mb-3 mt-2 text-gray-800 text-xl font-bold">{heading}</h3>
+      <h3 className="mb-2 mt-3 text-gray-800 text-xl font-bold">{heading}</h3>
       <p className="text-gray-800">{text}</p>
     </article>
   );
