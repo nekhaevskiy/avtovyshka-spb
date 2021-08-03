@@ -2,6 +2,7 @@
 /// <reference types="@testing-library/cypress" />
 
 import { contacts } from '../../data/contacts';
+import { images } from '../../data/photo-gallery';
 import { services } from '../../data/services';
 import { vehicles } from '../../data/vehicles';
 
@@ -140,6 +141,7 @@ describe('Homepage - Small mobiles', () => {
 
   context('Service', () => {
     it('shows the heading and all service items', () => {
+      cy.findByTestId('service').should('have.attr', 'id', 'service');
       cy.findByTestId('service').within(() => {
         cy.findByRole('heading', { name: 'Что мы предлагаем' }).should(
           'be.visible'
@@ -150,6 +152,37 @@ describe('Homepage - Small mobiles', () => {
             'be.visible'
           );
           cy.findByText(service.text).should('be.visible');
+        });
+      });
+    });
+  });
+
+  context('Photo', () => {
+    it('shows the heading and all thumbnails', () => {
+      cy.findByTestId('photo').should('have.attr', 'id', 'photo');
+      cy.findByTestId('photo').within(() => {
+        cy.findByRole('heading', { name: 'Наша техника за работой' }).should(
+          'be.visible'
+        );
+        images.forEach((image, index) => {
+          if (index === 0 || index === 1 || index === images.length - 1) {
+            cy.findByRole('img', { name: image.originalAlt })
+              .should('be.visible')
+              .and('have.attr', 'src', image.original);
+          } else {
+            cy.findByRole('img', { name: image.originalAlt }).should(
+              'not.exist'
+            );
+          }
+          if (index < 4) {
+            cy.findByRole('img', { name: image.thumbnailAlt })
+              .should('be.visible')
+              .and('have.attr', 'src', image.thumbnail);
+          } else {
+            cy.findByRole('img', { name: image.thumbnailAlt })
+              .should('not.be.visible')
+              .and('have.attr', 'src', image.thumbnail);
+          }
         });
       });
     });

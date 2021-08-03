@@ -5,6 +5,7 @@ import {
   ContactBar,
   IntroCarousel,
   NavBar,
+  PhotoGallery,
   Service,
   VehicleFleet,
 } from '../components';
@@ -35,6 +36,7 @@ export default function Home() {
         <VehicleFleet />
         <About />
         <Service />
+        <PhotoGallery />
 
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
