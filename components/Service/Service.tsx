@@ -26,7 +26,7 @@ function Service() {
       id="service"
     >
       <SectionHeading heading="Что мы предлагаем" />
-      <div className="flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center sm:-mx-2 lg:items-stretch lg:justify-around">
+      <div className="flex flex-row flex-wrap items-stretch justify-center -mx-2 lg:justify-around">
         {services.map((service) => (
           <ServiceCard
             key={service.heading}
