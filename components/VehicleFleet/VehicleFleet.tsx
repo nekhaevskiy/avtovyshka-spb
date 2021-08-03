@@ -1,5 +1,5 @@
-import { SectionHeading, VehicleCard } from '.';
-import { vehicles } from '../data/vehicles';
+import { SectionHeading, VehicleCard } from '..';
+import { vehicles } from '../../data/vehicles';
 
 function VehicleFleet() {
   return (
