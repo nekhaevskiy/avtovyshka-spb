@@ -17,7 +17,7 @@ export default function Home() {
       <Head>
         <title>
           Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской
-          области
+          области - ООО «Аренда Неба»
         </title>
         <meta
           name="description"
