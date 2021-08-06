@@ -67,12 +67,7 @@ function Slide({ vehicle }: Props) {
 }
 
 function IntroCarousel() {
-  const [value, setValue] = React.useState(0);
   const windowWidth = useWindowWidth();
-
-  function onChange(value: number) {
-    setValue(value);
-  }
 
   return windowWidth && windowWidth >= 1024 ? (
     <div
