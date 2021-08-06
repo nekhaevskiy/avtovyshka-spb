@@ -379,6 +379,7 @@ describe('Homepage - Laptops', () => {
           cy.get('@heading')
             .parents('[data-testid="slide"]')
             .within(() => {
+              cy.findByRole('img', { name: vehicle.name }).should('be.visible');
               const priceText = vehicle.priceHalfShift
                 ? `от ${vehicle.priceHalfShift} ₽/полсмены`
                 : `от ${vehicle.priceFullShift} ₽/смена`;

@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick-theme.css';
@@ -14,12 +15,16 @@ interface Props {
 
 function Slide({ vehicle }: Props) {
   return (
-    <article
-      className="w-full text-white bg-gray-500 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${vehicle.introCarouselImage})` }}
-      data-testid="slide"
-    >
-      <div className="flex justify-between p-14 bg-black bg-opacity-50">
+    <article className="relative w-full h-80 text-white" data-testid="slide">
+      <div className="absolute -z-1 w-full h-full">
+        <Image
+          src={vehicle.introCarouselImage}
+          alt={vehicle.name}
+          layout="fill"
+          objectFit="cover"
+        />
+      </div>
+      <div className="flex items-center justify-between p-14 h-full bg-black bg-opacity-50">
         <div>
           <h2 className="mb-4 text-3xl font-bold">
             {vehicle.fullName.map((part) => (
@@ -74,13 +79,7 @@ function IntroCarousel() {
       className="mx-auto pb-9 max-w-6xl xl:px-4"
       data-testid="intro-carousel"
     >
-      <Slider
-        arrows={false}
-        autoplay
-        className={styles.carousel}
-        dots
-        lazyLoad="ondemand"
-      >
+      <Slider arrows={false} autoplay className={styles.carousel} dots>
         {vehicles.map((vehicle) => (
           <Slide vehicle={vehicle} key={vehicle.path} />
         ))}

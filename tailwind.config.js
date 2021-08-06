@@ -8,6 +8,9 @@ module.exports = {
         phone: "url('/icons/phone.svg')",
         quote: "url('/icons/quote.svg')",
       }),
+      zIndex: {
+        '-1': '-1',
+      },
     },
   },
   variants: {
