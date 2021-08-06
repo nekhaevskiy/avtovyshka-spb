@@ -3,6 +3,7 @@
 
 import { contacts } from '../../data/contacts';
 import { images } from '../../data/photo-gallery';
+import { reviews } from '../../data/reviews';
 import { services } from '../../data/services';
 import { vehicles } from '../../data/vehicles';
 
@@ -157,7 +158,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('Photo', () => {
+  context('PhotoGallery', () => {
     it('shows the heading and all thumbnails', () => {
       cy.findByTestId('photo').should('have.attr', 'id', 'photo');
       cy.findByTestId('photo').within(() => {
@@ -184,6 +185,32 @@ describe('Homepage - Small mobiles', () => {
               .and('have.attr', 'src', image.thumbnail);
           }
         });
+      });
+    });
+  });
+
+  context('Reviews', () => {
+    it('shows the heading and first review', () => {
+      cy.findByTestId('reviews').should('have.attr', 'id', 'reviews');
+      cy.findByTestId('reviews').within(() => {
+        cy.findByRole('heading', { name: 'Отзывы наших клиентов' }).should(
+          'be.visible'
+        );
+        cy.findByRole('img', { name: 'Символ цитаты' }).should('be.visible');
+        cy.findByRole('heading', { name: reviews[0].author }).should(
+          'be.visible'
+        );
+        // there are two rendered texts and I don't know why it is so
+        cy.findAllByText(reviews[0].text).should('be.visible');
+
+        cy.findByRole('button', { name: '2' }).click();
+
+        cy.findByRole('img', { name: 'Символ цитаты' }).should('be.visible');
+        cy.findByRole('heading', { name: reviews[1].author }).should(
+          'be.visible'
+        );
+        // there are two rendered texts and I don't know why it is so
+        cy.findAllByText(reviews[1].text).should('be.visible');
       });
     });
   });
@@ -218,6 +245,26 @@ describe('Homepage - Big mobiles', () => {
         cy.findByRole('heading', {
           name: 'Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской области',
         }).should('be.visible');
+      });
+    });
+  });
+
+  context('Reviews', () => {
+    it('shows first two reviews', () => {
+      cy.findByTestId('reviews').within(() => {
+        cy.findAllByRole('img', { name: 'Символ цитаты' })
+          .should('be.visible')
+          .and('have.length', 2);
+        cy.findByRole('heading', { name: reviews[0].author }).should(
+          'be.visible'
+        );
+        // there are two rendered texts and I don't know why it is so
+        cy.findAllByText(reviews[0].text).should('be.visible');
+        cy.findByRole('heading', { name: reviews[1].author }).should(
+          'be.visible'
+        );
+        // there are two rendered texts and I don't know why it is so
+        cy.findAllByText(reviews[1].text).should('be.visible');
       });
     });
   });
@@ -355,6 +402,31 @@ describe('Homepage - Laptops', () => {
                 .and('have.attr', 'href', contacts[2].link);
             });
         });
+      });
+    });
+  });
+
+  context('Reviews', () => {
+    it('shows first two reviews', () => {
+      cy.findByTestId('reviews').within(() => {
+        cy.findAllByRole('img', { name: 'Символ цитаты' })
+          .should('be.visible')
+          .and('have.length', 3);
+        cy.findByRole('heading', { name: reviews[0].author }).should(
+          'be.visible'
+        );
+        // there are two rendered texts and I don't know why it is so
+        cy.findAllByText(reviews[0].text).should('be.visible');
+        cy.findByRole('heading', { name: reviews[1].author }).should(
+          'be.visible'
+        );
+        // there are two rendered texts and I don't know why it is so
+        cy.findAllByText(reviews[1].text).should('be.visible');
+        cy.findByRole('heading', { name: reviews[2].author }).should(
+          'be.visible'
+        );
+        // there are two rendered texts and I don't know why it is so
+        cy.findAllByText(reviews[2].text).should('be.visible');
       });
     });
   });

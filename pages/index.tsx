@@ -6,6 +6,7 @@ import {
   IntroCarousel,
   NavBar,
   PhotoGallery,
+  Reviews,
   Service,
   VehicleFleet,
 } from '../components';
@@ -37,6 +38,7 @@ export default function Home() {
         <About />
         <Service />
         <PhotoGallery />
+        <Reviews />
 
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
