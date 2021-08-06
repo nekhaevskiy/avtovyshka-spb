@@ -196,7 +196,6 @@ describe('Homepage - Small mobiles', () => {
         cy.findByRole('heading', { name: 'Отзывы наших клиентов' }).should(
           'be.visible'
         );
-        cy.findByRole('img', { name: 'Символ цитаты' }).should('be.visible');
         cy.findByRole('heading', { name: reviews[0].author }).should(
           'be.visible'
         );
@@ -205,7 +204,6 @@ describe('Homepage - Small mobiles', () => {
 
         cy.findByRole('button', { name: '2' }).click();
 
-        cy.findByRole('img', { name: 'Символ цитаты' }).should('be.visible');
         cy.findByRole('heading', { name: reviews[1].author }).should(
           'be.visible'
         );
@@ -252,9 +250,6 @@ describe('Homepage - Big mobiles', () => {
   context('Reviews', () => {
     it('shows first two reviews', () => {
       cy.findByTestId('reviews').within(() => {
-        cy.findAllByRole('img', { name: 'Символ цитаты' })
-          .should('be.visible')
-          .and('have.length', 2);
         cy.findByRole('heading', { name: reviews[0].author }).should(
           'be.visible'
         );
@@ -407,11 +402,8 @@ describe('Homepage - Laptops', () => {
   });
 
   context('Reviews', () => {
-    it('shows first two reviews', () => {
+    it('shows first three reviews', () => {
       cy.findByTestId('reviews').within(() => {
-        cy.findAllByRole('img', { name: 'Символ цитаты' })
-          .should('be.visible')
-          .and('have.length', 3);
         cy.findByRole('heading', { name: reviews[0].author }).should(
           'be.visible'
         );

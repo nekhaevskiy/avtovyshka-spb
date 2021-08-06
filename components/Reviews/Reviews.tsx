@@ -1,8 +1,6 @@
-import Image from 'next/image';
 import Slider from 'react-slick';
 import { SectionHeading } from '..';
 import { Review, reviews } from '../../data/reviews';
-import iconQuote from './icon-quote.svg';
 import styles from './Reviews.module.css';
 
 interface Props {
@@ -12,9 +10,10 @@ interface Props {
 function Slide({ review }: Props) {
   return (
     <article className="flex px-2">
-      <div className="relative flex flex-shrink-0 items-center justify-center p-2 w-10 h-10 bg-red-500 rounded-full">
-        <Image src={iconQuote} alt="Символ цитаты" width="22" height="22" />
-      </div>
+      <span
+        className="flex-shrink-0 w-10 h-10 bg-red-500 bg-quote bg-center bg-no-repeat rounded-full"
+        style={{ backgroundSize: 22 }}
+      />
       <div className="ml-3">
         <h3 className="mb-2 text-gray-800 text-lg font-bold">
           {review.author}
