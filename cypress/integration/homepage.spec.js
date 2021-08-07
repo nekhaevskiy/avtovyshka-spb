@@ -216,11 +216,27 @@ describe('Homepage - Small mobiles', () => {
   });
 
   context('Contacts', () => {
-    it('shows the heading and the map', () => {
+    it('renders the heading, the map and the contact data', () => {
       cy.findByTestId('contacts').should('have.attr', 'id', 'contacts');
       cy.findByTestId('contacts').within(() => {
         cy.findByRole('heading', { name: 'Контакты' }).should('be.visible');
         cy.findByRole('img', { name: companyName }).should('be.visible');
+        cy.findByRole('heading', { name: 'Телефоны' }).should('be.visible');
+        cy.findByRole('link', { name: phones[0].text.join(' ') })
+          .should('be.visible')
+          .and('have.attr', 'href', phones[0].link);
+        cy.findByRole('link', { name: phones[1].text })
+          .should('be.visible')
+          .and('have.attr', 'href', phones[1].link);
+        cy.findByRole('heading', { name: 'Email' }).should('be.visible');
+        cy.findByRole('link', { name: email.text })
+          .should('be.visible')
+          .and('have.attr', 'href', email.link);
+        cy.findByRole('heading', { name: 'Адрес' }).should('be.visible');
+        cy.findByText(companyName).should('be.visible');
+        address.forEach((item) => {
+          cy.findByText(item).should('be.visible');
+        });
       });
     });
   });

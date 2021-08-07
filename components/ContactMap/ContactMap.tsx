@@ -18,15 +18,21 @@ function MarkerWrapper(props: Props) {
   );
 }
 
+const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
+
 function ContactMap() {
   return (
     <div className="mb-6 w-full h-80">
       <GoogleMapReact
-        bootstrapURLKeys={{
-          key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || '',
-          language: 'ru',
-          region: 'ru',
-        }}
+        bootstrapURLKeys={
+          GOOGLE_MAPS_KEY
+            ? {
+                key: GOOGLE_MAPS_KEY,
+                language: 'ru',
+                region: 'ru',
+              }
+            : undefined
+        }
         defaultCenter={{
           lat: 59.948796,
           lng: 30.224368,
