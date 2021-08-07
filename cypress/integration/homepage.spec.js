@@ -381,35 +381,60 @@ describe('Homepage - Laptops', () => {
   });
 
   context('IntroCarousel', () => {
-    it('renders all vehicles', () => {
-      vehicles.forEach((vehicle, i) => {
-        cy.findByTestId('intro-carousel').within(() => {
-          cy.findByRole('button', { name: i + 1 }).click();
-          cy.findByRole('heading', { name: vehicle.fullName.join(' ') })
-            .as('heading')
-            .should('be.visible');
-          cy.get('@heading')
-            .parents('[data-testid="slide"]')
-            .within(() => {
-              cy.findByRole('img', { name: vehicle.name }).should('be.visible');
-              const priceText = vehicle.priceHalfShift
-                ? `от ${vehicle.priceHalfShift} ₽/полсмены`
-                : `от ${vehicle.priceFullShift} ₽/смена`;
-              cy.findByText(priceText).should('be.visible');
-              cy.findByRole('link', { name: 'Подробнее' })
-                .should('be.visible')
-                .and('have.attr', 'href', vehicle.path);
-              cy.findByRole('link', { name: phones[0].text.join(' ') })
-                .should('be.visible')
-                .and('have.attr', 'href', phones[0].link);
-              cy.findByRole('link', { name: phones[1].text })
-                .should('be.visible')
-                .and('have.attr', 'href', phones[1].link);
-              cy.findByRole('link', { name: email.text })
-                .should('be.visible')
-                .and('have.attr', 'href', email.link);
-            });
-        });
+    it('renders first and second slides', () => {
+      cy.findByTestId('intro-carousel').within(() => {
+        cy.findByRole('heading', { name: vehicles[0].fullName.join(' ') })
+          .as('heading')
+          .should('be.visible');
+        cy.get('@heading')
+          .parents('[data-testid="slide"]')
+          .within(() => {
+            cy.findByRole('img', { name: vehicles[0].name }).should(
+              'be.visible'
+            );
+            const priceText = vehicles[0].priceHalfShift
+              ? `от ${vehicles[0].priceHalfShift} ₽/полсмены`
+              : `от ${vehicles[0].priceFullShift} ₽/смена`;
+            cy.findByText(priceText).should('be.visible');
+            cy.findByRole('link', { name: 'Подробнее' })
+              .should('be.visible')
+              .and('have.attr', 'href', vehicles[0].path);
+            cy.findByRole('link', { name: phones[0].text.join(' ') })
+              .should('be.visible')
+              .and('have.attr', 'href', phones[0].link);
+            cy.findByRole('link', { name: phones[1].text })
+              .should('be.visible')
+              .and('have.attr', 'href', phones[1].link);
+            cy.findByRole('link', { name: email.text })
+              .should('be.visible')
+              .and('have.attr', 'href', email.link);
+          });
+        cy.findByRole('heading', { name: vehicles[1].fullName.join(' ') })
+          .as('heading')
+          .should('be.visible');
+        cy.get('@heading')
+          .parents('[data-testid="slide"]')
+          .within(() => {
+            cy.findByRole('img', { name: vehicles[1].name }).should(
+              'be.visible'
+            );
+            const priceText = vehicles[1].priceHalfShift
+              ? `от ${vehicles[1].priceHalfShift} ₽/полсмены`
+              : `от ${vehicles[1].priceFullShift} ₽/смена`;
+            cy.findByText(priceText).should('be.visible');
+            cy.findByRole('link', { name: 'Подробнее' })
+              .should('be.visible')
+              .and('have.attr', 'href', vehicles[1].path);
+            cy.findByRole('link', { name: phones[0].text.join(' ') })
+              .should('be.visible')
+              .and('have.attr', 'href', phones[0].link);
+            cy.findByRole('link', { name: phones[1].text })
+              .should('be.visible')
+              .and('have.attr', 'href', phones[1].link);
+            cy.findByRole('link', { name: email.text })
+              .should('be.visible')
+              .and('have.attr', 'href', email.link);
+          });
       });
     });
   });
