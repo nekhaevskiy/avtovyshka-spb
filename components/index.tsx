@@ -1,5 +1,6 @@
 import { About } from './About/About';
 import { ContactBar } from './ContactBar/ContactBar';
+import { Contacts } from './Contacts/Contacts';
 import { IntroCarousel } from './IntroCarousel/IntroCarousel';
 import { LinkAsButton } from './LinkAsButton/LinkAsButton';
 import { NavBar } from './NavBar/NavBar';
@@ -12,6 +13,7 @@ import { VehicleFleet } from './VehicleFleet/VehicleFleet';
 
 export {
   About,
+  Contacts,
   ContactBar,
   IntroCarousel,
   LinkAsButton,

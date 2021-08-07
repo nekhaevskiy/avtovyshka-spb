@@ -212,6 +212,18 @@ describe('Homepage - Small mobiles', () => {
       });
     });
   });
+
+  context('Contacts', () => {
+    it('shows the heading and the map', () => {
+      cy.findByTestId('contacts').should('have.attr', 'id', 'contacts');
+      cy.findByTestId('contacts').within(() => {
+        cy.findByRole('heading', { name: 'Контакты' }).should('be.visible');
+        cy.findByRole('img', { name: 'ООО «Аренда Неба»' }).should(
+          'be.visible'
+        );
+      });
+    });
+  });
 });
 
 describe('Homepage - Big mobiles', () => {

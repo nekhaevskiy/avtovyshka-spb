@@ -3,6 +3,7 @@ import React from 'react';
 import {
   About,
   ContactBar,
+  Contacts,
   IntroCarousel,
   NavBar,
   PhotoGallery,
@@ -39,6 +40,7 @@ export default function Home() {
         <Service />
         <PhotoGallery />
         <Reviews />
+        <Contacts />
 
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
