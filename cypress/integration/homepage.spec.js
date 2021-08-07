@@ -7,7 +7,7 @@ import { reviews } from '../../data/reviews';
 import { services } from '../../data/services';
 import { vehicles } from '../../data/vehicles';
 
-const { phones, email } = contacts;
+const { phones, email, companyName, address } = contacts;
 
 describe('Homepage - Small mobiles', () => {
   beforeEach(() => {
@@ -220,9 +220,7 @@ describe('Homepage - Small mobiles', () => {
       cy.findByTestId('contacts').should('have.attr', 'id', 'contacts');
       cy.findByTestId('contacts').within(() => {
         cy.findByRole('heading', { name: 'Контакты' }).should('be.visible');
-        cy.findByRole('img', { name: 'ООО «Аренда Неба»' }).should(
-          'be.visible'
-        );
+        cy.findByRole('img', { name: companyName }).should('be.visible');
       });
     });
   });

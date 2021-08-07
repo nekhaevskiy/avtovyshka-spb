@@ -13,8 +13,6 @@ export const contacts = {
     link: 'mailto:suedima@rambler.ru',
     text: 'suedima@rambler.ru',
   },
-  address: [
-    'ООО «Аренда Неба»',
-    'Санкт-Петербург, ул. Кораблестроителей, д. 33, кв. 2',
-  ],
+  companyName: 'ООО «Аренда Неба»',
+  address: ['Санкт-Петербург,', 'ул. Кораблестроителей, д. 33, кв. 2'],
 };

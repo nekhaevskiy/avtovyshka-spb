@@ -1,6 +1,9 @@
 import { About } from './About/About';
 import { ContactBar } from './ContactBar/ContactBar';
-import { Contacts } from './Contacts/Contacts';
+import { ContactForm } from './ContactForm/ContactForm';
+import { ContactItems } from './ContactItems/ContactItems';
+import { ContactMap } from './ContactMap/ContactMap';
+import { ContactSection } from './ContactSection/ContactSection';
 import { IntroCarousel } from './IntroCarousel/IntroCarousel';
 import { LinkAsButton } from './LinkAsButton/LinkAsButton';
 import { NavBar } from './NavBar/NavBar';
@@ -13,8 +16,11 @@ import { VehicleFleet } from './VehicleFleet/VehicleFleet';
 
 export {
   About,
-  Contacts,
   ContactBar,
+  ContactForm,
+  ContactItems,
+  ContactMap,
+  ContactSection,
   IntroCarousel,
   LinkAsButton,
   NavBar,

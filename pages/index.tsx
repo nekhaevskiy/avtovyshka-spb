@@ -3,7 +3,7 @@ import React from 'react';
 import {
   About,
   ContactBar,
-  Contacts,
+  ContactSection,
   IntroCarousel,
   NavBar,
   PhotoGallery,
@@ -40,7 +40,7 @@ export default function Home() {
         <Service />
         <PhotoGallery />
         <Reviews />
-        <Contacts />
+        <ContactSection />
       </main>
 
       <footer className={styles.footer}>
