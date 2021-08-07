@@ -9,6 +9,8 @@ import { Vehicle, vehicles } from '../../data/vehicles';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
 import styles from './IntroCarousel.module.css';
 
+const { phones, email } = contacts;
+
 interface Props {
   vehicle: Vehicle;
 }
@@ -42,28 +44,27 @@ function Slide({ vehicle }: Props) {
         </div>
         <div className="text-right">
           <a
-            href={contacts[0].link}
+            href={phones[0].link}
             className="block mb-1 text-lg"
             style={{ backgroundPosition: '1px 52%' }}
           >
-            {contacts[0].text[0]} <b>{contacts[0].text[1]}</b>{' '}
-            {contacts[0].text[2]}
+            {phones[0].text[0]} <b>{phones[0].text[1]}</b> {phones[0].text[2]}
           </a>
 
           <a
-            href={contacts[1].link}
+            href={phones[1].link}
             className="block mb-1 text-lg"
             style={{ backgroundPosition: '1px 52%' }}
           >
-            {contacts[1].text}
+            {phones[1].text}
           </a>
 
           <a
-            href={contacts[2].link}
+            href={email.link}
             className="block text-lg"
             style={{ backgroundPosition: '1px 52%' }}
           >
-            {contacts[2].text}
+            {email.text}
           </a>
         </div>
       </div>

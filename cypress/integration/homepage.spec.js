@@ -7,6 +7,8 @@ import { reviews } from '../../data/reviews';
 import { services } from '../../data/services';
 import { vehicles } from '../../data/vehicles';
 
+const { phones, email } = contacts;
+
 describe('Homepage - Small mobiles', () => {
   beforeEach(() => {
     cy.visit('/');
@@ -32,11 +34,11 @@ describe('Homepage - Small mobiles', () => {
   context('ContactBar', () => {
     it('shows the main phone', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: contacts[0].text.join(' ') })
+        cy.findByRole('link', { name: phones[0].text.join(' ') })
           .should('be.visible')
-          .and('have.attr', 'href', contacts[0].link);
-        cy.findByRole('link', { name: contacts[1].text }).should('not.exist');
-        cy.findByRole('link', { name: contacts[2].text }).should('not.exist');
+          .and('have.attr', 'href', phones[0].link);
+        cy.findByRole('link', { name: phones[1].text }).should('not.exist');
+        cy.findByRole('link', { name: email.text }).should('not.exist');
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
     });
@@ -235,13 +237,13 @@ describe('Homepage - Big mobiles', () => {
   context('ContactBar', () => {
     it('shows the main phone and the email', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should(
+        cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
-        cy.findByRole('link', { name: contacts[1].text }).should('not.exist');
-        cy.findByRole('link', { name: contacts[2].text })
+        cy.findByRole('link', { name: phones[1].text }).should('not.exist');
+        cy.findByRole('link', { name: email.text })
           .should('be.visible')
-          .and('have.attr', 'href', contacts[2].link);
+          .and('have.attr', 'href', email.link);
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
     });
@@ -286,13 +288,13 @@ describe('Homepage - Tablets', () => {
   context('ContactBar', () => {
     it('shows only the contact items', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should(
+        cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
-        cy.findByRole('link', { name: contacts[1].text })
+        cy.findByRole('link', { name: phones[1].text })
           .should('be.visible')
-          .and('have.attr', 'href', contacts[1].link);
-        cy.findByRole('link', { name: contacts[2].text }).should('be.visible');
+          .and('have.attr', 'href', phones[1].link);
+        cy.findByRole('link', { name: email.text }).should('be.visible');
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
     });
@@ -352,11 +354,11 @@ describe('Homepage - Laptops', () => {
   context('ContactBar', () => {
     it('shows the contact items and the note', () => {
       cy.findByTestId('contact-bar').within(() => {
-        cy.findByRole('link', { name: contacts[0].text.join(' ') }).should(
+        cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
-        cy.findByRole('link', { name: contacts[1].text }).should('be.visible');
-        cy.findByRole('link', { name: contacts[2].text }).should('be.visible');
+        cy.findByRole('link', { name: phones[1].text }).should('be.visible');
+        cy.findByRole('link', { name: email.text }).should('be.visible');
         cy.findByText('Работаем круглосуточно').should('be.visible');
       });
     });
@@ -399,15 +401,15 @@ describe('Homepage - Laptops', () => {
               cy.findByRole('link', { name: 'Подробнее' })
                 .should('be.visible')
                 .and('have.attr', 'href', vehicle.path);
-              cy.findByRole('link', { name: contacts[0].text.join(' ') })
+              cy.findByRole('link', { name: phones[0].text.join(' ') })
                 .should('be.visible')
-                .and('have.attr', 'href', contacts[0].link);
-              cy.findByRole('link', { name: contacts[1].text })
+                .and('have.attr', 'href', phones[0].link);
+              cy.findByRole('link', { name: phones[1].text })
                 .should('be.visible')
-                .and('have.attr', 'href', contacts[1].link);
-              cy.findByRole('link', { name: contacts[2].text })
+                .and('have.attr', 'href', phones[1].link);
+              cy.findByRole('link', { name: email.text })
                 .should('be.visible')
-                .and('have.attr', 'href', contacts[2].link);
+                .and('have.attr', 'href', email.link);
             });
         });
       });
