@@ -23,7 +23,7 @@ function ContactMap() {
     <div className="mb-6 w-full h-80">
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: 'AIzaSyD1IQxplUprzuwTr70s71P57rLsfhkbNsQ',
+          key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || '',
           language: 'ru',
           region: 'ru',
         }}
