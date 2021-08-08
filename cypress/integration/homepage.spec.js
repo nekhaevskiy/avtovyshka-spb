@@ -374,11 +374,30 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  // context('FooterNavBar', () => {
-  //   it('renders the menu', () => {
-  //     cy.findByTestId()
-  //   })
-  // })
+  context.only('FooterNavBar', () => {
+    it('renders the menu', () => {
+      cy.findByTestId('footer-nav-bar').within(() => {
+        cy.findByRole('link', { name: 'Главная' })
+          .should('be.visible')
+          .and('have.attr', 'href', '/');
+        cy.findByRole('link', { name: 'Автопарк' })
+          .should('be.visible')
+          .and('have.attr', 'href', '/#vehicle-section');
+        cy.findByRole('link', { name: 'Услуги' })
+          .should('be.visible')
+          .and('have.attr', 'href', '/#service-section');
+        cy.findByRole('link', { name: 'Фото' })
+          .should('be.visible')
+          .and('have.attr', 'href', '/#photo-section');
+        cy.findByRole('link', { name: 'Отзывы' })
+          .should('be.visible')
+          .and('have.attr', 'href', '/#review-section');
+        cy.findByRole('link', { name: 'Контакты' })
+          .should('be.visible')
+          .and('have.attr', 'href', '/#contact-section');
+      });
+    });
+  });
 });
 
 describe('Homepage - Big mobiles', () => {
