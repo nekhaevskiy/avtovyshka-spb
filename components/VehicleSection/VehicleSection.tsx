@@ -5,8 +5,8 @@ function VehicleSection() {
   return (
     <section
       className="bg-gray-100"
-      data-testid="vehicle-fleet"
-      id="vehicle-fleet"
+      data-testid="vehicle-section"
+      id="vehicle-section"
     >
       <div className="mx-auto px-4 py-8 max-w-6xl">
         <SectionHeading

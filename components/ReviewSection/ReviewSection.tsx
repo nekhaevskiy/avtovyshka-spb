@@ -26,7 +26,11 @@ function Slide({ review }: Props) {
 
 function ReviewSection() {
   return (
-    <section className="bg-gray-100" data-testid="reviews" id="reviews">
+    <section
+      className="bg-gray-100"
+      data-testid="review-section"
+      id="review-section"
+    >
       <div className="mx-auto pb-12 pt-8 px-4 max-w-6xl">
         <SectionHeading heading="Отзывы наших клиентов" />
 

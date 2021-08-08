@@ -7,8 +7,8 @@ function PhotoSection() {
   return (
     <section
       className="mx-auto px-4 py-8 max-w-6xl"
-      data-testid="photo"
-      id="photo"
+      data-testid="photo-section"
+      id="photo-section"
     >
       <SectionHeading heading="Наша техника за работой" />
       <ImageGallery items={images} lazyLoad />

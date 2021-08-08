@@ -4,8 +4,8 @@ function ContactSection() {
   return (
     <section
       className="mx-auto px-4 py-8 max-w-6xl text-gray-800"
-      data-testid="contacts"
-      id="contacts"
+      data-testid="contact-section"
+      id="contact-section"
     >
       <SectionHeading heading="Контакты" />
 

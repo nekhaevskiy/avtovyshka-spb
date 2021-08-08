@@ -1,6 +1,6 @@
 function AboutSection() {
   return (
-    <section className="border-b border-gray-300" data-testid="about">
+    <section className="border-b border-gray-300" data-testid="about-section">
       <div className="mx-auto px-4 py-8 max-w-6xl text-sm md:text-base">
         <p className="mb-3 text-gray-800">
           ООО «Аренда Неба» - Ваш верный партнёр в области аренды спецтехники.

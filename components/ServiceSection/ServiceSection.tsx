@@ -22,8 +22,8 @@ function ServiceSection() {
   return (
     <section
       className="mx-auto px-4 py-8 max-w-6xl"
-      data-testid="service"
-      id="service"
+      data-testid="service-section"
+      id="service-section"
     >
       <SectionHeading heading="Что мы предлагаем" />
       <div className="flex flex-row flex-wrap items-stretch justify-center -mx-2 lg:justify-around">

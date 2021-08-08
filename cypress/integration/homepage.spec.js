@@ -33,7 +33,7 @@ describe('Homepage - Small mobiles', () => {
 
   context('HeaderContacts', () => {
     it('shows the main phone', () => {
-      cy.findByTestId('contact-bar').within(() => {
+      cy.findByTestId('header-contacts').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') })
           .should('be.visible')
           .and('have.attr', 'href', phones[0].link);
@@ -46,7 +46,7 @@ describe('Homepage - Small mobiles', () => {
 
   context('HeaderNavBar', () => {
     it('shows the logo, the heading and the menu button', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' })
           .should('be.visible')
           .and('have.attr', 'href', '/');
@@ -58,7 +58,7 @@ describe('Homepage - Small mobiles', () => {
     });
 
     it('opens and closes the menu and the sub-menu', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('navigation').should('not.exist');
         cy.findByRole('button', { name: 'Открыть меню' }).click();
         cy.findByRole('button', { name: 'Закрыть меню' }).should('be.visible');
@@ -67,7 +67,7 @@ describe('Homepage - Small mobiles', () => {
           .and('have.attr', 'href', '/');
         cy.findByRole('link', { name: 'Автопарк' })
           .should('be.visible')
-          .and('have.attr', 'href', '/#vehicle-fleet');
+          .and('have.attr', 'href', '/#vehicle-section');
         vehicles.forEach((vehicle) => {
           cy.findByRole('link', { name: vehicle.name })
             .should('be.visible')
@@ -75,28 +75,28 @@ describe('Homepage - Small mobiles', () => {
         });
         cy.findByRole('link', { name: 'Услуги' })
           .should('be.visible')
-          .and('have.attr', 'href', '/#service');
+          .and('have.attr', 'href', '/#service-section');
         cy.findByRole('link', { name: 'Фото' })
           .should('be.visible')
-          .and('have.attr', 'href', '/#photo');
+          .and('have.attr', 'href', '/#photo-section');
         cy.findByRole('link', { name: 'Отзывы' })
           .should('be.visible')
-          .and('have.attr', 'href', '/#reviews');
+          .and('have.attr', 'href', '/#review-section');
         cy.findByRole('link', { name: 'Контакты' })
           .should('be.visible')
-          .and('have.attr', 'href', '/#contacts');
+          .and('have.attr', 'href', '/#contact-section');
         cy.findByRole('button', { name: 'Закрыть меню' }).click();
         cy.findByRole('navigation').should('not.exist');
       });
     });
 
     it('closes the menu on click outside', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('button', { name: 'Открыть меню' }).click();
         cy.findByRole('navigation').should('be.visible');
       });
-      cy.findByTestId('nav-bar').click();
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').click();
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('navigation').should('not.exist');
       });
     });
@@ -104,13 +104,13 @@ describe('Homepage - Small mobiles', () => {
 
   context('IntroSection', () => {
     it("doesn't exist", () => {
-      cy.findByTestId('intro-carousel').should('not.exist');
+      cy.findByTestId('intro-section').should('not.exist');
     });
   });
 
-  context('VehicleFleet', () => {
+  context('VehicleSection', () => {
     it('shows the heading and the cards', () => {
-      cy.findByTestId('vehicle-fleet').within(() => {
+      cy.findByTestId('vehicle-section').within(() => {
         cy.findByRole('heading', {
           name: 'Наш автопарк автовышки и автокраны',
         });
@@ -138,14 +138,18 @@ describe('Homepage - Small mobiles', () => {
 
   context('AboutSection', () => {
     it('shows the description of the company', () => {
-      cy.findByTestId('about').should('be.visible');
+      cy.findByTestId('about-section').should('be.visible');
     });
   });
 
   context('ServiceSection', () => {
     it('shows the heading and all service items', () => {
-      cy.findByTestId('service').should('have.attr', 'id', 'service');
-      cy.findByTestId('service').within(() => {
+      cy.findByTestId('service-section').should(
+        'have.attr',
+        'id',
+        'service-section'
+      );
+      cy.findByTestId('service-section').within(() => {
         cy.findByRole('heading', { name: 'Что мы предлагаем' }).should(
           'be.visible'
         );
@@ -162,8 +166,12 @@ describe('Homepage - Small mobiles', () => {
 
   context('PhotoSection', () => {
     it('shows the heading and all thumbnails', () => {
-      cy.findByTestId('photo').should('have.attr', 'id', 'photo');
-      cy.findByTestId('photo').within(() => {
+      cy.findByTestId('photo-section').should(
+        'have.attr',
+        'id',
+        'photo-section'
+      );
+      cy.findByTestId('photo-section').within(() => {
         cy.findByRole('heading', { name: 'Наша техника за работой' }).should(
           'be.visible'
         );
@@ -193,8 +201,12 @@ describe('Homepage - Small mobiles', () => {
 
   context('ReviewSection', () => {
     it('shows the heading and first review', () => {
-      cy.findByTestId('reviews').should('have.attr', 'id', 'reviews');
-      cy.findByTestId('reviews').within(() => {
+      cy.findByTestId('review-section').should(
+        'have.attr',
+        'id',
+        'review-section'
+      );
+      cy.findByTestId('review-section').within(() => {
         cy.findByRole('heading', { name: 'Отзывы наших клиентов' }).should(
           'be.visible'
         );
@@ -217,8 +229,12 @@ describe('Homepage - Small mobiles', () => {
 
   context('ContactSection', () => {
     it('renders the heading, the map placeholder and the contact data', () => {
-      cy.findByTestId('contacts').should('have.attr', 'id', 'contacts');
-      cy.findByTestId('contacts').within(() => {
+      cy.findByTestId('contact-section').should(
+        'have.attr',
+        'id',
+        'contact-section'
+      );
+      cy.findByTestId('contact-section').within(() => {
         cy.findByRole('heading', { name: 'Контакты' }).should('be.visible');
         cy.findByText('Google Maps placeholder').should('be.visible');
         cy.findByRole('heading', { name: 'Телефоны' }).should('be.visible');
@@ -246,7 +262,7 @@ describe('Homepage - Small mobiles', () => {
         body: 'OK',
         delay: 100,
       });
-      cy.findByTestId('contacts').within(() => {
+      cy.findByTestId('contact-section').within(() => {
         cy.findByRole('textbox', { name: 'Сообщение*' })
           .as('messageInput')
           .should('be.visible')
@@ -333,7 +349,7 @@ describe('Homepage - Small mobiles', () => {
         body: 'The user_id parameter is required',
         delay: 100,
       });
-      cy.findByTestId('contacts').within(() => {
+      cy.findByTestId('contact-section').within(() => {
         cy.findByRole('textbox', { name: 'Сообщение*' })
           .as('messageInput')
           .type('Тестовое сообщение');
@@ -357,6 +373,12 @@ describe('Homepage - Small mobiles', () => {
       });
     });
   });
+
+  // context('FooterNavBar', () => {
+  //   it('renders the menu', () => {
+  //     cy.findByTestId()
+  //   })
+  // })
 });
 
 describe('Homepage - Big mobiles', () => {
@@ -367,7 +389,7 @@ describe('Homepage - Big mobiles', () => {
 
   context('HeaderContacts', () => {
     it('shows the main phone and the email', () => {
-      cy.findByTestId('contact-bar').within(() => {
+      cy.findByTestId('header-contacts').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
@@ -382,7 +404,7 @@ describe('Homepage - Big mobiles', () => {
 
   context('HeaderNavBar', () => {
     it('shows the logo and the full heading', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
         cy.findByRole('img', { name: 'На главную' }).should('be.visible');
         cy.findByRole('heading', {
@@ -394,7 +416,7 @@ describe('Homepage - Big mobiles', () => {
 
   context('ReviewSection', () => {
     it('shows first two reviews', () => {
-      cy.findByTestId('reviews').within(() => {
+      cy.findByTestId('review-section').within(() => {
         cy.findByRole('heading', { name: reviews[0].author }).should(
           'be.visible'
         );
@@ -418,7 +440,7 @@ describe('Homepage - Tablets', () => {
 
   context('HeaderContacts', () => {
     it('shows only the contact items', () => {
-      cy.findByTestId('contact-bar').within(() => {
+      cy.findByTestId('header-contacts').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
@@ -433,7 +455,7 @@ describe('Homepage - Tablets', () => {
 
   context('HeaderNavBar', () => {
     it('shows the logo, the full heading and the menu', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
         cy.findByRole('img', { name: 'На главную' }).should('be.visible');
         cy.findByRole('button', { name: /(открыть|закрыть) меню/i }).should(
@@ -449,7 +471,7 @@ describe('Homepage - Tablets', () => {
     });
 
     it('opens and closes the sub-menu', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('button', { name: 'Автопарк' })
           .as('subMenuBtn')
           .should('be.visible');
@@ -464,12 +486,12 @@ describe('Homepage - Tablets', () => {
     });
 
     it('closes the sub-menu on click outside', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('button', { name: 'Автопарк' }).click();
         cy.findByTestId('sub-menu').should('be.visible');
       });
-      cy.findByTestId('nav-bar').click();
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').click();
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('sub-menu').should('not.exist');
       });
     });
@@ -484,7 +506,7 @@ describe('Homepage - Laptops', () => {
 
   context('HeaderContacts', () => {
     it('shows the contact items and the note', () => {
-      cy.findByTestId('contact-bar').within(() => {
+      cy.findByTestId('header-contacts').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
@@ -497,7 +519,7 @@ describe('Homepage - Laptops', () => {
 
   context('HeaderNavBar', () => {
     it('shows the logo, the full heading and the menu', () => {
-      cy.findByTestId('nav-bar').within(() => {
+      cy.findByTestId('header-nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
         cy.findByRole('img', { name: 'На главную' }).should('be.visible');
         cy.findByRole('button', { name: /(открыть|закрыть) меню/i }).should(
@@ -515,7 +537,7 @@ describe('Homepage - Laptops', () => {
 
   context('IntroSection', () => {
     it('renders first and second slides', () => {
-      cy.findByTestId('intro-carousel').within(() => {
+      cy.findByTestId('intro-section').within(() => {
         cy.findByRole('heading', { name: vehicles[0].fullName.join(' ') })
           .as('heading')
           .should('be.visible');
@@ -574,7 +596,7 @@ describe('Homepage - Laptops', () => {
 
   context('ReviewSection', () => {
     it('shows first three reviews', () => {
-      cy.findByTestId('reviews').within(() => {
+      cy.findByTestId('review-section').within(() => {
         cy.findByRole('heading', { name: reviews[0].author }).should(
           'be.visible'
         );

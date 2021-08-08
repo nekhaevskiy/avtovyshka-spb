@@ -29,7 +29,7 @@ function HeaderNavBar() {
   return (
     <div
       className="relative p-4 md:flex md:items-center md:py-0 lg:mx-auto lg:max-w-6xl"
-      data-testid="nav-bar"
+      data-testid="header-nav-bar"
     >
       <Link href="/">
         <a className="absolute -top-8 left-0 w-20 h-8 md:relative md:left-auto md:top-auto md:flex-shrink-0 md:w-32 md:h-16">
@@ -78,7 +78,7 @@ function HeaderNavBar() {
           </Link>
           <div className={styles.subMenuWrapper} ref={subMenuWrapperEl}>
             {windowWidth && windowWidth < 768 ? (
-              <Link href="/#vehicle-fleet">
+              <Link href="/#vehicle-section">
                 <a
                   className={styles.menuItem}
                   onClick={() => setMenuOpen(false)}
@@ -116,22 +116,22 @@ function HeaderNavBar() {
               ))}
             </div>
           </div>
-          <Link href="/#service">
+          <Link href="/#service-section">
             <a className={styles.menuItem} onClick={() => setMenuOpen(false)}>
               Услуги
             </a>
           </Link>
-          <Link href="/#photo">
+          <Link href="/#photo-section">
             <a className={styles.menuItem} onClick={() => setMenuOpen(false)}>
               Фото
             </a>
           </Link>
-          <Link href="/#reviews">
+          <Link href="/#review-section">
             <a className={styles.menuItem} onClick={() => setMenuOpen(false)}>
               Отзывы
             </a>
           </Link>
-          <Link href="/#contacts">
+          <Link href="/#contact-section">
             <a className={styles.menuItem} onClick={() => setMenuOpen(false)}>
               Контакты
             </a>
