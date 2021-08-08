@@ -215,12 +215,12 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('Contacts', () => {
-    it('renders the heading, the map and the contact data', () => {
+  context.only('Contacts', () => {
+    it('renders the heading, the map placeholder and the contact data', () => {
       cy.findByTestId('contacts').should('have.attr', 'id', 'contacts');
       cy.findByTestId('contacts').within(() => {
         cy.findByRole('heading', { name: 'Контакты' }).should('be.visible');
-        cy.findByRole('img', { name: companyName }).should('be.visible');
+        cy.findByText('Google Maps placeholder').should('be.visible');
         cy.findByRole('heading', { name: 'Телефоны' }).should('be.visible');
         cy.findByRole('link', { name: phones[0].text.join(' ') })
           .should('be.visible')
@@ -237,6 +237,125 @@ describe('Homepage - Small mobiles', () => {
         address.forEach((item) => {
           cy.findByText(item).should('be.visible');
         });
+      });
+    });
+
+    it('shows notification to user if sending of message is succeeded', () => {
+      cy.intercept('https://api.emailjs.com/api/v1.0/email/send-form', {
+        statusCode: 200,
+        body: 'OK',
+        delay: 100,
+      });
+      cy.findByTestId('contacts').within(() => {
+        cy.findByRole('textbox', { name: 'Сообщение*' })
+          .as('messageInput')
+          .should('be.visible')
+          .and('have.attr', 'placeholder', 'Текст сообщения');
+        cy.findByRole('textbox', { name: 'Фамилия Имя Отчество*' })
+          .as('nameInput')
+          .should('be.visible')
+          .and('have.attr', 'placeholder', 'Ваше имя');
+        cy.findByRole('textbox', { name: 'Контактный телефон*' })
+          .as('phoneInput')
+          .should('be.visible')
+          .and('have.attr', 'placeholder', 'Ваш телефон');
+        cy.findByRole('textbox', { name: 'Email' })
+          .as('emailInput')
+          .should('be.visible')
+          .and('have.attr', 'placeholder', 'Ваш email');
+        cy.findByRole('button', { name: 'Отправить' })
+          .as('submitBtn')
+          .should('be.visible');
+        cy.findByText(
+          'Поля, отмеченные звездочкой (*), обязательны для заполнения'
+        ).should('be.visible');
+
+        cy.get('@submitBtn').click();
+
+        cy.get('@messageInput')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.false');
+
+        cy.get('@messageInput')
+          .type('Тестовое сообщение')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.true');
+        cy.get('@submitBtn').click();
+
+        cy.get('@nameInput')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.false');
+
+        cy.get('@nameInput')
+          .type('Тестов Тест')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.true');
+        cy.get('@submitBtn').click();
+
+        cy.get('@phoneInput')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.false');
+
+        cy.get('@phoneInput')
+          .type('+7 (999) 999-99-99')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.true');
+        cy.get('@emailInput').type('test');
+        cy.get('@submitBtn').click();
+
+        cy.get('@emailInput')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.false');
+
+        cy.get('@emailInput')
+          .type('@test.ru')
+          .then(($el) => $el[0].checkValidity())
+          .should('be.true');
+        cy.get('@submitBtn').click();
+
+        cy.get('@submitBtn').should('be.disabled');
+
+        cy.findByRole('status').should(
+          'have.text',
+          'Ваше сообщение отправлено'
+        );
+        cy.get('@messageInput').should('have.value', '');
+        cy.get('@nameInput').should('have.value', '');
+        cy.get('@phoneInput').should('have.value', '');
+        cy.get('@emailInput').should('have.value', '');
+        cy.get('@submitBtn').should('not.be.disabled');
+        cy.findByRole('status').should('not.exist');
+      });
+    });
+
+    it('shows notification to user if sending of message is failed', () => {
+      cy.intercept('https://api.emailjs.com/api/v1.0/email/send-form', {
+        statusCode: 400,
+        body: 'The user_id parameter is required',
+        delay: 100,
+      });
+      cy.findByTestId('contacts').within(() => {
+        cy.findByRole('textbox', { name: 'Сообщение*' })
+          .as('messageInput')
+          .type('Тестовое сообщение');
+        cy.findByRole('textbox', { name: 'Фамилия Имя Отчество*' })
+          .as('nameInput')
+          .type('Тестов Тест');
+        cy.findByRole('textbox', { name: 'Контактный телефон*' })
+          .as('phoneInput')
+          .type('+7 (999) 999-99-99');
+        cy.findByRole('button', { name: 'Отправить' }).as('submitBtn').click();
+
+        cy.get('@submitBtn').should('be.disabled');
+        cy.findByRole('status').should(
+          'have.text',
+          'Сообщение не удалось отправить. Пожалуйста, попробуйте еще раз.'
+        );
+        cy.get('@messageInput').should('have.value', 'Тестовое сообщение');
+        cy.get('@nameInput').should('have.value', 'Тестов Тест');
+        cy.get('@phoneInput').should('have.value', '+7 (999) 999-99-99');
+        cy.get('@submitBtn').should('not.be.disabled');
+        cy.findByRole('status').should('not.exist');
       });
     });
   });
