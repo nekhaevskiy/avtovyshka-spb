@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { SectionHeading } from '..';
-import { services } from '../../data/services';
+import { services } from '../../data/service-section';
 
 interface Props {
   img: string;
@@ -18,7 +18,7 @@ function ServiceCard({ img, heading, text }: Props) {
   );
 }
 
-function Service() {
+function ServiceSection() {
   return (
     <section
       className="mx-auto px-4 py-8 max-w-6xl"
@@ -40,4 +40,4 @@ function Service() {
   );
 }
 
-export { Service };
+export { ServiceSection };

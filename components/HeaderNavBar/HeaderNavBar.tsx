@@ -4,10 +4,10 @@ import React from 'react';
 import { vehicles } from '../../data/vehicles';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
+import styles from './HeaderNavBar.module.css';
 import logoPic from './logo.svg';
-import styles from './NavBar.module.css';
 
-function NavBar() {
+function HeaderNavBar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const [subMenuOpen, setSubMenuOpen] = React.useState(false);
   const menuWrapperEl = React.useRef<HTMLDivElement | null>(null);
@@ -142,4 +142,4 @@ function NavBar() {
   );
 }
 
-export { NavBar };
+export { HeaderNavBar };

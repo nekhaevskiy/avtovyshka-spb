@@ -1,17 +1,17 @@
 import Head from 'next/head';
 import React from 'react';
 import {
-  About,
-  ContactBar,
+  AboutSection,
   ContactSection,
-  IntroCarousel,
-  NavBar,
-  PhotoGallery,
-  Reviews,
-  Service,
-  VehicleFleet,
+  FooterNavBar,
+  HeaderContacts,
+  HeaderNavBar,
+  IntroSection,
+  PhotoSection,
+  ReviewSection,
+  ServiceSection,
+  VehicleSection,
 } from '../components';
-import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -29,28 +29,22 @@ export default function Home() {
       </Head>
 
       <header>
-        <ContactBar />
-        <NavBar />
+        <HeaderContacts />
+        <HeaderNavBar />
       </header>
 
       <main>
-        <IntroCarousel />
-        <VehicleFleet />
-        <About />
-        <Service />
-        <PhotoGallery />
-        <Reviews />
+        <IntroSection />
+        <VehicleSection />
+        <AboutSection />
+        <ServiceSection />
+        <PhotoSection />
+        <ReviewSection />
         <ContactSection />
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-        </a>
+      <footer className="bg-gray-900">
+        <FooterNavBar />
       </footer>
     </>
   );

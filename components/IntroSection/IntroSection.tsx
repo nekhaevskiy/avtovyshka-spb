@@ -7,7 +7,7 @@ import { LinkAsButton } from '..';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
-import styles from './IntroCarousel.module.css';
+import styles from './IntroSection.module.css';
 
 const { phones, email } = contacts;
 
@@ -72,7 +72,7 @@ function Slide({ vehicle }: Props) {
   );
 }
 
-function IntroCarousel() {
+function IntroSection() {
   const windowWidth = useWindowWidth();
 
   return windowWidth && windowWidth >= 1024 ? (
@@ -89,4 +89,4 @@ function IntroCarousel() {
   ) : null;
 }
 
-export { IntroCarousel };
+export { IntroSection };

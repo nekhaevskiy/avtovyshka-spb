@@ -2,7 +2,7 @@ import { contacts } from '../../data/contacts';
 
 const { phones, email } = contacts;
 
-function ContactBar() {
+function HeaderContacts() {
   return (
     <>
       <div
@@ -40,10 +40,10 @@ function ContactBar() {
         </span>
       </div>
 
-      {/* The next div is needed to compensate height of ContactBar when it's fixed (above md) */}
+      {/* The next div is needed to compensate height of HeaderContacts when it's fixed (above md) */}
       <div className="hidden h-10 md:block" />
     </>
   );
 }
 
-export { ContactBar };
+export { HeaderContacts };

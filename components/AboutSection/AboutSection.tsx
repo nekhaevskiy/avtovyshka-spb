@@ -1,4 +1,4 @@
-function About() {
+function AboutSection() {
   return (
     <section className="border-b border-gray-300" data-testid="about">
       <div className="mx-auto px-4 py-8 max-w-6xl text-sm md:text-base">
@@ -53,4 +53,4 @@ function About() {
   );
 }
 
-export { About };
+export { AboutSection };

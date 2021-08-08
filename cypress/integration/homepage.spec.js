@@ -2,9 +2,9 @@
 /// <reference types="@testing-library/cypress" />
 
 import { contacts } from '../../data/contacts';
-import { images } from '../../data/photo-gallery';
-import { reviews } from '../../data/reviews';
-import { services } from '../../data/services';
+import { images } from '../../data/photo-section';
+import { reviews } from '../../data/review-section';
+import { services } from '../../data/service-section';
 import { vehicles } from '../../data/vehicles';
 
 const { phones, email, companyName, address } = contacts;
@@ -31,7 +31,7 @@ describe('Homepage - Small mobiles', () => {
       .should('have.attr', 'href', '/favicon.ico');
   });
 
-  context('ContactBar', () => {
+  context('HeaderContacts', () => {
     it('shows the main phone', () => {
       cy.findByTestId('contact-bar').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') })
@@ -44,7 +44,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('NavBar', () => {
+  context('HeaderNavBar', () => {
     it('shows the logo, the heading and the menu button', () => {
       cy.findByTestId('nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' })
@@ -102,7 +102,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('IntroCarousel', () => {
+  context('IntroSection', () => {
     it("doesn't exist", () => {
       cy.findByTestId('intro-carousel').should('not.exist');
     });
@@ -136,13 +136,13 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('About', () => {
+  context('AboutSection', () => {
     it('shows the description of the company', () => {
       cy.findByTestId('about').should('be.visible');
     });
   });
 
-  context('Service', () => {
+  context('ServiceSection', () => {
     it('shows the heading and all service items', () => {
       cy.findByTestId('service').should('have.attr', 'id', 'service');
       cy.findByTestId('service').within(() => {
@@ -160,7 +160,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('PhotoGallery', () => {
+  context('PhotoSection', () => {
     it('shows the heading and all thumbnails', () => {
       cy.findByTestId('photo').should('have.attr', 'id', 'photo');
       cy.findByTestId('photo').within(() => {
@@ -191,7 +191,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('Reviews', () => {
+  context('ReviewSection', () => {
     it('shows the heading and first review', () => {
       cy.findByTestId('reviews').should('have.attr', 'id', 'reviews');
       cy.findByTestId('reviews').within(() => {
@@ -215,7 +215,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context('Contacts', () => {
+  context('ContactSection', () => {
     it('renders the heading, the map placeholder and the contact data', () => {
       cy.findByTestId('contacts').should('have.attr', 'id', 'contacts');
       cy.findByTestId('contacts').within(() => {
@@ -365,7 +365,7 @@ describe('Homepage - Big mobiles', () => {
     cy.visit('/');
   });
 
-  context('ContactBar', () => {
+  context('HeaderContacts', () => {
     it('shows the main phone and the email', () => {
       cy.findByTestId('contact-bar').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
@@ -380,7 +380,7 @@ describe('Homepage - Big mobiles', () => {
     });
   });
 
-  context('NavBar', () => {
+  context('HeaderNavBar', () => {
     it('shows the logo and the full heading', () => {
       cy.findByTestId('nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
@@ -392,7 +392,7 @@ describe('Homepage - Big mobiles', () => {
     });
   });
 
-  context('Reviews', () => {
+  context('ReviewSection', () => {
     it('shows first two reviews', () => {
       cy.findByTestId('reviews').within(() => {
         cy.findByRole('heading', { name: reviews[0].author }).should(
@@ -416,7 +416,7 @@ describe('Homepage - Tablets', () => {
     cy.visit('/');
   });
 
-  context('ContactBar', () => {
+  context('HeaderContacts', () => {
     it('shows only the contact items', () => {
       cy.findByTestId('contact-bar').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
@@ -431,7 +431,7 @@ describe('Homepage - Tablets', () => {
     });
   });
 
-  context('NavBar', () => {
+  context('HeaderNavBar', () => {
     it('shows the logo, the full heading and the menu', () => {
       cy.findByTestId('nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
@@ -482,7 +482,7 @@ describe('Homepage - Laptops', () => {
     cy.visit('/');
   });
 
-  context('ContactBar', () => {
+  context('HeaderContacts', () => {
     it('shows the contact items and the note', () => {
       cy.findByTestId('contact-bar').within(() => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
@@ -495,7 +495,7 @@ describe('Homepage - Laptops', () => {
     });
   });
 
-  context('NavBar', () => {
+  context('HeaderNavBar', () => {
     it('shows the logo, the full heading and the menu', () => {
       cy.findByTestId('nav-bar').within(() => {
         cy.findByRole('link', { name: 'На главную' }).should('be.visible');
@@ -513,7 +513,7 @@ describe('Homepage - Laptops', () => {
     });
   });
 
-  context('IntroCarousel', () => {
+  context('IntroSection', () => {
     it('renders first and second slides', () => {
       cy.findByTestId('intro-carousel').within(() => {
         cy.findByRole('heading', { name: vehicles[0].fullName.join(' ') })
@@ -572,7 +572,7 @@ describe('Homepage - Laptops', () => {
     });
   });
 
-  context('Reviews', () => {
+  context('ReviewSection', () => {
     it('shows first three reviews', () => {
       cy.findByTestId('reviews').within(() => {
         cy.findByRole('heading', { name: reviews[0].author }).should(

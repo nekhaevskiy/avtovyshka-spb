@@ -1,33 +1,35 @@
-import { About } from './About/About';
-import { ContactBar } from './ContactBar/ContactBar';
+import { AboutSection } from './AboutSection/AboutSection';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactItems } from './ContactItems/ContactItems';
 import { ContactMap } from './ContactMap/ContactMap';
 import { ContactSection } from './ContactSection/ContactSection';
-import { IntroCarousel } from './IntroCarousel/IntroCarousel';
+import { FooterNavBar } from './FooterNavBar/FooterNavBar';
+import { HeaderContacts } from './HeaderContacts/HeaderContacts';
+import { HeaderNavBar } from './HeaderNavBar/HeaderNavBar';
+import { IntroSection } from './IntroSection/IntroSection';
 import { LinkAsButton } from './LinkAsButton/LinkAsButton';
-import { NavBar } from './NavBar/NavBar';
-import { PhotoGallery } from './PhotoGallery/PhotoGallery';
-import { Reviews } from './Reviews/Reviews';
+import { PhotoSection } from './PhotoSection/PhotoSection';
+import { ReviewSection } from './ReviewSection/ReviewSection';
 import { SectionHeading } from './SectionHeading/SectionHeading';
-import { Service } from './Service/Service';
+import { ServiceSection } from './ServiceSection/ServiceSection';
 import { VehicleCard } from './VehicleCard/VehicleCard';
-import { VehicleFleet } from './VehicleFleet/VehicleFleet';
+import { VehicleSection } from './VehicleSection/VehicleSection';
 
 export {
-  About,
-  ContactBar,
+  AboutSection,
   ContactForm,
   ContactItems,
   ContactMap,
   ContactSection,
-  IntroCarousel,
+  FooterNavBar,
+  HeaderContacts,
+  HeaderNavBar,
+  IntroSection,
   LinkAsButton,
-  NavBar,
-  PhotoGallery,
-  Reviews,
+  PhotoSection,
+  ReviewSection,
   SectionHeading,
-  Service,
+  ServiceSection,
   VehicleCard,
-  VehicleFleet,
+  VehicleSection,
 };

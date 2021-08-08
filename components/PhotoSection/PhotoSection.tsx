@@ -1,9 +1,9 @@
 import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { SectionHeading } from '..';
-import { images } from '../../data/photo-gallery';
+import { images } from '../../data/photo-section';
 
-function PhotoGallery() {
+function PhotoSection() {
   return (
     <section
       className="mx-auto px-4 py-8 max-w-6xl"
@@ -16,4 +16,4 @@ function PhotoGallery() {
   );
 }
 
-export { PhotoGallery };
+export { PhotoSection };

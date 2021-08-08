@@ -1,7 +1,7 @@
 import { SectionHeading, VehicleCard } from '..';
 import { vehicles } from '../../data/vehicles';
 
-function VehicleFleet() {
+function VehicleSection() {
   return (
     <section
       className="bg-gray-100"
@@ -28,4 +28,4 @@ function VehicleFleet() {
   );
 }
 
-export { VehicleFleet };
+export { VehicleSection };

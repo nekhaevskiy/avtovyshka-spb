@@ -1,7 +1,7 @@
 import Slider from 'react-slick';
 import { SectionHeading } from '..';
-import { Review, reviews } from '../../data/reviews';
-import styles from './Reviews.module.css';
+import { Review, reviews } from '../../data/review-section';
+import styles from './ReviewSection.module.css';
 
 interface Props {
   review: Review;
@@ -24,7 +24,7 @@ function Slide({ review }: Props) {
   );
 }
 
-function Reviews() {
+function ReviewSection() {
   return (
     <section className="bg-gray-100" data-testid="reviews" id="reviews">
       <div className="mx-auto pb-12 pt-8 px-4 max-w-6xl">
@@ -62,4 +62,4 @@ function Reviews() {
   );
 }
 
-export { Reviews };
+export { ReviewSection };
