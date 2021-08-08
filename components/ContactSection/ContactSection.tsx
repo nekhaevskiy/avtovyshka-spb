@@ -11,11 +11,15 @@ function ContactSection() {
 
       <ContactMap />
 
-      <div className="mb-4">
-        <ContactItems />
-      </div>
+      <div className="sm:flex">
+        <div className="mb-4 sm:mb-0 sm:mr-2 sm:w-1/2 lg:w-1/3">
+          <ContactItems />
+        </div>
 
-      <ContactForm />
+        <div className="sm:ml-2 sm:w-1/2 lg:w-2/3">
+          <ContactForm />
+        </div>
+      </div>
     </section>
   );
 }

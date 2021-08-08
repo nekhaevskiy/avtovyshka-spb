@@ -34,59 +34,72 @@ function ContactForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="mb-4">
-        <label htmlFor="contact-message" className="block text-lg font-medium">
-          Сообщение*
-        </label>
-        <textarea
-          className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          id="contact-message"
-          name="user_message"
-          placeholder="Текст сообщения"
-          required
-          rows={9}
-        />
-      </div>
+      <div className="lg:flex">
+        <div className="mb-4 lg:mr-2 lg:w-1/2">
+          <label
+            htmlFor="contact-message"
+            className="block text-lg font-medium"
+          >
+            Сообщение*
+          </label>
+          <textarea
+            className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            id="contact-message"
+            name="user_message"
+            placeholder="Текст сообщения"
+            required
+            rows={8}
+          />
+        </div>
 
-      <div className="mb-4">
-        <label htmlFor="contact-name" className="block text-lg font-medium">
-          Фамилия Имя Отчество*
-        </label>
-        <input
-          className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          id="contact-name"
-          name="user_name"
-          placeholder="Ваше имя"
-          required
-          type="text"
-        />
-      </div>
+        <div className="lg:ml-2 lg:w-1/2">
+          <div className="mb-4">
+            <label htmlFor="contact-name" className="block text-lg font-medium">
+              Фамилия Имя Отчество*
+            </label>
+            <input
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              id="contact-name"
+              name="user_name"
+              placeholder="Ваше имя"
+              required
+              type="text"
+            />
+          </div>
 
-      <div className="mb-4">
-        <label htmlFor="contact-phone" className="block text-lg font-medium">
-          Контактный телефон*
-        </label>
-        <input
-          className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          id="contact-phone"
-          name="user_phone"
-          placeholder="Ваш телефон"
-          required
-          type="tel"
-        />
-      </div>
+          <div className="mb-4">
+            <label
+              htmlFor="contact-phone"
+              className="block text-lg font-medium"
+            >
+              Контактный телефон*
+            </label>
+            <input
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              id="contact-phone"
+              name="user_phone"
+              placeholder="Ваш телефон"
+              required
+              type="tel"
+            />
+          </div>
 
-      <div className="mb-6">
-        <label htmlFor="contact-email" className="block text-lg font-medium">
-          Email
-        </label>
-        <input
-          className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-          id="contact-email"
-          name="user_email"
-          placeholder="Ваш email"
-          type="email"
-        />
+          <div className="mb-6">
+            <label
+              htmlFor="contact-email"
+              className="block text-lg font-medium"
+            >
+              Email
+            </label>
+            <input
+              className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              id="contact-email"
+              name="user_email"
+              placeholder="Ваш email"
+              type="email"
+            />
+          </div>
+        </div>
       </div>
 
       <div className="mb-6 text-center">
