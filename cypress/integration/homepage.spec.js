@@ -215,7 +215,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context.only('Contacts', () => {
+  context('Contacts', () => {
     it('renders the heading, the map placeholder and the contact data', () => {
       cy.findByTestId('contacts').should('have.attr', 'id', 'contacts');
       cy.findByTestId('contacts').within(() => {
@@ -324,7 +324,6 @@ describe('Homepage - Small mobiles', () => {
         cy.get('@phoneInput').should('have.value', '');
         cy.get('@emailInput').should('have.value', '');
         cy.get('@submitBtn').should('not.be.disabled');
-        cy.findByRole('status').should('not.exist');
       });
     });
 
@@ -355,7 +354,6 @@ describe('Homepage - Small mobiles', () => {
         cy.get('@nameInput').should('have.value', 'Тестов Тест');
         cy.get('@phoneInput').should('have.value', '+7 (999) 999-99-99');
         cy.get('@submitBtn').should('not.be.disabled');
-        cy.findByRole('status').should('not.exist');
       });
     });
   });
