@@ -3,6 +3,7 @@ import React from 'react';
 import {
   AboutSection,
   ContactSection,
+  FooterCopyright,
   FooterNavBar,
   HeaderContacts,
   HeaderNavBar,
@@ -45,6 +46,7 @@ export default function Home() {
 
       <footer className="bg-gray-900">
         <FooterNavBar />
+        <FooterCopyright />
       </footer>
     </>
   );

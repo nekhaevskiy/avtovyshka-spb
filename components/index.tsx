@@ -3,6 +3,7 @@ import { ContactForm } from './ContactForm/ContactForm';
 import { ContactItems } from './ContactItems/ContactItems';
 import { ContactMap } from './ContactMap/ContactMap';
 import { ContactSection } from './ContactSection/ContactSection';
+import { FooterCopyright } from './FooterCopyright/FooterCopyright';
 import { FooterNavBar } from './FooterNavBar/FooterNavBar';
 import { HeaderContacts } from './HeaderContacts/HeaderContacts';
 import { HeaderNavBar } from './HeaderNavBar/HeaderNavBar';
@@ -21,6 +22,7 @@ export {
   ContactItems,
   ContactMap,
   ContactSection,
+  FooterCopyright,
   FooterNavBar,
   HeaderContacts,
   HeaderNavBar,

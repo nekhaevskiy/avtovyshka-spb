@@ -374,7 +374,7 @@ describe('Homepage - Small mobiles', () => {
     });
   });
 
-  context.only('FooterNavBar', () => {
+  context('FooterNavBar', () => {
     it('renders the menu', () => {
       cy.findByTestId('footer-nav-bar').within(() => {
         cy.findByRole('link', { name: 'Главная' })
@@ -396,6 +396,15 @@ describe('Homepage - Small mobiles', () => {
           .should('be.visible')
           .and('have.attr', 'href', '/#contact-section');
       });
+    });
+  });
+
+  context('FooterCopyright', () => {
+    it('renders the copyright', () => {
+      cy.findByTestId('footer-copyright').should(
+        'have.text',
+        `2016-${new Date().getFullYear()} © ООО «Аренда Неба»`
+      );
     });
   });
 });
