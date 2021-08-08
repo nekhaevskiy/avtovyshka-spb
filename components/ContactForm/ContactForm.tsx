@@ -34,8 +34,8 @@ function ContactForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="lg:flex">
-        <div className="mb-4 lg:mr-2 lg:w-1/2">
+      <div className="lg:flex lg:mb-6">
+        <div className="mb-4 lg:mb-0 lg:mr-2 lg:w-2/3">
           <label
             htmlFor="contact-message"
             className="block text-lg font-medium"
@@ -48,12 +48,12 @@ function ContactForm() {
             name="user_message"
             placeholder="Текст сообщения"
             required
-            rows={8}
+            rows={9}
           />
         </div>
 
-        <div className="lg:ml-2 lg:w-1/2">
-          <div className="mb-4">
+        <div className="lg:ml-2 lg:w-1/3">
+          <div className="mb-4 lg:mb-5">
             <label htmlFor="contact-name" className="block text-lg font-medium">
               Фамилия Имя Отчество*
             </label>
@@ -67,7 +67,7 @@ function ContactForm() {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-4 lg:mb-6">
             <label
               htmlFor="contact-phone"
               className="block text-lg font-medium"
@@ -84,7 +84,7 @@ function ContactForm() {
             />
           </div>
 
-          <div className="mb-6">
+          <div className="mb-6 lg:mb-0">
             <label
               htmlFor="contact-email"
               className="block text-lg font-medium"
