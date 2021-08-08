@@ -20,7 +20,7 @@ function Slide({ vehicle }: Props) {
     <article className="relative w-full h-80 text-white" data-testid="slide">
       <div className="absolute -z-1 w-full h-full">
         <Image
-          src={vehicle.introCarouselImage}
+          src={vehicle.introSectionImage}
           alt={vehicle.name}
           layout="fill"
           objectFit="cover"

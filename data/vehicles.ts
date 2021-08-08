@@ -10,7 +10,7 @@ export interface Vehicle {
   priceHalfShift?: number;
   priceFullShift: number;
   priceDelivery: number;
-  introCarouselImage: string;
+  introSectionImage: string;
   vehicleCard: Card;
 }
 
@@ -22,7 +22,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 7000,
     priceFullShift: 9000,
     priceDelivery: 50,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-13m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-13m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-13m.jpg',
       specs: [
@@ -40,7 +40,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 7000,
     priceFullShift: 9000,
     priceDelivery: 50,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-15m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-15m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-15m.jpg',
       specs: [
@@ -58,7 +58,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 8000,
     priceFullShift: 10000,
     priceDelivery: 50,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-16m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-16m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-16m.jpg',
       specs: [
@@ -76,7 +76,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 7000,
     priceFullShift: 9000,
     priceDelivery: 50,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-17m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-17m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-17m.jpg',
       specs: [
@@ -94,7 +94,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 11000,
     priceFullShift: 13000,
     priceDelivery: 50,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-21m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-21m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-21m.jpg',
       specs: [
@@ -112,7 +112,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 10000,
     priceFullShift: 12000,
     priceDelivery: 50,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-24m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-24m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-24m.jpg',
       specs: [
@@ -130,7 +130,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 9000,
     priceFullShift: 13000,
     priceDelivery: 45,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-29m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-29m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-29m.jpg',
       specs: [
@@ -147,7 +147,7 @@ export const vehicles: Vehicle[] = [
     path: '/avtovyshka-40m',
     priceFullShift: 22000,
     priceDelivery: 45,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-40m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-40m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-40m.jpg',
       specs: [
@@ -163,7 +163,7 @@ export const vehicles: Vehicle[] = [
     path: '/avtovyshka-45m',
     priceFullShift: 25000,
     priceDelivery: 45,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-45m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-45m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-45m.jpg',
       specs: [
@@ -179,7 +179,7 @@ export const vehicles: Vehicle[] = [
     path: '/avtovyshka-50m',
     priceFullShift: 28000,
     priceDelivery: 45,
-    introCarouselImage: '/images/intro-carousel/avtovyshka-50m.jpg',
+    introSectionImage: '/images/intro-section/avtovyshka-50m.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtovyshka-50m.jpg',
       specs: [
@@ -196,7 +196,7 @@ export const vehicles: Vehicle[] = [
     priceHalfShift: 8000,
     priceFullShift: 14000,
     priceDelivery: 45,
-    introCarouselImage: '/images/intro-carousel/avtokran-25t-ivanovets.jpg',
+    introSectionImage: '/images/intro-section/avtokran-25t-ivanovets.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtokran-25t-ivanovets.jpg',
       specs: [
@@ -213,7 +213,7 @@ export const vehicles: Vehicle[] = [
     path: '/avtokran-25t-kobelco',
     priceFullShift: 16000,
     priceDelivery: 45,
-    introCarouselImage: '/images/intro-carousel/avtokran-25t-kobelco.jpg',
+    introSectionImage: '/images/intro-section/avtokran-25t-kobelco.jpg',
     vehicleCard: {
       image: '/images/vehicle-card/avtokran-25t-kobelco.jpg',
       specs: [
