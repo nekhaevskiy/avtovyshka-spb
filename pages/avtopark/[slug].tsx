@@ -1,3 +1,4 @@
+import ErrorPage from 'next/error';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react';
@@ -13,13 +14,13 @@ import { vehicles } from '../../data/vehicles';
 
 export default function VehiclePage() {
   const router = useRouter();
-  const { key } = router.query;
+  const { slug } = router.query;
 
-  if (typeof key !== 'string') {
-    return null;
+  if (typeof slug !== 'string' || !vehicles[slug]) {
+    return <ErrorPage statusCode={404} />;
   }
 
-  const vehicle = vehicles[key];
+  const vehicle = vehicles[slug];
 
   return (
     <>
