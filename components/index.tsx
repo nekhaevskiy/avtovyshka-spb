@@ -1,4 +1,5 @@
 import { AboutSection } from './AboutSection/AboutSection';
+import { Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactItems } from './ContactItems/ContactItems';
 import { ContactMap } from './ContactMap/ContactMap';
@@ -18,6 +19,7 @@ import { VehicleSection } from './VehicleSection/VehicleSection';
 
 export {
   AboutSection,
+  Breadcrumbs,
   ContactForm,
   ContactItems,
   ContactMap,
