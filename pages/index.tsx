@@ -13,6 +13,7 @@ import {
   ServiceSection,
   VehicleSection,
 } from '../components';
+import { contacts } from '../data/contacts';
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
       <Head>
         <title>
           Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской
-          области - ООО «Аренда Неба»
+          области - {contacts.companyName}
         </title>
         <meta
           name="description"

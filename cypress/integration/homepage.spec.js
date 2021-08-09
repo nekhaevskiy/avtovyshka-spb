@@ -17,7 +17,7 @@ describe('Homepage - Small mobiles', () => {
   it('has correct title tag, meta tag "description", and favicon.ico', () => {
     cy.title().should(
       'eq',
-      'Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской области - ООО «Аренда Неба»'
+      `Аренда автовышки и автокрана в Санкт-Петербурге и Ленинградской области - ${companyName}`
     );
     cy.document()
       .get('head meta[name="description"]')
@@ -403,7 +403,7 @@ describe('Homepage - Small mobiles', () => {
     it('renders the copyright', () => {
       cy.findByTestId('footer-copyright').should(
         'have.text',
-        `2016-${new Date().getFullYear()} © ООО «Аренда Неба»`
+        `2016-${new Date().getFullYear()} © ${companyName}`
       );
     });
   });
