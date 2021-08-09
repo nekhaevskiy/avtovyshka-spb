@@ -7,6 +7,7 @@ export interface Vehicle {
   name: string;
   fullName: string[];
   path: string;
+  title: string;
   priceHalfShift?: number;
   priceFullShift: number;
   priceDelivery: number;
@@ -14,11 +15,12 @@ export interface Vehicle {
   vehicleCard: Card;
 }
 
-export const vehicles: Vehicle[] = [
-  {
+export const vehicles: Record<string, Vehicle> = {
+  'avtovyshka-13m': {
     name: 'Автовышка-платформа 13м',
     fullName: ['Автовышка-платформа', '13 метров'],
-    path: '/avtovyshka-13m',
+    path: '/avtopark/avtovyshka-13m',
+    title: 'Аренда автовышки-платформы 13м',
     priceHalfShift: 7000,
     priceFullShift: 9000,
     priceDelivery: 50,
@@ -33,10 +35,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-15m': {
     name: 'Автовышка 15м',
     fullName: ['Автовышка', '15 метров'],
-    path: '/avtovyshka-15m',
+    path: '/avtopark/avtovyshka-15m',
+    title: 'Аренда автовышки 15м',
     priceHalfShift: 7000,
     priceFullShift: 9000,
     priceDelivery: 50,
@@ -51,10 +54,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-16m': {
     name: 'Автовышка-платформа 16м',
     fullName: ['Автовышка-платформа', '16 метров'],
-    path: '/avtovyshka-16m',
+    path: '/avtopark/avtovyshka-16m',
+    title: 'Аренда автовышки-платформы 16м',
     priceHalfShift: 8000,
     priceFullShift: 10000,
     priceDelivery: 50,
@@ -69,10 +73,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-17m': {
     name: 'Автовышка 17м',
     fullName: ['Автовышка', '17 метров'],
-    path: '/avtovyshka-17m',
+    path: '/avtopark/avtovyshka-17m',
+    title: 'Аренда автовышки 17м',
     priceHalfShift: 7000,
     priceFullShift: 9000,
     priceDelivery: 50,
@@ -87,10 +92,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-21m': {
     name: 'Автовышка-платформа 21м',
     fullName: ['Автовышка-платформа', '21 метр'],
-    path: '/avtovyshka-21m',
+    path: '/avtopark/avtovyshka-21m',
+    title: 'Аренда автовышки-платформы 21м',
     priceHalfShift: 11000,
     priceFullShift: 13000,
     priceDelivery: 50,
@@ -105,10 +111,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-24m': {
     name: 'Автовышка 24м',
     fullName: ['Автовышка', '24 метра'],
-    path: '/avtovyshka-24m',
+    path: '/avtopark/avtovyshka-24m',
+    title: 'Аренда автовышки 24м',
     priceHalfShift: 10000,
     priceFullShift: 12000,
     priceDelivery: 50,
@@ -123,10 +130,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-29m': {
     name: 'Автовышка 29м',
     fullName: ['Автовышка', '29 метров'],
-    path: '/avtovyshka-29m',
+    path: '/avtopark/avtovyshka-29m',
+    title: 'Аренда автовышки 29м',
     priceHalfShift: 9000,
     priceFullShift: 13000,
     priceDelivery: 45,
@@ -141,10 +149,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-40m': {
     name: 'Автовышка 40м',
     fullName: ['Автовышка', '40 метров'],
-    path: '/avtovyshka-40m',
+    path: '/avtopark/avtovyshka-40m',
+    title: 'Аренда автовышки 40м',
     priceFullShift: 22000,
     priceDelivery: 45,
     introSectionImage: '/images/intro-section/avtovyshka-40m.jpg',
@@ -157,10 +166,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-45m': {
     name: 'Автовышка 45м',
     fullName: ['Автовышка', '45 метров'],
-    path: '/avtovyshka-45m',
+    path: '/avtopark/avtovyshka-45m',
+    title: 'Аренда автовышки 45м',
     priceFullShift: 25000,
     priceDelivery: 45,
     introSectionImage: '/images/intro-section/avtovyshka-45m.jpg',
@@ -173,10 +183,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtovyshka-50m': {
     name: 'Автовышка 50м',
     fullName: ['Автовышка', '50 метров'],
-    path: '/avtovyshka-50m',
+    path: '/avtopark/avtovyshka-50m',
+    title: 'Аренда автовышки 50м',
     priceFullShift: 28000,
     priceDelivery: 45,
     introSectionImage: '/images/intro-section/avtovyshka-50m.jpg',
@@ -189,10 +200,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtokran-25t-ivanovets': {
     name: 'Автокран 25т Ивановец',
     fullName: ['Автокран Ивановец', '25 тонн'],
-    path: '/avtokran-25t-ivanovets',
+    path: '/avtopark/avtokran-25t-ivanovets',
+    title: 'Аренда автокрана Ивановец 25т',
     priceHalfShift: 8000,
     priceFullShift: 14000,
     priceDelivery: 45,
@@ -207,10 +219,11 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-  {
+  'avtokran-25t-kobelco': {
     name: 'Автокран 25т Kobelco',
     fullName: ['Автокран Kobelco', '25 тонн'],
-    path: '/avtokran-25t-kobelco',
+    path: '/avtopark/avtokran-25t-kobelco',
+    title: 'Аренда автокрана Kobelco 25т',
     priceFullShift: 16000,
     priceDelivery: 45,
     introSectionImage: '/images/intro-section/avtokran-25t-kobelco.jpg',
@@ -223,4 +236,4 @@ export const vehicles: Vehicle[] = [
       ],
     },
   },
-];
+};

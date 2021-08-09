@@ -109,9 +109,9 @@ function HeaderNavBar() {
               }
               data-testid="sub-menu"
             >
-              {vehicles.map((vehicle) => (
-                <Link href={vehicle.path} key={vehicle.path}>
-                  <a className={styles.subMenuItem}>{vehicle.name}</a>
+              {Object.keys(vehicles).map((key) => (
+                <Link href={vehicles[key].path} key={key}>
+                  <a className={styles.subMenuItem}>{vehicles[key].name}</a>
                 </Link>
               ))}
             </div>

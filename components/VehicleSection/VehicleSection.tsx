@@ -14,12 +14,9 @@ function VehicleSection() {
           subheading="автовышки и автокраны"
         />
         <div className="sm:flex sm:flex-wrap sm:items-stretch sm:justify-center sm:-mx-2 lg:justify-around">
-          {vehicles.map((vehicle) => (
-            <div
-              className="mb-4 mx-auto max-w-xs sm:mx-2 sm:w-80"
-              key={vehicle.path}
-            >
-              <VehicleCard vehicle={vehicle} />
+          {Object.keys(vehicles).map((key) => (
+            <div className="mb-4 mx-auto max-w-xs sm:mx-2 sm:w-80" key={key}>
+              <VehicleCard vehicle={vehicles[key]} />
             </div>
           ))}
         </div>

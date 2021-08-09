@@ -78,8 +78,8 @@ function IntroSection() {
   return windowWidth && windowWidth >= 1024 ? (
     <div className="mx-auto pb-9 max-w-6xl xl:px-4" data-testid="intro-section">
       <Slider arrows={false} autoplay className={styles.carousel} dots>
-        {vehicles.map((vehicle) => (
-          <Slide vehicle={vehicle} key={vehicle.path} />
+        {Object.keys(vehicles).map((key) => (
+          <Slide vehicle={vehicles[key]} key={key} />
         ))}
       </Slider>
     </div>

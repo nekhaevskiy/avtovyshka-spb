@@ -5,20 +5,21 @@ import { contacts } from '../../data/contacts';
 import { vehicles } from '../../data/vehicles';
 
 const { companyName } = contacts;
+const vehicle = vehicles[Object.keys(vehicles)[0]];
 
-describe('AWP 13m - Small mobiles', () => {
+describe('Vehicle - Small mobiles', () => {
   beforeEach(() => {
-    cy.visit('/avtovyshka-13m');
+    cy.visit(vehicle.path);
   });
 
   it('has correct title tag, meta tag "description", and favicon.ico', () => {
-    cy.title().should('eq', `Аренда автовышки 13м - ${companyName}`);
+    cy.title().should('eq', `${vehicle.title} - ${companyName}`);
     cy.document()
       .get('head meta[name="description"]')
       .should(
         'have.attr',
         'content',
-        'Аренда автовышки 13м - технические характеристики, подробное описание, фото и видео'
+        `${vehicle.title} - технические характеристики, подробное описание, фото и видео`
       );
     cy.document()
       .get('head link[rel="icon"]')
@@ -31,7 +32,7 @@ describe('AWP 13m - Small mobiles', () => {
         cy.findByRole('link', { name: 'Главная' })
           .should('be.visible')
           .and('have.attr', 'href', '/');
-        cy.findByText(vehicles[0].name).should('be.visible');
+        cy.findByText(vehicle.name).should('be.visible');
       });
     });
   });

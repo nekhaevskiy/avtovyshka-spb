@@ -15,7 +15,7 @@ import {
 } from '../components';
 import { contacts } from '../data/contacts';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Head>
