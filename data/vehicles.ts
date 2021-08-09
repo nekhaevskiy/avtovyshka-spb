@@ -15,6 +15,8 @@ export interface Vehicle {
   vehicleCard: Card;
 }
 
+// We use object structure of vehicles instead of array structure of them
+// because it's more suitable for dynamic routes feature of Next.js
 export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-13m': {
     name: 'Автовышка-платформа 13м',
