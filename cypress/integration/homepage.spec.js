@@ -166,7 +166,7 @@ describe('Homepage - Small mobiles', () => {
   });
 
   context('PhotoSection', () => {
-    it('shows the heading and all thumbnails', () => {
+    it('shows the heading, some photos and thumbnails', () => {
       cy.findByTestId('photo-section').should(
         'have.attr',
         'id',

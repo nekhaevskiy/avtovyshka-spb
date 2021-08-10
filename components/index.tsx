@@ -15,6 +15,7 @@ import { ReviewSection } from './ReviewSection/ReviewSection';
 import { SectionHeading } from './SectionHeading/SectionHeading';
 import { ServiceSection } from './ServiceSection/ServiceSection';
 import { VehicleCard } from './VehicleCard/VehicleCard';
+import { VehiclePhoto } from './VehiclePhoto/VehiclePhoto';
 import { VehicleSection } from './VehicleSection/VehicleSection';
 
 export {
@@ -35,5 +36,6 @@ export {
   SectionHeading,
   ServiceSection,
   VehicleCard,
+  VehiclePhoto,
   VehicleSection,
 };

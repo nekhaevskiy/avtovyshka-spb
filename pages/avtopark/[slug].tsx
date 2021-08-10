@@ -7,6 +7,7 @@ import {
   FooterNavBar,
   HeaderContacts,
   HeaderNavBar,
+  VehiclePhoto,
 } from '../../components';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
@@ -36,6 +37,7 @@ export default function VehiclePage({ vehicle }: Props) {
 
       <main>
         <Breadcrumbs currentPage={vehicle.name} />
+        <VehiclePhoto items={vehicle.vehiclePhoto!} />
       </main>
 
       <footer className="bg-gray-900">

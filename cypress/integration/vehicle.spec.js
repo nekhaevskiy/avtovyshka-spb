@@ -36,4 +36,35 @@ describe('Vehicle - Small mobiles', () => {
       });
     });
   });
+
+  context('VehiclePhoto', () => {
+    it('shows the heading, some photos and thumbnails', () => {
+      cy.findByTestId('vehicle-photo').within(() => {
+        vehicle.vehiclePhoto.forEach((item, index) => {
+          if (
+            index === 0 ||
+            index === 1 ||
+            index === vehicle.vehiclePhoto.length - 1
+          ) {
+            cy.findByRole('img', { name: item.originalAlt })
+              .should('be.visible')
+              .and('have.attr', 'src', item.original);
+          } else {
+            cy.findByRole('img', { name: item.originalAlt }).should(
+              'not.exist'
+            );
+          }
+          if (index < 4) {
+            cy.findByRole('img', { name: item.thumbnailAlt })
+              .should('be.visible')
+              .and('have.attr', 'src', item.thumbnail);
+          } else {
+            cy.findByRole('img', { name: item.thumbnailAlt })
+              .should('not.be.visible')
+              .and('have.attr', 'src', item.thumbnail);
+          }
+        });
+      });
+    });
+  });
 });
