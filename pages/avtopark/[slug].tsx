@@ -1,6 +1,5 @@
-import ErrorPage from 'next/error';
+import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import React from 'react';
 import {
   Breadcrumbs,
@@ -10,18 +9,13 @@ import {
   HeaderNavBar,
 } from '../../components';
 import { contacts } from '../../data/contacts';
-import { vehicles } from '../../data/vehicles';
+import { Vehicle, vehicles } from '../../data/vehicles';
 
-export default function VehiclePage() {
-  const router = useRouter();
-  const { slug } = router.query;
+interface Props {
+  vehicle: Vehicle;
+}
 
-  if (typeof slug !== 'string' || !vehicles[slug]) {
-    return <ErrorPage statusCode={404} />;
-  }
-
-  const vehicle = vehicles[slug];
-
+export default function VehiclePage({ vehicle }: Props) {
   return (
     <>
       <Head>
@@ -50,4 +44,25 @@ export default function VehiclePage() {
       </footer>
     </>
   );
+}
+
+export async function getStaticProps({ params }: GetStaticPropsContext) {
+  if (!params || typeof params.slug !== 'string' || !vehicles[params.slug]) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      vehicle: vehicles[params.slug],
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: Object.keys(vehicles).map((key) => ({ params: { slug: key } })),
+    fallback: false,
+  };
 }
