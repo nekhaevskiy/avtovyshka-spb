@@ -111,7 +111,15 @@ function HeaderNavBar() {
             >
               {Object.keys(vehicles).map((key) => (
                 <Link href={vehicles[key].path} key={key}>
-                  <a className={styles.subMenuItem}>{vehicles[key].name}</a>
+                  <a
+                    className={styles.subMenuItem}
+                    onClick={() => {
+                      setMenuOpen(false);
+                      setSubMenuOpen(false);
+                    }}
+                  >
+                    {vehicles[key].name}
+                  </a>
                 </Link>
               ))}
             </div>
