@@ -33,9 +33,9 @@ describe('Vehicle - Small mobiles', () => {
   context('Breadcrumbs', () => {
     it('renders the link to the home page and the title of the current page', () => {
       cy.findByTestId('breadcrumbs').within(() => {
-        cy.findByRole('link', { name: 'Главная' })
+        cy.findByRole('link', { name: 'Автопарк' })
           .should('be.visible')
-          .and('have.attr', 'href', '/');
+          .and('have.attr', 'href', '/#vehicle-section');
         cy.findByText(vehicle.name).should('be.visible');
       });
     });
