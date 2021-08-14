@@ -572,7 +572,10 @@ describe('Homepage - Laptops', () => {
         const vehicleKeys = Object.keys(vehicles);
         const firstVehicle = vehicles[vehicleKeys[0]];
         const secondVehicle = vehicles[vehicleKeys[1]];
-        cy.findByRole('heading', { name: firstVehicle.fullName.join(' ') })
+        cy.findByRole('heading', {
+          name: firstVehicle.fullName.join(' '),
+          timeout: 10000,
+        })
           .as('heading')
           .should('be.visible');
         cy.get('@heading')
