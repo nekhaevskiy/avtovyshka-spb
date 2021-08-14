@@ -38,12 +38,13 @@ function VehicleShortDescription({ vehicle }: Props) {
               Смена (7+1){priceHalfShift ? ' / Полсмены (3+1)' : ''}
             </td>
             <td className="px-2 py-1">
-              {priceFullShift} ₽{priceHalfShift ? ` / ${priceHalfShift} ₽` : ''}
+              {priceFullShift}&nbsp;₽
+              {priceHalfShift ? ` / ${priceHalfShift}\xa0₽` : ''}
             </td>
           </tr>
           <tr className="border-t">
             <td className="px-2 py-1">Подача за КАД</td>
-            <td className="px-2 py-1">{priceDelivery} ₽/км</td>
+            <td className="px-2 py-1">{priceDelivery}&nbsp;₽/км</td>
           </tr>
         </tbody>
       </table>
