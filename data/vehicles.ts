@@ -1,9 +1,9 @@
-interface VehicleCard {
-  image: string;
-  specs: [string, string][];
+export interface Price {
+  fullShift: number;
+  halfShift?: number;
+  delivery: number;
 }
-
-export interface IVehiclePhoto {
+export interface Photo {
   original: string;
   thumbnail: string;
   originalAlt: string;
@@ -11,41 +11,41 @@ export interface IVehiclePhoto {
 }
 
 export interface Vehicle {
-  name: string;
+  shortName: string;
   fullName: string[];
-  path: string;
-  priceHalfShift?: number;
-  priceFullShift: number;
-  priceDelivery: number;
-  introSectionImage: string;
-  vehicleCard: VehicleCard;
-  title: string;
-  vehiclePhoto: IVehiclePhoto[];
-  vehicleShortDescription: [string, string][];
+  pagePath: string;
+  pageTitle: string;
+  image: string;
+  price: Price;
+  card: [string, string][];
+  generalPhotos: Photo[];
+  // technicalPhotos: Photo[];
+  shortSpecs: [string, string][];
+  // fullSpecs: [string, string][];
+  // detailedDescription: string[];
 }
 
 // We use object structure of vehicles instead of array structure of them
 // because it's more suitable for dynamic routes feature of Next.js
 export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-13m': {
-    name: 'Автовышка-платформа 13м',
+    shortName: 'Автовышка-платформа 13м',
     fullName: ['Автовышка-платформа', '13 метров'],
-    path: '/avtopark/avtovyshka-13m',
-    priceHalfShift: 7000,
-    priceFullShift: 9000,
-    priceDelivery: 50,
-    introSectionImage: '/images/intro-section/avtovyshka-13m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-13m.jpg',
-      specs: [
-        ['Грузоподъемность корзины', '400 кг'],
-        ['Размеры корзины (платформы)', '2х4 м'],
-        ['Высота подъема', '13 м'],
-        ['Вылет максимальный', '8 м'],
-      ],
+    pagePath: '/avtopark/avtovyshka-13m',
+    pageTitle: 'Аренда автовышки-платформы 13м',
+    price: {
+      halfShift: 7000,
+      fullShift: 9000,
+      delivery: 50,
     },
-    title: 'Аренда автовышки-платформы 13м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-13m/01.jpg',
+    card: [
+      ['Грузоподъемность корзины', '400 кг'],
+      ['Размеры корзины (платформы)', '2х4 м'],
+      ['Высота подъема', '13 м'],
+      ['Вылет максимальный', '8 м'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-13m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-13m/01-thumb.jpg',
@@ -101,7 +101,8 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 9',
       },
     ],
-    vehicleShortDescription: [
+    // technicalPhotos: [],
+    shortSpecs: [
       ['Большая корзина СУПЕРДЕК', '2х4м'],
       ['Высота подъема', '13 м'],
       ['Вылет максимальный', '8 м'],
@@ -109,26 +110,27 @@ export const vehicles: Record<string, Vehicle> = {
       ['Поворот корзины (платформы)', '360°'],
       ['Размеры платформы (Д/Ш/В), мм', '4000/2000/900'],
     ],
+    // fullSpecs: [],
+    // detailedDescription: [],
   },
   'avtovyshka-15m': {
-    name: 'Автовышка 15м',
+    shortName: 'Автовышка 15м',
     fullName: ['Автовышка', '15 метров'],
-    path: '/avtopark/avtovyshka-15m',
-    priceHalfShift: 7000,
-    priceFullShift: 9000,
-    priceDelivery: 50,
-    introSectionImage: '/images/intro-section/avtovyshka-15m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-15m.jpg',
-      specs: [
-        ['Высота подъема', '15 м'],
-        ['Вылет максимальный', '11 м'],
-        ['Грузоподъемность люльки', '200 кг'],
-        ['Грузоподъемность лебедки', '450 кг'],
-      ],
+    pagePath: '/avtopark/avtovyshka-15m',
+    pageTitle: 'Аренда автовышки 15м',
+    price: {
+      halfShift: 7000,
+      fullShift: 9000,
+      delivery: 50,
     },
-    title: 'Аренда автовышки 15м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-15m/04.jpg',
+    card: [
+      ['Высота подъема', '15 м'],
+      ['Вылет максимальный', '11 м'],
+      ['Грузоподъемность люльки', '200 кг'],
+      ['Грузоподъемность лебедки', '450 кг'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-15m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-15m/01-thumb.jpg',
@@ -172,7 +174,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 15м - 7',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Высота подъема', '15 м'],
       ['Вылет максимальный', '11 м'],
       ['Грузоподъемность люльки', '200 кг'],
@@ -182,24 +184,23 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-16m': {
-    name: 'Автовышка-платформа 16м',
+    shortName: 'Автовышка-платформа 16м',
     fullName: ['Автовышка-платформа', '16 метров'],
-    path: '/avtopark/avtovyshka-16m',
-    priceHalfShift: 8000,
-    priceFullShift: 10000,
-    priceDelivery: 50,
-    introSectionImage: '/images/intro-section/avtovyshka-16m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-16m.jpg',
-      specs: [
-        ['Грузоподъемность корзины', '1000 кг'],
-        ['Размер корзины (платформы)', '2х4 м'],
-        ['Высота подъема', '16 м'],
-        ['Вылет максимальный', '11 м'],
-      ],
+    pagePath: '/avtopark/avtovyshka-16m',
+    pageTitle: 'Аренда автовышки-платформы 16м',
+    price: {
+      halfShift: 8000,
+      fullShift: 10000,
+      delivery: 50,
     },
-    title: 'Аренда автовышки-платформы 16м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-16m/01.jpg',
+    card: [
+      ['Грузоподъемность корзины', '1000 кг'],
+      ['Размер корзины (платформы)', '2х4 м'],
+      ['Высота подъема', '16 м'],
+      ['Вылет максимальный', '11 м'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-16m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-16m/01-thumb.jpg',
@@ -225,7 +226,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки-платформы 16м - 4',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Большая корзина СУПЕРДЕК', '2х4м'],
       ['Высота подъема', '16 м'],
       ['Вылет максимальный', '11 м'],
@@ -234,24 +235,23 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-17m': {
-    name: 'Автовышка 17м',
+    shortName: 'Автовышка 17м',
     fullName: ['Автовышка', '17 метров'],
-    path: '/avtopark/avtovyshka-17m',
-    priceHalfShift: 7000,
-    priceFullShift: 9000,
-    priceDelivery: 50,
-    introSectionImage: '/images/intro-section/avtovyshka-17m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-17m.jpg',
-      specs: [
-        ['Высота подъема', '17 м'],
-        ['Вылет максимальный', '10 м'],
-        ['Грузоподъемность люльки', '200 кг'],
-        ['Проезд в арку', '3200 мм'],
-      ],
+    pagePath: '/avtopark/avtovyshka-17m',
+    pageTitle: 'Аренда автовышки 17м',
+    price: {
+      halfShift: 7000,
+      fullShift: 9000,
+      delivery: 50,
     },
-    title: 'Аренда автовышки 17м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-17m/05.jpg',
+    card: [
+      ['Высота подъема', '17 м'],
+      ['Вылет максимальный', '10 м'],
+      ['Грузоподъемность люльки', '200 кг'],
+      ['Проезд в арку', '3200 мм'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-17m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-17m/01-thumb.jpg',
@@ -313,7 +313,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 17м - 10',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Высота подъема', '17 м'],
       ['Вылет максимальный', '10 м'],
       ['Грузоподъемность люльки', '200 кг'],
@@ -324,24 +324,23 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-21m': {
-    name: 'Автовышка-платформа 21м',
+    shortName: 'Автовышка-платформа 21м',
     fullName: ['Автовышка-платформа', '21 метр'],
-    path: '/avtopark/avtovyshka-21m',
-    priceHalfShift: 11000,
-    priceFullShift: 13000,
-    priceDelivery: 50,
-    introSectionImage: '/images/intro-section/avtovyshka-21m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-21m.jpg',
-      specs: [
-        ['Грузоподъемность', '1000 кг'],
-        ['Размеры корзины (платформы)', '2х4 м'],
-        ['Высота подъема', '21 м'],
-        ['Вылет максимальный', '11 м'],
-      ],
+    pagePath: '/avtopark/avtovyshka-21m',
+    pageTitle: 'Аренда автовышки-платформы 21м',
+    price: {
+      halfShift: 11000,
+      fullShift: 13000,
+      delivery: 50,
     },
-    title: 'Аренда автовышки-платформы 21м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-21m/01.jpg',
+    card: [
+      ['Грузоподъемность', '1000 кг'],
+      ['Размеры корзины (платформы)', '2х4 м'],
+      ['Высота подъема', '21 м'],
+      ['Вылет максимальный', '11 м'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-21m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-21m/01-thumb.jpg',
@@ -385,7 +384,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 7',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Большая корзина СУПЕРДЕК', '2х4м'],
       ['Высота подъема', '21 м'],
       ['Вылет максимальный', '11 м'],
@@ -394,24 +393,23 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-24m': {
-    name: 'Автовышка 24м',
+    shortName: 'Автовышка 24м',
     fullName: ['Автовышка', '24 метра'],
-    path: '/avtopark/avtovyshka-24m',
-    priceHalfShift: 10000,
-    priceFullShift: 12000,
-    priceDelivery: 50,
-    introSectionImage: '/images/intro-section/avtovyshka-24m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-24m.jpg',
-      specs: [
-        ['Высота подъема', '24 м'],
-        ['Вылет максимальный', '15 м'],
-        ['Грузоподъемность люльки', '200 кг'],
-        ['Проезд в арку', '2800 мм'],
-      ],
+    pagePath: '/avtopark/avtovyshka-24m',
+    pageTitle: 'Аренда автовышки 24м',
+    price: {
+      halfShift: 10000,
+      fullShift: 12000,
+      delivery: 50,
     },
-    title: 'Аренда автовышки 24м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-24m/01.jpg',
+    card: [
+      ['Высота подъема', '24 м'],
+      ['Вылет максимальный', '15 м'],
+      ['Грузоподъемность люльки', '200 кг'],
+      ['Проезд в арку', '2800 мм'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-24m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-24m/01-thumb.jpg',
@@ -437,7 +435,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 24м - 4',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Высота подъема', '24 м'],
       ['Вылет максимальный', '15 м'],
       ['Грузоподъемность люльки', '200 кг'],
@@ -448,24 +446,23 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-29m': {
-    name: 'Автовышка 29м',
+    shortName: 'Автовышка 29м',
     fullName: ['Автовышка', '29 метров'],
-    path: '/avtopark/avtovyshka-29m',
-    priceHalfShift: 9000,
-    priceFullShift: 13000,
-    priceDelivery: 45,
-    introSectionImage: '/images/intro-section/avtovyshka-29m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-29m.jpg',
-      specs: [
-        ['Высота подъема', '29 м'],
-        ['Вылет максимальный', '14 м'],
-        ['Грузоподъемность люльки', '200 кг'],
-        ['Проезд в арку', '3300 мм'],
-      ],
+    pagePath: '/avtopark/avtovyshka-29m',
+    pageTitle: 'Аренда автовышки 29м',
+    price: {
+      halfShift: 9000,
+      fullShift: 13000,
+      delivery: 45,
     },
-    title: 'Аренда автовышки 29м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-29m/01.jpg',
+    card: [
+      ['Высота подъема', '29 м'],
+      ['Вылет максимальный', '14 м'],
+      ['Грузоподъемность люльки', '200 кг'],
+      ['Проезд в арку', '3300 мм'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-29m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-29m/01-thumb.jpg',
@@ -479,7 +476,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 29м - 2',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Высота подъема', '29 м'],
       ['Вылет максимальный', '14 м'],
       ['Грузоподъемность люльки', '200 кг'],
@@ -490,22 +487,21 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-40m': {
-    name: 'Автовышка 40м',
+    shortName: 'Автовышка 40м',
     fullName: ['Автовышка', '40 метров'],
-    path: '/avtopark/avtovyshka-40m',
-    priceFullShift: 22000,
-    priceDelivery: 45,
-    introSectionImage: '/images/intro-section/avtovyshka-40m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-40m.jpg',
-      specs: [
-        ['Высота подъема', '40 м'],
-        ['Вылет максимальный', '20 м'],
-        ['Грузоподъемность люльки', '300 кг'],
-      ],
+    pagePath: '/avtopark/avtovyshka-40m',
+    pageTitle: 'Аренда автовышки 40м',
+    price: {
+      fullShift: 22000,
+      delivery: 45,
     },
-    title: 'Аренда автовышки 40м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-40m/01.jpg',
+    card: [
+      ['Высота подъема', '40 м'],
+      ['Вылет максимальный', '20 м'],
+      ['Грузоподъемность люльки', '300 кг'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-40m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-40m/01-thumb.jpg',
@@ -543,7 +539,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 40м - 6',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Шасси', 'Daewoo Ultra Novus'],
       ['Высота подъема', '40 м'],
       ['Вылет максимальный', '20 м'],
@@ -554,22 +550,21 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-45m': {
-    name: 'Автовышка 45м',
+    shortName: 'Автовышка 45м',
     fullName: ['Автовышка', '45 метров'],
-    path: '/avtopark/avtovyshka-45m',
-    priceFullShift: 25000,
-    priceDelivery: 45,
-    introSectionImage: '/images/intro-section/avtovyshka-45m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-45m.jpg',
-      specs: [
-        ['Высота подъема', '45 м'],
-        ['Вылет максимальный', '25 м'],
-        ['Грузоподъемность люльки', '300 кг'],
-      ],
+    pagePath: '/avtopark/avtovyshka-45m',
+    pageTitle: 'Аренда автовышки 45м',
+    price: {
+      fullShift: 25000,
+      delivery: 45,
     },
-    title: 'Аренда автовышки 45м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-45m/01.jpg',
+    card: [
+      ['Высота подъема', '45 м'],
+      ['Вылет максимальный', '25 м'],
+      ['Грузоподъемность люльки', '300 кг'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-45m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-45m/01-thumb.jpg',
@@ -607,7 +602,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 45м - 6',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Шасси', 'Daewoo Ultra Novus'],
       ['Высота подъема', '45 м'],
       ['Вылет максимальный', '25 м'],
@@ -618,22 +613,21 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtovyshka-50m': {
-    name: 'Автовышка 50м',
+    shortName: 'Автовышка 50м',
     fullName: ['Автовышка', '50 метров'],
-    path: '/avtopark/avtovyshka-50m',
-    priceFullShift: 28000,
-    priceDelivery: 45,
-    introSectionImage: '/images/intro-section/avtovyshka-50m.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtovyshka-50m.jpg',
-      specs: [
-        ['Высота подъема', '50 м'],
-        ['Вылет максимальный', '30 м'],
-        ['Грузоподъемность люльки', '300 кг'],
-      ],
+    pagePath: '/avtopark/avtovyshka-50m',
+    pageTitle: 'Аренда автовышки 50м',
+    price: {
+      fullShift: 28000,
+      delivery: 45,
     },
-    title: 'Аренда автовышки 50м',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/awp-50m/01.jpg',
+    card: [
+      ['Высота подъема', '50 м'],
+      ['Вылет максимальный', '30 м'],
+      ['Грузоподъемность люльки', '300 кг'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/awp-50m/01.jpg',
         thumbnail: '/images/vehicle-photo/awp-50m/01-thumb.jpg',
@@ -683,7 +677,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 50м - 8',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Шасси', 'Daewoo Ultra Novus'],
       ['Высота подъема', '50 м'],
       ['Вылет максимальный', '30 м'],
@@ -694,24 +688,23 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtokran-25t-ivanovets': {
-    name: 'Автокран 25т Ивановец',
+    shortName: 'Автокран 25т Ивановец',
     fullName: ['Автокран Ивановец', '25 тонн'],
-    path: '/avtopark/avtokran-25t-ivanovets',
-    priceHalfShift: 8000,
-    priceFullShift: 14000,
-    priceDelivery: 45,
-    introSectionImage: '/images/intro-section/avtokran-25t-ivanovets.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtokran-25t-ivanovets.jpg',
-      specs: [
-        ['Грузоподъемность', '25 т'],
-        ['Высота подъема', '31 м'],
-        ['Вылет максимальный', '28 м'],
-        ['Шасси', 'КАМАЗ'],
-      ],
+    pagePath: '/avtopark/avtokran-25t-ivanovets',
+    pageTitle: 'Аренда автокрана Ивановец 25т',
+    price: {
+      halfShift: 8000,
+      fullShift: 14000,
+      delivery: 45,
     },
-    title: 'Аренда автокрана Ивановец 25т',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/truck-crane-ivanovets/01.jpg',
+    card: [
+      ['Грузоподъемность', '25 т'],
+      ['Высота подъема', '31 м'],
+      ['Вылет максимальный', '28 м'],
+      ['Шасси', 'КАМАЗ'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/truck-crane-ivanovets/01.jpg',
         thumbnail: '/images/vehicle-photo/truck-crane-ivanovets/01-thumb.jpg',
@@ -737,7 +730,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автокрана 25т Ивановец - 4',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Грузоподъемность', '25 т'],
       ['Высота подъема', '31 м'],
       ['Вылет максимальный', '28 м'],
@@ -745,22 +738,21 @@ export const vehicles: Record<string, Vehicle> = {
     ],
   },
   'avtokran-25t-kobelco': {
-    name: 'Автокран 25т Kobelco',
+    shortName: 'Автокран 25т Kobelco',
     fullName: ['Автокран Kobelco', '25 тонн'],
-    path: '/avtopark/avtokran-25t-kobelco',
-    priceFullShift: 16000,
-    priceDelivery: 45,
-    introSectionImage: '/images/intro-section/avtokran-25t-kobelco.jpg',
-    vehicleCard: {
-      image: '/images/vehicle-card/avtokran-25t-kobelco.jpg',
-      specs: [
-        ['Грузоподъемность', '25 т'],
-        ['Высота подъема', '42 м'],
-        ['Вылет максимальный', '30 м'],
-      ],
+    pagePath: '/avtopark/avtokran-25t-kobelco',
+    pageTitle: 'Аренда автокрана Kobelco 25т',
+    price: {
+      fullShift: 16000,
+      delivery: 45,
     },
-    title: 'Аренда автокрана Kobelco 25т',
-    vehiclePhoto: [
+    image: '/images/vehicle-photo/truck-crane-kobelco/01.jpg',
+    card: [
+      ['Грузоподъемность', '25 т'],
+      ['Высота подъема', '42 м'],
+      ['Вылет максимальный', '30 м'],
+    ],
+    generalPhotos: [
       {
         original: '/images/vehicle-photo/truck-crane-kobelco/01.jpg',
         thumbnail: '/images/vehicle-photo/truck-crane-kobelco/01-thumb.jpg',
@@ -780,7 +772,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автокрана 25т Kobelco - 3',
       },
     ],
-    vehicleShortDescription: [
+    shortSpecs: [
       ['Высота подъема', '42 м'],
       ['Вылет максимальный', '30 м'],
       ['Грузоподъемность', '25 т'],

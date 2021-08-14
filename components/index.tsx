@@ -15,9 +15,8 @@ import { ReviewSection } from './ReviewSection/ReviewSection';
 import { SectionHeading } from './SectionHeading/SectionHeading';
 import { ServiceSection } from './ServiceSection/ServiceSection';
 import { VehicleCard } from './VehicleCard/VehicleCard';
-import { VehiclePhoto } from './VehiclePhoto/VehiclePhoto';
 import { VehicleSection } from './VehicleSection/VehicleSection';
-import { VehicleShortDescription } from './VehicleShortDescription/VehicleShortDescription';
+import { VehicleSpecs } from './VehicleSpecs/VehicleSpecs';
 
 export {
   AboutSection,
@@ -37,7 +36,6 @@ export {
   SectionHeading,
   ServiceSection,
   VehicleCard,
-  VehiclePhoto,
   VehicleSection,
-  VehicleShortDescription,
+  VehicleSpecs,
 };

@@ -16,31 +16,27 @@ interface Props {
 }
 
 function Slide({ vehicle }: Props) {
+  const { image, shortName, fullName, price, pagePath } = vehicle;
   return (
     <article className="relative w-full h-80 text-white" data-testid="slide">
       <div className="absolute -z-1 w-full h-full">
-        <Image
-          src={vehicle.introSectionImage}
-          alt={vehicle.name}
-          layout="fill"
-          objectFit="cover"
-        />
+        <Image src={image} alt={shortName} layout="fill" objectFit="cover" />
       </div>
       <div className="flex items-center justify-between p-14 h-full bg-black bg-opacity-50">
         <div>
           <h2 className="mb-4 text-3xl font-bold">
-            {vehicle.fullName.map((part) => (
+            {fullName.map((part) => (
               <span className="block" key={part}>
                 {part}
               </span>
             ))}
           </h2>
           <p className="mb-7 text-xl font-medium">
-            {vehicle.priceHalfShift
-              ? `от ${vehicle.priceHalfShift} ₽/полсмены`
-              : `от ${vehicle.priceFullShift} ₽/смена`}
+            {price.halfShift
+              ? `от ${price.halfShift} ₽/полсмены`
+              : `от ${price.fullShift} ₽/смена`}
           </p>
-          <LinkAsButton href={vehicle.path}>Подробнее</LinkAsButton>
+          <LinkAsButton href={pagePath}>Подробнее</LinkAsButton>
         </div>
         <div className="text-right">
           <a

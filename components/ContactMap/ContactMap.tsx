@@ -10,7 +10,7 @@ function MarkerWrapper(props: Props) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/images/awp.png"
+      src="/images/map-marker.png"
       alt={contacts.companyName}
       width="50"
       height="50"

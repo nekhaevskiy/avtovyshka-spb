@@ -1,14 +1,14 @@
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import React from 'react';
+import ReactImageGallery from 'react-image-gallery';
 import {
   Breadcrumbs,
   FooterCopyright,
   FooterNavBar,
   HeaderContacts,
   HeaderNavBar,
-  VehiclePhoto,
-  VehicleShortDescription,
+  VehicleSpecs,
 } from '../../components';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
@@ -18,15 +18,17 @@ interface Props {
 }
 
 export default function VehiclePage({ vehicle }: Props) {
+  const { pageTitle, shortName, fullName, generalPhotos, shortSpecs, price } =
+    vehicle;
   return (
     <>
       <Head>
         <title>
-          {vehicle.title} - {contacts.companyName}
+          {pageTitle} - {contacts.companyName}
         </title>
         <meta
           name="description"
-          content={`${vehicle.title} - технические характеристики, подробное описание, фото и видео`}
+          content={`${pageTitle} - технические характеристики, подробное описание, фото и видео`}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -37,13 +39,26 @@ export default function VehiclePage({ vehicle }: Props) {
       </header>
 
       <main>
-        <Breadcrumbs currentPage={vehicle.name} />
+        <Breadcrumbs currentPage={shortName} />
+
         <h2 className="mb-4 mx-auto px-4 max-w-6xl text-center text-2xl font-medium sm:text-3xl">
-          {vehicle.fullName.join(' ')}
+          {fullName.join(' ')}
         </h2>
+
         <div className="mb-6 mx-auto px-4 max-w-6xl md:flex">
-          <VehiclePhoto items={vehicle.vehiclePhoto!} />
-          <VehicleShortDescription vehicle={vehicle} />
+          <div
+            className="mb-4 md:mr-1 md:w-1/2 lg:mr-2 xl:mr-4"
+            data-testid="general-photos"
+          >
+            <ReactImageGallery items={generalPhotos} lazyLoad />
+          </div>
+
+          <div
+            className="mx-auto max-w-md md:ml-1 md:mr-0 md:w-1/2 md:max-w-none xl:ml-4"
+            data-testid="short-specs"
+          >
+            <VehicleSpecs specs={shortSpecs} price={price} />
+          </div>
         </div>
       </main>
 

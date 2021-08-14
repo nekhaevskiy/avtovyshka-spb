@@ -110,7 +110,7 @@ function HeaderNavBar() {
               data-testid="sub-menu"
             >
               {Object.keys(vehicles).map((key) => (
-                <Link href={vehicles[key].path} key={key}>
+                <Link href={vehicles[key].pagePath} key={key}>
                   <a
                     className={styles.subMenuItem}
                     onClick={() => {
@@ -118,7 +118,7 @@ function HeaderNavBar() {
                       setSubMenuOpen(false);
                     }}
                   >
-                    {vehicles[key].name}
+                    {vehicles[key].shortName}
                   </a>
                 </Link>
               ))}

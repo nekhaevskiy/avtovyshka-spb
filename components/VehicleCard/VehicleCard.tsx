@@ -7,31 +7,31 @@ interface Props {
 }
 
 function VehicleCard({ vehicle }: Props) {
-  const { vehicleCard } = vehicle;
+  const { pagePath, shortName, image, fullName, card, price } = vehicle;
   return (
-    <Link href={vehicle.path}>
+    <Link href={pagePath}>
       <a
         className="flex flex-col pb-5 pt-4 px-4 max-w-xs h-full bg-white border border-gray-300 rounded hover:shadow-2xl focus:shadow-2xl shadow-sm"
         data-testid="vehicle-card"
       >
         <div className="relative mb-2 w-full h-40">
           <Image
-            alt={vehicle.name}
+            alt={shortName}
             className="rounded"
             layout="fill"
             objectFit="cover"
-            src={vehicleCard.image}
+            src={image}
           />
         </div>
         <h3 className="mb-2 text-center text-gray-800 text-xl font-bold leading-6">
-          {vehicle.fullName.map((part) => (
+          {fullName.map((part) => (
             <span className="block" key={part}>
               {part}
             </span>
           ))}
         </h3>
         <dl className="mb-3">
-          {vehicleCard.specs.map((spec) => (
+          {card.map((spec) => (
             <div key={spec[0]} className="flex">
               <dt className="flex-grow p-1 text-gray-500 text-sm border-t border-gray-300">
                 {spec[0]}
@@ -43,7 +43,7 @@ function VehicleCard({ vehicle }: Props) {
           ))}
         </dl>
         <p className="mb-3 mt-auto text-center text-gray-800 text-lg">
-          <b>{vehicle.priceFullShift} ₽</b>/смена
+          <b>{price.fullShift}&nbsp;₽</b>/смена
         </p>
 
         <div className="text-center">

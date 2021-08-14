@@ -69,9 +69,9 @@ describe('Homepage - Small mobiles', () => {
           .should('be.visible')
           .and('have.attr', 'href', '/#vehicle-section');
         Object.keys(vehicles).forEach((key) => {
-          cy.findByRole('link', { name: vehicles[key].name })
+          cy.findByRole('link', { name: vehicles[key].shortName })
             .should('be.visible')
-            .and('have.attr', 'href', vehicles[key].path);
+            .and('have.attr', 'href', vehicles[key].pagePath);
         });
         cy.findByRole('link', { name: 'Услуги' })
           .should('be.visible')
@@ -116,18 +116,22 @@ describe('Homepage - Small mobiles', () => {
         });
         Object.keys(vehicles).forEach((key) => {
           const vehicle = vehicles[key];
-          cy.findByRole('img', { name: vehicle.name }).should('be.visible');
+          cy.findByRole('img', { name: vehicle.shortName }).should(
+            'be.visible'
+          );
           cy.findByRole('heading', { name: vehicle.fullName.join(' ') }).should(
             'be.visible'
           );
           cy.findByRole('heading', { name: vehicle.fullName.join(' ') })
             .parents('[data-testid="vehicle-card"]')
             .within(() => {
-              vehicle.vehicleCard.specs.forEach((spec) => {
+              vehicle.card.forEach((spec) => {
                 cy.findByText(spec[0]).should('be.visible');
                 cy.findByText(spec[1]).should('be.visible');
               });
-              cy.findByText(`${vehicle.priceFullShift} ₽`).should('be.visible');
+              cy.findByText(`${vehicle.price.fullShift} ₽`).should(
+                'be.visible'
+              );
               cy.findByText('Подробнее').should('be.visible');
             });
         });
@@ -505,7 +509,7 @@ describe('Homepage - Tablets', () => {
         cy.findByTestId('sub-menu').should('not.be.visible');
         cy.get('@subMenuBtn').click();
         Object.keys(vehicles).forEach((key) => {
-          cy.findByRole('link', { name: vehicles[key].name }).should(
+          cy.findByRole('link', { name: vehicles[key].shortName }).should(
             'be.visible'
           );
         });
@@ -576,16 +580,16 @@ describe('Homepage - Laptops', () => {
         cy.get('@heading')
           .parents('[data-testid="slide"]')
           .within(() => {
-            cy.findByRole('img', { name: firstVehicle.name }).should(
+            cy.findByRole('img', { name: firstVehicle.shortName }).should(
               'be.visible'
             );
-            const priceText = firstVehicle.priceHalfShift
-              ? `от ${firstVehicle.priceHalfShift} ₽/полсмены`
-              : `от ${firstVehicle.priceFullShift} ₽/смена`;
+            const priceText = firstVehicle.price.halfShift
+              ? `от ${firstVehicle.price.halfShift} ₽/полсмены`
+              : `от ${firstVehicle.price.fullShift} ₽/смена`;
             cy.findByText(priceText).should('be.visible');
             cy.findByRole('link', { name: 'Подробнее' })
               .should('be.visible')
-              .and('have.attr', 'href', firstVehicle.path);
+              .and('have.attr', 'href', firstVehicle.pagePath);
             cy.findByRole('link', { name: phones[0].text.join(' ') })
               .should('be.visible')
               .and('have.attr', 'href', phones[0].link);
@@ -605,16 +609,16 @@ describe('Homepage - Laptops', () => {
         cy.get('@heading')
           .parents('[data-testid="slide"]')
           .within(() => {
-            cy.findByRole('img', { name: secondVehicle.name }).should(
+            cy.findByRole('img', { name: secondVehicle.shortName }).should(
               'be.visible'
             );
-            const priceText = secondVehicle.priceHalfShift
-              ? `от ${secondVehicle.priceHalfShift} ₽/полсмены`
-              : `от ${secondVehicle.priceFullShift} ₽/смена`;
+            const priceText = secondVehicle.price.halfShift
+              ? `от ${secondVehicle.price.halfShift} ₽/полсмены`
+              : `от ${secondVehicle.price.fullShift} ₽/смена`;
             cy.findByText(priceText).should('be.visible');
             cy.findByRole('link', { name: 'Подробнее' })
               .should('be.visible')
-              .and('have.attr', 'href', secondVehicle.path);
+              .and('have.attr', 'href', secondVehicle.pagePath);
             cy.findByRole('link', { name: phones[0].text.join(' ') })
               .should('be.visible')
               .and('have.attr', 'href', phones[0].link);
