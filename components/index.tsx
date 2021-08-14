@@ -17,6 +17,7 @@ import { ServiceSection } from './ServiceSection/ServiceSection';
 import { VehicleCard } from './VehicleCard/VehicleCard';
 import { VehiclePhoto } from './VehiclePhoto/VehiclePhoto';
 import { VehicleSection } from './VehicleSection/VehicleSection';
+import { VehicleShortDescription } from './VehicleShortDescription/VehicleShortDescription';
 
 export {
   AboutSection,
@@ -38,4 +39,5 @@ export {
   VehicleCard,
   VehiclePhoto,
   VehicleSection,
+  VehicleShortDescription,
 };

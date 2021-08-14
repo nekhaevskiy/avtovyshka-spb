@@ -8,6 +8,7 @@ import {
   HeaderContacts,
   HeaderNavBar,
   VehiclePhoto,
+  VehicleShortDescription,
 } from '../../components';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
@@ -37,7 +38,13 @@ export default function VehiclePage({ vehicle }: Props) {
 
       <main>
         <Breadcrumbs currentPage={vehicle.name} />
-        <VehiclePhoto items={vehicle.vehiclePhoto!} />
+        <h2 className="mb-4 mx-auto px-4 max-w-6xl text-center text-2xl font-medium sm:text-3xl">
+          {vehicle.fullName.join(' ')}
+        </h2>
+        <div className="mb-6 mx-auto px-4 max-w-6xl md:flex">
+          <VehiclePhoto items={vehicle.vehiclePhoto!} />
+          <VehicleShortDescription vehicle={vehicle} />
+        </div>
       </main>
 
       <footer className="bg-gray-900">

@@ -26,6 +26,10 @@ describe('Vehicle - Small mobiles', () => {
       .should('have.attr', 'href', '/favicon.ico');
   });
 
+  it('has correct heading', () => {
+    cy.findByRole('heading', { name: vehicle.fullName.join(' ') });
+  });
+
   context('Breadcrumbs', () => {
     it('renders the link to the home page and the title of the current page', () => {
       cy.findByTestId('breadcrumbs').within(() => {
@@ -64,6 +68,29 @@ describe('Vehicle - Small mobiles', () => {
               .and('have.attr', 'src', item.thumbnail);
           }
         });
+      });
+    });
+  });
+
+  context('VehicleShortDescription', () => {
+    it('renders short description', () => {
+      cy.findByTestId('vehicle-short-description').within(() => {
+        cy.findByRole('heading', { name: 'Технические характеристики' }).should(
+          'be.visible'
+        );
+        vehicle.vehicleShortDescription.forEach((items) => {
+          cy.findByText(items[0]).should('be.visible');
+          cy.findByText(items[1]).should('be.visible');
+        });
+        cy.findByRole('heading', { name: 'Стоимость аренды' }).should(
+          'be.visible'
+        );
+        cy.findByText('Смена (7+1) / Полсмены (3+1)').should('be.visible');
+        cy.findByText(
+          `${vehicle.priceFullShift} ₽ / ${vehicle.priceHalfShift} ₽`
+        ).should('be.visible');
+        cy.findByText('Подача за КАД').should('be.visible');
+        cy.findByText(`${vehicle.priceDelivery} ₽/км`).should('be.visible');
       });
     });
   });
