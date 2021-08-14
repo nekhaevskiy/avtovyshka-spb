@@ -128,9 +128,7 @@ describe('Homepage - Small mobiles', () => {
                 cy.findByText(spec[1]).should('be.visible');
               });
               cy.findByText(`${vehicle.priceFullShift} ₽`).should('be.visible');
-              cy.findByRole('link', { name: 'Подробнее' })
-                .should('be.visible')
-                .and('have.attr', 'href', vehicle.path);
+              cy.findByText('Подробнее').should('be.visible');
             });
         });
       });
