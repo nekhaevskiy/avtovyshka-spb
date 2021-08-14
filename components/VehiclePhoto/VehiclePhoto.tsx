@@ -7,7 +7,10 @@ interface Props {
 
 function VehiclePhoto({ items }: Props) {
   return (
-    <div data-testid="vehicle-photo">
+    <div
+      className="mb-4 md:mr-1 md:w-1/2 lg:mr-2 xl:mr-4"
+      data-testid="vehicle-photo"
+    >
       <ReactImageGallery items={items} lazyLoad />
     </div>
   );
