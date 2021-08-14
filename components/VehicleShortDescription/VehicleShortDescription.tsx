@@ -16,10 +16,6 @@ function VehicleShortDescription({ vehicle }: Props) {
       className="mx-auto max-w-md text-gray-800 md:ml-1 md:mr-0 md:w-1/2 md:max-w-none xl:ml-4"
       data-testid="vehicle-short-description"
     >
-      <h3 className="mb-3 text-center text-lg font-semibold lg:text-2xl">
-        Технические характеристики
-      </h3>
-
       <table className="mb-4 mx-auto w-full text-sm border-b lg:text-base">
         <tbody>
           {vehicleShortDescription.map((items) => (
@@ -31,7 +27,7 @@ function VehicleShortDescription({ vehicle }: Props) {
         </tbody>
       </table>
 
-      <h3 className="mb-3 text-center text-lg font-semibold lg:text-2xl">
+      <h3 className="mb-3 text-center text-xl font-semibold">
         Стоимость аренды
       </h3>
 

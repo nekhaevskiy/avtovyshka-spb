@@ -75,9 +75,6 @@ describe('Vehicle - Small mobiles', () => {
   context('VehicleShortDescription', () => {
     it('renders short description', () => {
       cy.findByTestId('vehicle-short-description').within(() => {
-        cy.findByRole('heading', { name: 'Технические характеристики' }).should(
-          'be.visible'
-        );
         vehicle.vehicleShortDescription.forEach((items) => {
           cy.findByText(items[0]).should('be.visible');
           cy.findByText(items[1]).should('be.visible');
