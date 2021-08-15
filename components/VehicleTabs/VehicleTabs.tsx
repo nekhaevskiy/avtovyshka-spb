@@ -59,7 +59,11 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
             </div>
             {technicalPhotos && technicalPhotos.length > 0 ? (
               <div className="md:ml-1 md:w-1/2 lg:ml-2 xl:ml-4">
-                <ReactImageGallery items={technicalPhotos} lazyLoad />
+                <ReactImageGallery
+                  items={technicalPhotos}
+                  lazyLoad
+                  showPlayButton={technicalPhotos.length > 1}
+                />
               </div>
             ) : null}
           </div>

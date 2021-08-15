@@ -5,9 +5,9 @@ export interface Price {
 }
 export interface Photo {
   original: string;
-  thumbnail: string;
   originalAlt: string;
-  thumbnailAlt: string;
+  thumbnail?: string;
+  thumbnailAlt?: string;
 }
 
 export interface Vehicle {
@@ -403,9 +403,7 @@ export const vehicles: Record<string, Vehicle> = {
     technicalPhotos: [
       {
         original: '/images/vehicle-photo/awp-17m/technical-1.jpg',
-        thumbnail: '/images/vehicle-photo/awp-17m/technical-1-thumb.jpg',
         originalAlt: 'Технические характеристики автовышки 17м - 1',
-        thumbnailAlt: 'Миниатюра технических характеристик автовышки 17м - 1',
       },
     ],
     shortSpecs: [
@@ -735,9 +733,7 @@ export const vehicles: Record<string, Vehicle> = {
     technicalPhotos: [
       {
         original: '/images/vehicle-photo/awp-40m/technical-1.jpg',
-        thumbnail: '/images/vehicle-photo/awp-40m/technical-1-thumb.jpg',
         originalAlt: 'Технические характеристики автовышки 40м - 1',
-        thumbnailAlt: 'Миниатюра технических характеристик автовышки 40м - 1',
       },
     ],
     shortSpecs: [
@@ -908,9 +904,7 @@ export const vehicles: Record<string, Vehicle> = {
     technicalPhotos: [
       {
         original: '/images/vehicle-photo/awp-50m/technical-1.jpg',
-        thumbnail: '/images/vehicle-photo/awp-50m/technical-1-thumb.jpg',
         originalAlt: 'Технические характеристики автовышки 50м - 1',
-        thumbnailAlt: 'Миниатюра технических характеристик автовышки 50м - 1',
       },
     ],
     shortSpecs: [
