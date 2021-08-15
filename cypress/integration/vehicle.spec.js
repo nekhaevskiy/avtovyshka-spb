@@ -122,6 +122,35 @@ describe('Vehicle - Small mobiles', () => {
         cy.findByText('Any content 1').should('be.visible');
       });
     });
+
+    it('renders the heading, some technical photos and thumbnails', () => {
+      cy.findByTestId('vehicle-tabs').within(() => {
+        vehicle.technicalPhotos.forEach((item, index) => {
+          if (
+            index === 0 ||
+            index === 1 ||
+            index === vehicle.technicalPhotos.length - 1
+          ) {
+            cy.findByRole('img', { name: item.originalAlt })
+              .should('be.visible')
+              .and('have.attr', 'src', item.original);
+          } else {
+            cy.findByRole('img', { name: item.originalAlt }).should(
+              'not.exist'
+            );
+          }
+          if (index < 4) {
+            cy.findByRole('img', { name: item.thumbnailAlt })
+              .should('be.visible')
+              .and('have.attr', 'src', item.thumbnail);
+          } else {
+            cy.findByRole('img', { name: item.thumbnailAlt })
+              .should('not.be.visible')
+              .and('have.attr', 'src', item.thumbnail);
+          }
+        });
+      });
+    });
   });
 });
 

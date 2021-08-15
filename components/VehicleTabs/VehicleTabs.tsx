@@ -1,5 +1,7 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import React from 'react';
+import ReactImageGallery from 'react-image-gallery';
 import { Tab, TabList, TabPanel, TabsProps } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Table } from '..';
@@ -14,6 +16,7 @@ const Tabs = dynamic<TabsProps>(
 );
 
 function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
+  const { fullSpecs, technicalPhotos } = vehicle;
   return (
     <div data-testid="vehicle-tabs" className="mb-6 mx-auto px-4 max-w-6xl">
       <Tabs className="mx-auto max-w-md md:max-w-none">
@@ -50,7 +53,16 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
           <h3 className="mb-3 text-center text-gray-800 text-xl font-semibold md:hidden">
             Подробные технические характеристики
           </h3>
-          <Table data={vehicle.fullSpecs} />
+          <div className="md:flex">
+            <div className="mb-6 md:mb-0 md:mr-1 md:w-1/2 lg:mr-2 xl:mr-4">
+              <Table data={fullSpecs} />
+            </div>
+            {technicalPhotos && technicalPhotos.length > 0 ? (
+              <div className="md:ml-1 md:w-1/2 lg:ml-2 xl:ml-4">
+                <ReactImageGallery items={technicalPhotos} lazyLoad />
+              </div>
+            ) : null}
+          </div>
         </TabPanel>
         <TabPanel>
           <h2>Any content 1</h2>

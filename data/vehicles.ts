@@ -19,7 +19,7 @@ export interface Vehicle {
   price: Price;
   card: [string, string][];
   generalPhotos: Photo[];
-  // technicalPhotos: Photo[];
+  technicalPhotos: Photo[];
   shortSpecs: [string, string][];
   fullSpecs: [string, string][];
   // detailedDescription: string[];
@@ -101,7 +101,22 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 9',
       },
     ],
-    // technicalPhotos: [],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-13m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-13m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки-платформы 13м - 1',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автовышки-платформы 13м - 1',
+      },
+      {
+        original: '/images/vehicle-photo/awp-13m/technical-2.jpg',
+        thumbnail: '/images/vehicle-photo/awp-13m/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки-платформы 13м - 2',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автовышки-платформы 13м - 2',
+      },
+    ],
     shortSpecs: [
       ['Большая корзина СУПЕРДЕК', '2х4м'],
       ['Высота подъема', '13 м'],
@@ -189,6 +204,20 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 15м - 7',
       },
     ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-15m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-15m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 15м - 1',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 15м - 1',
+      },
+      {
+        original: '/images/vehicle-photo/awp-15m/technical-2.jpg',
+        thumbnail: '/images/vehicle-photo/awp-15m/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 15м - 2',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 15м - 2',
+      },
+    ],
     shortSpecs: [
       ['Высота подъема', '15 м'],
       ['Вылет максимальный', '11 м'],
@@ -254,6 +283,22 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnail: '/images/vehicle-photo/awp-16m/04-thumb.jpg',
         originalAlt: 'Автовышка-платформа 16м - 4',
         thumbnailAlt: 'Миниатюра автовышки-платформы 16м - 4',
+      },
+    ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-16m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-16m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки-платформы 16м - 1',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автовышки-платформы 16м - 1',
+      },
+      {
+        original: '/images/vehicle-photo/awp-16m/technical-2.jpg',
+        thumbnail: '/images/vehicle-photo/awp-16m/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки-платформы 16м - 2',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автовышки-платформы 16м - 2',
       },
     ],
     shortSpecs: [
@@ -355,6 +400,14 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 17м - 10',
       },
     ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-17m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-17m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 17м - 1',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 17м - 1',
+      },
+    ],
     shortSpecs: [
       ['Высота подъема', '17 м'],
       ['Вылет максимальный', '10 м'],
@@ -440,6 +493,22 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 7',
       },
     ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-21m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-21m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки-платформы 21м - 1',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автовышки-платформы 21м - 1',
+      },
+      {
+        original: '/images/vehicle-photo/awp-21m/technical-2.jpg',
+        thumbnail: '/images/vehicle-photo/awp-21m/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки-платформы 21м - 2',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автовышки-платформы 21м - 2',
+      },
+    ],
     shortSpecs: [
       ['Большая корзина СУПЕРДЕК', '2х4м'],
       ['Высота подъема', '21 м'],
@@ -503,6 +572,20 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 24м - 4',
       },
     ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-24m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-24m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 24м - 1',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 24м - 1',
+      },
+      {
+        original: '/images/vehicle-photo/awp-24m/technical-2.jpg',
+        thumbnail: '/images/vehicle-photo/awp-24m/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 24м - 2',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 24м - 2',
+      },
+    ],
     shortSpecs: [
       ['Высота подъема', '24 м'],
       ['Вылет максимальный', '15 м'],
@@ -556,6 +639,20 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnail: '/images/vehicle-photo/awp-29m/02-thumb.jpg',
         originalAlt: 'Автовышка 29м - 2',
         thumbnailAlt: 'Миниатюра автовышки 29м - 2',
+      },
+    ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-29m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-29m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 29м - 1',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 29м - 1',
+      },
+      {
+        original: '/images/vehicle-photo/awp-29m/technical-2.jpg',
+        thumbnail: '/images/vehicle-photo/awp-29m/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 29м - 2',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 29м - 2',
       },
     ],
     shortSpecs: [
@@ -635,6 +732,14 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 40м - 6',
       },
     ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-40m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-40m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 40м - 1',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 40м - 1',
+      },
+    ],
     shortSpecs: [
       ['Шасси', 'Daewoo Ultra Novus'],
       ['Высота подъема', '40 м'],
@@ -711,6 +816,7 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 45м - 6',
       },
     ],
+    technicalPhotos: [],
     shortSpecs: [
       ['Шасси', 'Daewoo Ultra Novus'],
       ['Высота подъема', '45 м'],
@@ -799,6 +905,14 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автовышки 50м - 8',
       },
     ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/awp-50m/technical-1.jpg',
+        thumbnail: '/images/vehicle-photo/awp-50m/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автовышки 50м - 1',
+        thumbnailAlt: 'Миниатюра технических характеристик автовышки 50м - 1',
+      },
+    ],
     shortSpecs: [
       ['Шасси', 'Daewoo Ultra Novus'],
       ['Высота подъема', '50 м'],
@@ -865,6 +979,24 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnailAlt: 'Миниатюра автокрана 25т Ивановец - 4',
       },
     ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/truck-crane-ivanovets/technical-1.jpg',
+        thumbnail:
+          '/images/vehicle-photo/truck-crane-ivanovets/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автокрана Ивановец 25 т - 1',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автокрана Ивановец 25 т - 1',
+      },
+      {
+        original: '/images/vehicle-photo/truck-crane-ivanovets/technical-2.jpg',
+        thumbnail:
+          '/images/vehicle-photo/truck-crane-ivanovets/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автокрана Ивановец 25 т - 2',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автокрана Ивановец 25 т - 2',
+      },
+    ],
     shortSpecs: [
       ['Грузоподъемность', '25 т'],
       ['Высота подъема', '31 м'],
@@ -915,6 +1047,32 @@ export const vehicles: Record<string, Vehicle> = {
         thumbnail: '/images/vehicle-photo/truck-crane-kobelco/03-thumb.jpg',
         originalAlt: 'Автокран 25т Kobelco - 3',
         thumbnailAlt: 'Миниатюра автокрана 25т Kobelco - 3',
+      },
+    ],
+    technicalPhotos: [
+      {
+        original: '/images/vehicle-photo/truck-crane-kobelco/technical-1.jpg',
+        thumbnail:
+          '/images/vehicle-photo/truck-crane-kobelco/technical-1-thumb.jpg',
+        originalAlt: 'Технические характеристики автокрана Kobelco 25 т - 1',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автокрана Kobelco 25 т - 1',
+      },
+      {
+        original: '/images/vehicle-photo/truck-crane-kobelco/technical-2.jpg',
+        thumbnail:
+          '/images/vehicle-photo/truck-crane-kobelco/technical-2-thumb.jpg',
+        originalAlt: 'Технические характеристики автокрана Kobelco 25 т - 2',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автокрана Kobelco 25 т - 2',
+      },
+      {
+        original: '/images/vehicle-photo/truck-crane-kobelco/technical-3.jpg',
+        thumbnail:
+          '/images/vehicle-photo/truck-crane-kobelco/technical-3-thumb.jpg',
+        originalAlt: 'Технические характеристики автокрана Kobelco 25 т - 3',
+        thumbnailAlt:
+          'Миниатюра технических характеристик автокрана Kobelco 25 т - 3',
       },
     ],
     shortSpecs: [
