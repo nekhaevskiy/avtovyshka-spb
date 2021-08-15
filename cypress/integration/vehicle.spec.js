@@ -42,7 +42,7 @@ describe('Vehicle - Small mobiles', () => {
   });
 
   context('GeneralPhotos', () => {
-    it('shows the heading, some photos and thumbnails', () => {
+    it('renders the heading, some photos and thumbnails', () => {
       cy.findByTestId('general-photos').within(() => {
         vehicle.generalPhotos.forEach((item, index) => {
           if (
@@ -88,6 +88,54 @@ describe('Vehicle - Small mobiles', () => {
         ).should('be.visible');
         cy.findByText('Подача за КАД').should('be.visible');
         cy.findByText(`${vehicle.price.delivery} ₽/км`).should('be.visible');
+      });
+    });
+  });
+
+  context('Tabs', () => {
+    it('renders tab titles and contents', () => {
+      cy.findByTestId('vehicle-tabs').within(() => {
+        cy.findByRole('tab', { name: 'Технические характеристики' }).should(
+          'be.visible'
+        );
+        cy.findByAltText('Технические характеристики').should('be.visible');
+        cy.findByText('Технические характеристики').should('not.be.visible');
+        cy.findByRole('tab', { name: 'Подробное описание' })
+          .as('secondTab')
+          .should('be.visible');
+        cy.findByAltText('Подробное описание').should('be.visible');
+        cy.findByText('Подробное описание').should('not.be.visible');
+        cy.findByRole('heading', {
+          name: 'Подробные технические характеристики',
+        }).should('be.visible');
+        vehicle.fullSpecs.forEach((items) => {
+          cy.findByText(items[0]).should('be.visible');
+          cy.findAllByText(items[1]).should('be.visible');
+        });
+        cy.findByText('Any content 1').should('not.exist');
+
+        cy.get('@secondTab').click();
+
+        cy.findByRole('heading', {
+          name: 'Подробные технические характеристики',
+        }).should('not.exist');
+        cy.findByText('Any content 1').should('be.visible');
+      });
+    });
+  });
+});
+
+describe('Vehicle - Tablets', () => {
+  beforeEach(() => {
+    cy.viewport('ipad-2');
+    cy.visit(vehicle.pagePath);
+  });
+
+  context('Tabs', () => {
+    it('renders full tab titles', () => {
+      cy.findByTestId('vehicle-tabs').within(() => {
+        cy.findByText('Технические характеристики').should('be.visible');
+        cy.findByText('Подробное описание').should('be.visible');
       });
     });
   });

@@ -8,7 +8,8 @@ import {
   FooterNavBar,
   HeaderContacts,
   HeaderNavBar,
-  VehicleSpecs,
+  Table,
+  VehicleTabs,
 } from '../../components';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
@@ -20,6 +21,16 @@ interface Props {
 export default function VehiclePage({ vehicle }: Props) {
   const { pageTitle, shortName, fullName, generalPhotos, shortSpecs, price } =
     vehicle;
+  const priceDescription = price.halfShift
+    ? 'Смена (7+1) / Полсмены (3+1)'
+    : 'Смена (7+1)';
+  const priceSum = price.halfShift
+    ? `${price.fullShift}\xa0₽ / ${price.halfShift}\xa0₽`
+    : `${price.fullShift}\xa0₽`;
+  const priceSpecs: [string, string][] = [
+    [priceDescription, priceSum],
+    ['Подача за КАД', `${price.delivery}\xa0₽/км`],
+  ];
   return (
     <>
       <Head>
@@ -47,19 +58,25 @@ export default function VehiclePage({ vehicle }: Props) {
 
         <div className="mb-6 mx-auto px-4 max-w-6xl md:flex">
           <div
-            className="mb-4 md:mr-1 md:w-1/2 lg:mr-2 xl:mr-4"
             data-testid="general-photos"
+            className="mb-4 md:mr-1 md:w-1/2 lg:mr-2 xl:mr-4"
           >
             <ReactImageGallery items={generalPhotos} lazyLoad />
           </div>
 
           <div
-            className="mx-auto max-w-md md:ml-1 md:mr-0 md:w-1/2 md:max-w-none xl:ml-4"
             data-testid="short-specs"
+            className="mx-auto max-w-md md:ml-1 md:mr-0 md:w-1/2 md:max-w-none xl:ml-4"
           >
-            <VehicleSpecs specs={shortSpecs} price={price} />
+            <Table data={shortSpecs} className="mb-4" />
+            <h3 className="mb-3 text-center text-gray-800 text-xl font-semibold">
+              Стоимость аренды
+            </h3>
+            <Table data={priceSpecs} />
           </div>
         </div>
+
+        <VehicleTabs vehicle={vehicle} />
       </main>
 
       <footer className="bg-gray-900">
