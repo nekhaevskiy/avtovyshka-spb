@@ -610,9 +610,9 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     technicalPhotos: [
       {
-        original: '/images/vehicle-photo/awp-24m/technical-1.jpg',
+        original: '/images/vehicle-photo/awp-24m/technical-1.png',
         originalAlt: 'Технические характеристики автовышки 24м - 1',
-        thumbnail: '/images/vehicle-photo/awp-24m/technical-1-thumb.jpg',
+        thumbnail: '/images/vehicle-photo/awp-24m/technical-1-thumb.png',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 24м - 1',
       },
       {
@@ -684,15 +684,15 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     technicalPhotos: [
       {
-        original: '/images/vehicle-photo/awp-29m/technical-1.jpg',
+        original: '/images/vehicle-photo/awp-29m/technical-1.png',
         originalAlt: 'Технические характеристики автовышки 29м - 1',
-        thumbnail: '/images/vehicle-photo/awp-29m/technical-1-thumb.jpg',
+        thumbnail: '/images/vehicle-photo/awp-29m/technical-1-thumb.png',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 29м - 1',
       },
       {
-        original: '/images/vehicle-photo/awp-29m/technical-2.jpg',
+        original: '/images/vehicle-photo/awp-29m/technical-2.png',
         originalAlt: 'Технические характеристики автовышки 29м - 2',
-        thumbnail: '/images/vehicle-photo/awp-29m/technical-2-thumb.jpg',
+        thumbnail: '/images/vehicle-photo/awp-29m/technical-2-thumb.png',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 29м - 2',
       },
     ],
