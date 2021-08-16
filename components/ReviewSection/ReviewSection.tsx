@@ -40,14 +40,14 @@ function ReviewSection() {
           dots
           responsive={[
             {
-              breakpoint: 640,
+              breakpoint: 639,
               settings: {
                 slidesToScroll: 1,
                 slidesToShow: 1,
               },
             },
             {
-              breakpoint: 960,
+              breakpoint: 959,
               settings: {
                 slidesToScroll: 2,
                 slidesToShow: 2,

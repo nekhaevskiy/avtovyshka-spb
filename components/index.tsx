@@ -11,6 +11,7 @@ import { HeaderNavBar } from './HeaderNavBar/HeaderNavBar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
 import { IntroSection } from './IntroSection/IntroSection';
 import { LinkAsButton } from './LinkAsButton/LinkAsButton';
+import { OtherVehicles } from './OtherVehicles/OtherVehicles';
 import { PhotoSection } from './PhotoSection/PhotoSection';
 import { ReviewSection } from './ReviewSection/ReviewSection';
 import { SectionHeading } from './SectionHeading/SectionHeading';
@@ -34,6 +35,7 @@ export {
   ImageGallery,
   IntroSection,
   LinkAsButton,
+  OtherVehicles,
   PhotoSection,
   ReviewSection,
   SectionHeading,

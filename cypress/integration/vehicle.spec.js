@@ -154,6 +154,54 @@ describe('Vehicle - Small mobiles', () => {
       });
     });
   });
+
+  context('OtherVehicles', () => {
+    it('renders last card initially and second card after click', () => {
+      cy.findByTestId('other-vehicles').within(() => {
+        const vehicleKeys = Object.keys(vehicles);
+        const lastVehicle = vehicles[vehicleKeys[vehicleKeys.length - 1]];
+        const secondVehicle = vehicles[vehicleKeys[1]];
+        cy.findByRole('heading', {
+          name: lastVehicle.fullName.join(' '),
+        }).should('be.visible');
+        cy.findByRole('heading', {
+          name: secondVehicle.fullName.join(' '),
+        }).should('not.exist');
+
+        cy.findByRole('button', { name: 'Next' }).click();
+
+        cy.findByRole('heading', {
+          name: lastVehicle.fullName.join(' '),
+        }).should('not.exist');
+        cy.findByRole('heading', {
+          name: secondVehicle.fullName.join(' '),
+        }).should('be.visible');
+      });
+    });
+  });
+});
+
+describe('Vehicle - Big mobiles', () => {
+  beforeEach(() => {
+    cy.viewport('iphone-6+', 'landscape');
+    cy.visit(vehicle.pagePath);
+  });
+
+  context('OtherVehicles', () => {
+    it('renders last and second cards initially', () => {
+      cy.findByTestId('other-vehicles').within(() => {
+        const vehicleKeys = Object.keys(vehicles);
+        const lastVehicle = vehicles[vehicleKeys[vehicleKeys.length - 1]];
+        const secondVehicle = vehicles[vehicleKeys[1]];
+        cy.findByRole('heading', {
+          name: lastVehicle.fullName.join(' '),
+        }).should('be.visible');
+        cy.findByRole('heading', {
+          name: secondVehicle.fullName.join(' '),
+        }).should('be.visible');
+      });
+    });
+  });
 });
 
 describe('Vehicle - Tablets', () => {
@@ -167,6 +215,33 @@ describe('Vehicle - Tablets', () => {
       cy.findByTestId('vehicle-tabs').within(() => {
         cy.findByText('Технические характеристики').should('be.visible');
         cy.findByText('Подробное описание').should('be.visible');
+      });
+    });
+  });
+});
+
+describe('Vehicle - Laptops', () => {
+  beforeEach(() => {
+    cy.viewport('macbook-15');
+    cy.visit(vehicle.pagePath);
+  });
+
+  context('OtherVehicles', () => {
+    it('renders last, second and third cards initially', () => {
+      cy.findByTestId('other-vehicles').within(() => {
+        const vehicleKeys = Object.keys(vehicles);
+        const lastVehicle = vehicles[vehicleKeys[vehicleKeys.length - 1]];
+        const secondVehicle = vehicles[vehicleKeys[1]];
+        const thirdVehicle = vehicles[vehicleKeys[2]];
+        cy.findByRole('heading', {
+          name: lastVehicle.fullName.join(' '),
+        }).should('be.visible');
+        cy.findByRole('heading', {
+          name: secondVehicle.fullName.join(' '),
+        }).should('be.visible');
+        cy.findByRole('heading', {
+          name: thirdVehicle.fullName.join(' '),
+        }).should('be.visible');
       });
     });
   });

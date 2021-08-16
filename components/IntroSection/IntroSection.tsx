@@ -11,11 +11,7 @@ import styles from './IntroSection.module.css';
 
 const { phones, email } = contacts;
 
-interface Props {
-  vehicle: Vehicle;
-}
-
-function Slide({ vehicle }: Props) {
+function Slide({ vehicle }: { vehicle: Vehicle }) {
   const { image, shortName, fullName, price, pagePath } = vehicle;
   return (
     <article className="relative w-full h-80 text-white" data-testid="slide">

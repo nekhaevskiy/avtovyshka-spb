@@ -1,17 +1,25 @@
+import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Vehicle } from '../../data/vehicles';
 
-interface Props {
+function VehicleCard({
+  vehicle,
+  className,
+  specsClassName,
+}: {
   vehicle: Vehicle;
-}
-
-function VehicleCard({ vehicle }: Props) {
+  className?: string;
+  specsClassName?: string;
+}) {
   const { pagePath, shortName, image, fullName, card, price } = vehicle;
   return (
     <Link href={pagePath}>
       <a
-        className="flex flex-col pb-5 pt-4 px-4 max-w-xs h-full bg-white border border-gray-300 rounded hover:shadow-2xl focus:shadow-2xl shadow-sm"
+        className={classNames(
+          'flex flex-col mx-auto pb-5 pt-4 px-4 max-w-xs bg-white border border-gray-300 rounded',
+          className
+        )}
         data-testid="vehicle-card"
       >
         <div className="relative mb-2 w-full h-40">
@@ -30,7 +38,7 @@ function VehicleCard({ vehicle }: Props) {
             </span>
           ))}
         </h3>
-        <dl className="mb-3">
+        <dl className={classNames('mb-3', specsClassName)}>
           {card.map((spec) => (
             <div key={spec[0]} className="flex">
               <dt className="flex-grow p-1 text-gray-500 text-sm border-t border-gray-300">

@@ -8,19 +8,23 @@ import {
   HeaderContacts,
   HeaderNavBar,
   ImageGallery,
+  OtherVehicles,
   Table,
   VehicleTabs,
 } from '../../components';
 import { contacts } from '../../data/contacts';
 import { Vehicle, vehicles } from '../../data/vehicles';
 
-interface Props {
-  vehicle: Vehicle;
-}
-
-export default function VehiclePage({ vehicle }: Props) {
-  const { pageTitle, shortName, fullName, generalPhotos, shortSpecs, price } =
-    vehicle;
+export default function VehiclePage({ vehicle }: { vehicle: Vehicle }) {
+  const {
+    pageTitle,
+    shortName,
+    fullName,
+    generalPhotos,
+    shortSpecs,
+    price,
+    pagePath,
+  } = vehicle;
   const priceDescription = price.halfShift
     ? 'Смена (7+1) / Полсмены (3+1)'
     : 'Смена (7+1)';
@@ -77,6 +81,8 @@ export default function VehiclePage({ vehicle }: Props) {
         </div>
 
         <VehicleTabs vehicle={vehicle} />
+
+        <OtherVehicles currentVehiclePath={pagePath} />
       </main>
 
       <footer className="bg-gray-900">

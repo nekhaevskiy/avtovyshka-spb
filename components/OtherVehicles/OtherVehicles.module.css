@@ -1,0 +1,4 @@
+.carousel :global .slick-prev::before,
+.carousel :global .slick-next::before {
+  color: rgb(239, 68, 68);
+}

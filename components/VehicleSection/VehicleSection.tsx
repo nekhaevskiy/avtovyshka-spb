@@ -15,9 +15,11 @@ function VehicleSection() {
         />
         <div className="sm:flex sm:flex-wrap sm:items-stretch sm:justify-center sm:-mx-2 lg:justify-around">
           {Object.keys(vehicles).map((key) => (
-            <div className="mb-4 mx-auto max-w-xs sm:mx-2 sm:w-80" key={key}>
-              <VehicleCard vehicle={vehicles[key]} />
-            </div>
+            <VehicleCard
+              vehicle={vehicles[key]}
+              className="mb-4 hover:shadow-2xl focus:shadow-2xl shadow-sm sm:mx-2 sm:w-80"
+              key={key}
+            />
           ))}
         </div>
       </div>

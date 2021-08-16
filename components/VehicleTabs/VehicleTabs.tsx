@@ -17,7 +17,7 @@ const Tabs = dynamic<TabsProps>(
 function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
   const { fullSpecs, technicalPhotos, detailedDescription } = vehicle;
   return (
-    <div data-testid="vehicle-tabs" className="mb-10 mx-auto px-4 max-w-6xl">
+    <div data-testid="vehicle-tabs" className="mb-6 mx-auto px-4 max-w-6xl">
       <Tabs className="mx-auto max-w-md md:max-w-none">
         <TabList>
           <Tab>
