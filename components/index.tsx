@@ -8,6 +8,7 @@ import { FooterCopyright } from './FooterCopyright/FooterCopyright';
 import { FooterNavBar } from './FooterNavBar/FooterNavBar';
 import { HeaderContacts } from './HeaderContacts/HeaderContacts';
 import { HeaderNavBar } from './HeaderNavBar/HeaderNavBar';
+import { ImageGallery } from './ImageGallery/ImageGallery';
 import { IntroSection } from './IntroSection/IntroSection';
 import { LinkAsButton } from './LinkAsButton/LinkAsButton';
 import { PhotoSection } from './PhotoSection/PhotoSection';
@@ -30,6 +31,7 @@ export {
   FooterNavBar,
   HeaderContacts,
   HeaderNavBar,
+  ImageGallery,
   IntroSection,
   LinkAsButton,
   PhotoSection,

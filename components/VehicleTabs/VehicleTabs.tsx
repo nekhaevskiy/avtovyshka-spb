@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import React from 'react';
-import ReactImageGallery from 'react-image-gallery';
 import { Tab, TabList, TabPanel, TabsProps } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { Table } from '..';
+import { ImageGallery, Table } from '..';
 import { Vehicle } from '../../data/vehicles';
 
 // Dynamic import is needed to prevent the following error in the console:
@@ -58,13 +57,12 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
               <Table data={fullSpecs} />
             </div>
             {technicalPhotos && technicalPhotos.length > 0 ? (
-              <div className="md:ml-1 md:w-1/2 lg:ml-2 xl:ml-4">
-                <ReactImageGallery
-                  items={technicalPhotos}
-                  lazyLoad
-                  showPlayButton={technicalPhotos.length > 1}
-                />
-              </div>
+              <ImageGallery
+                items={technicalPhotos}
+                lazyLoad
+                showPlayButton={technicalPhotos.length > 1}
+                className="md:ml-1 md:w-1/2 lg:ml-2 xl:ml-4"
+              />
             ) : null}
           </div>
         </TabPanel>

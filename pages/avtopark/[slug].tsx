@@ -1,13 +1,13 @@
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import React from 'react';
-import ReactImageGallery from 'react-image-gallery';
 import {
   Breadcrumbs,
   FooterCopyright,
   FooterNavBar,
   HeaderContacts,
   HeaderNavBar,
+  ImageGallery,
   Table,
   VehicleTabs,
 } from '../../components';
@@ -57,12 +57,12 @@ export default function VehiclePage({ vehicle }: Props) {
         </h2>
 
         <div className="mb-6 mx-auto px-4 max-w-6xl md:flex">
-          <div
-            data-testid="general-photos"
+          <ImageGallery
+            items={generalPhotos}
+            lazyLoad
+            dataTestid="general-photos"
             className="mb-4 md:mr-1 md:w-1/2 lg:mr-2 xl:mr-4"
-          >
-            <ReactImageGallery items={generalPhotos} lazyLoad />
-          </div>
+          />
 
           <div
             data-testid="short-specs"

@@ -1,6 +1,6 @@
-import ReactImageGallery from 'react-image-gallery';
+import React from 'react';
 import 'react-image-gallery/styles/css/image-gallery.css';
-import { SectionHeading } from '..';
+import { ImageGallery, SectionHeading } from '..';
 import { images } from '../../data/photo-section';
 
 function PhotoSection() {
@@ -11,7 +11,7 @@ function PhotoSection() {
       id="photo-section"
     >
       <SectionHeading heading="Наша техника за работой" />
-      <ReactImageGallery items={images} lazyLoad />
+      <ImageGallery items={images} lazyLoad />
     </section>
   );
 }
