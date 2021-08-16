@@ -657,7 +657,7 @@ export const vehicles: Record<string, Vehicle> = {
     pagePath: '/avtopark/avtovyshka-25m',
     pageTitle: 'Аренда автовышки 25м',
     price: {
-      fullShift: 12000,
+      fullShift: 13000,
       delivery: 50,
     },
     image: '/images/vehicle-photo/awp-25m/06.jpg',
