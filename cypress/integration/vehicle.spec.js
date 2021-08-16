@@ -112,14 +112,16 @@ describe('Vehicle - Small mobiles', () => {
           cy.findByText(items[0]).should('be.visible');
           cy.findAllByText(items[1]).should('be.visible');
         });
-        cy.findByText('Any content 1').should('not.exist');
+        cy.findByText(vehicle.detailedDescription[0]).should('not.exist');
 
         cy.get('@secondTab').click();
 
         cy.findByRole('heading', {
           name: 'Подробные технические характеристики',
         }).should('not.exist');
-        cy.findByText('Any content 1').should('be.visible');
+        vehicle.detailedDescription.forEach((paragraph) => {
+          cy.findByText(paragraph).should('be.visible');
+        });
       });
     });
 

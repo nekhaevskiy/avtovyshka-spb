@@ -15,9 +15,9 @@ const Tabs = dynamic<TabsProps>(
 );
 
 function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
-  const { fullSpecs, technicalPhotos } = vehicle;
+  const { fullSpecs, technicalPhotos, detailedDescription } = vehicle;
   return (
-    <div data-testid="vehicle-tabs" className="mb-6 mx-auto px-4 max-w-6xl">
+    <div data-testid="vehicle-tabs" className="mb-10 mx-auto px-4 max-w-6xl">
       <Tabs className="mx-auto max-w-md md:max-w-none">
         <TabList>
           <Tab>
@@ -67,7 +67,11 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
           </div>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 1</h2>
+          {detailedDescription.map((item, index) => (
+            <p key={index} className="mb-2 text-gray-800">
+              {item}
+            </p>
+          ))}
         </TabPanel>
       </Tabs>
     </div>
