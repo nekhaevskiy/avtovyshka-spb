@@ -1,11 +1,9 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { vehicles } from '../../data/vehicles';
 import { useOnClickOutside } from '../../hooks/useOnClickOutside';
 import { useWindowWidth } from '../../hooks/useWindowWidth';
 import styles from './HeaderNavBar.module.css';
-import logoPic from './logo.svg';
 
 function HeaderNavBar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -33,12 +31,12 @@ function HeaderNavBar() {
     >
       <Link href="/">
         <a className="absolute -top-8 left-0 w-20 h-8 md:relative md:left-auto md:top-auto md:flex-shrink-0 md:w-32 md:h-16">
-          <Image
-            src={logoPic}
+          {/* Reasons: `/README.md#using-nextimage-for-svg-files` */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo.svg"
             alt="На главную"
-            layout="fill"
-            objectFit="contain"
-            objectPosition="100%"
+            className="h-full object-contain object-bottom"
           />
         </a>
       </Link>
