@@ -50,4 +50,4 @@ function ContactMap() {
   );
 }
 
-export { ContactMap };
+export default ContactMap;

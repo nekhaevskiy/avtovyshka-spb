@@ -1,4 +1,8 @@
-import { ContactForm, ContactItems, ContactMap, SectionHeading } from '..';
+import dynamic from 'next/dynamic';
+import React from 'react';
+import { ContactForm, ContactItems, SectionHeading } from '..';
+
+const ContactMap = dynamic(() => import('../ContactMap/ContactMap'));
 
 function ContactSection() {
   return (
