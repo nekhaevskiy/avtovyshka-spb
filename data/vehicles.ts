@@ -43,72 +43,94 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-13m/01.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629206681/awp-13m/01.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629206681/awp-13m/01.jpg',
         originalAlt: 'Автовышка-платформа 13м - 1',
-        thumbnail: 'awp-13m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 1',
       },
       {
-        original: 'awp-13m/02.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/02_sncbvt.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/02_sncbvt.jpg',
         originalAlt: 'Автовышка-платформа 13м - 2',
-        thumbnail: 'awp-13m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 2',
       },
       {
-        original: 'awp-13m/03.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/03_ccu4zq.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/03_ccu4zq.jpg',
         originalAlt: 'Автовышка-платформа 13м - 3',
-        thumbnail: 'awp-13m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 3',
       },
       {
-        original: 'awp-13m/04.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/04_zoaoex.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/04_zoaoex.jpg',
         originalAlt: 'Автовышка-платформа 13м - 4',
-        thumbnail: 'awp-13m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 4',
       },
       {
-        original: 'awp-13m/05.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/05_vmfzgt.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/05_vmfzgt.jpg',
         originalAlt: 'Автовышка-платформа 13м - 5',
-        thumbnail: 'awp-13m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 5',
       },
       {
-        original: 'awp-13m/06.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/06_jluye0.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/06_jluye0.jpg',
         originalAlt: 'Автовышка-платформа 13м - 6',
-        thumbnail: 'awp-13m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 6',
       },
       {
-        original: 'awp-13m/07.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216605/awp-13m/07_lfpdqq.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216605/awp-13m/07_lfpdqq.jpg',
         originalAlt: 'Автовышка-платформа 13м - 7',
-        thumbnail: 'awp-13m/07-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 7',
       },
       {
-        original: 'awp-13m/08.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/08_kgy4rb.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/08_kgy4rb.jpg',
         originalAlt: 'Автовышка-платформа 13м - 8',
-        thumbnail: 'awp-13m/08-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 8',
       },
       {
-        original: 'awp-13m/09.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216605/awp-13m/09_m7yfsv.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216605/awp-13m/09_m7yfsv.jpg',
         originalAlt: 'Автовышка-платформа 13м - 9',
-        thumbnail: 'awp-13m/09-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 9',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-13m/technical-1.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/technical-1_u7ergx.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/technical-1_u7ergx.jpg',
         originalAlt: 'Технические характеристики автовышки-платформы 13м - 1',
-        thumbnail: 'awp-13m/technical-1-thumb.jpg',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 13м - 1',
       },
       {
-        original: 'awp-13m/technical-2.jpg',
+        original:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/technical-2_uxubo3.jpg',
+        thumbnail:
+          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/technical-2_uxubo3.jpg',
         originalAlt: 'Технические характеристики автовышки-платформы 13м - 2',
-        thumbnail: 'awp-13m/technical-2-thumb.jpg',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 13м - 2',
       },
