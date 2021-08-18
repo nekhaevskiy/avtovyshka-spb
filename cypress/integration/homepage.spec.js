@@ -263,7 +263,7 @@ describe('Homepage - Small mobiles', () => {
       cy.intercept('https://api.emailjs.com/api/v1.0/email/send-form', {
         statusCode: 200,
         body: 'OK',
-        delay: 100,
+        delay: 500,
       });
       cy.findByTestId('contact-section').within(() => {
         cy.findByRole('textbox', { name: 'Сообщение*' })
@@ -350,7 +350,7 @@ describe('Homepage - Small mobiles', () => {
       cy.intercept('https://api.emailjs.com/api/v1.0/email/send-form', {
         statusCode: 400,
         body: 'The user_id parameter is required',
-        delay: 100,
+        delay: 500,
       });
       cy.findByTestId('contact-section').within(() => {
         cy.findByRole('textbox', { name: 'Сообщение*' })
