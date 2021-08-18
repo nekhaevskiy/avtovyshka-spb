@@ -5,6 +5,7 @@ import { ImageGallery, SectionHeading } from '..';
 import { images } from '../../data/photo-section';
 
 function PhotoSection() {
+  // We use `react-cool-inview` due to performance reasons
   const { observe, inView } = useInView({
     rootMargin: '50px',
     unobserveOnEnter: true,

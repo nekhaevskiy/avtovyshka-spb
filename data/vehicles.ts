@@ -1,5 +1,11 @@
 import { ReactImageGalleryItem } from 'react-image-gallery';
 
+const CLOUDINARY_URL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
+const ORIGINAL_TRANSFORM = 'f_auto,c_limit,h_630,w_1120';
+const THUMBNAIL_TRANSFORM = 'f_auto,c_thumb,g_auto,h_84,w_150';
+const originalPrefix = `${CLOUDINARY_URL}${ORIGINAL_TRANSFORM}`;
+const thumbnailPrefix = `${CLOUDINARY_URL}${THUMBNAIL_TRANSFORM}`;
+
 export interface Price {
   fullShift: number;
   halfShift?: number;
@@ -34,7 +40,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 9000,
       delivery: 50,
     },
-    image: 'v1629206681/awp-13m/01.jpg',
+    image: 'awp-13m/01.jpg',
     card: [
       ['Грузоподъемность корзины', '400 кг'],
       ['Размеры корзины (платформы)', '2х4 м'],
@@ -43,93 +49,71 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629206681/awp-13m/01.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629206681/awp-13m/01.jpg',
+        original: `${originalPrefix}/awp-13m/01.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/01.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 1',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 1',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/02_sncbvt.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/02_sncbvt.jpg',
+        original: `${originalPrefix}/awp-13m/02_sncbvt.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/02_sncbvt.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 2',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 2',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/03_ccu4zq.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/03_ccu4zq.jpg',
+        original: `${originalPrefix}/awp-13m/03_ccu4zq.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/03_ccu4zq.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 3',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 3',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/04_zoaoex.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/04_zoaoex.jpg',
+        original: `${originalPrefix}/awp-13m/04_zoaoex.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/04_zoaoex.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 4',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 4',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/05_vmfzgt.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/05_vmfzgt.jpg',
+        original: `${originalPrefix}/awp-13m/05_vmfzgt.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/05_vmfzgt.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 5',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 5',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/06_jluye0.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/06_jluye0.jpg',
+        original: `${originalPrefix}/awp-13m/06_jluye0.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/06_jluye0.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 6',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 6',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216605/awp-13m/07_lfpdqq.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216605/awp-13m/07_lfpdqq.jpg',
+        original: `${originalPrefix}/awp-13m/07_lfpdqq.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/07_lfpdqq.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 7',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 7',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/08_kgy4rb.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/08_kgy4rb.jpg',
+        original: `${originalPrefix}/awp-13m/08_kgy4rb.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/08_kgy4rb.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 8',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 8',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216605/awp-13m/09_m7yfsv.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216605/awp-13m/09_m7yfsv.jpg',
+        original: `${originalPrefix}/awp-13m/09_m7yfsv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/09_m7yfsv.jpg`,
         originalAlt: 'Автовышка-платформа 13м - 9',
         thumbnailAlt: 'Миниатюра автовышки-платформы 13м - 9',
       },
     ],
     technicalPhotos: [
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/technical-1_u7ergx.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/technical-1_u7ergx.jpg',
+        original: `${originalPrefix}/awp-13m/technical-1_u7ergx.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/technical-1_u7ergx.jpg`,
         originalAlt: 'Технические характеристики автовышки-платформы 13м - 1',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 13м - 1',
       },
       {
-        original:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_limit,h_630,w_1120/v1629216604/awp-13m/technical-2_uxubo3.jpg',
-        thumbnail:
-          'https://res.cloudinary.com/djblscylv/image/upload/f_auto,c_thumb,g_auto,h_52,w_92/v1629216604/awp-13m/technical-2_uxubo3.jpg',
+        original: `${originalPrefix}/awp-13m/technical-2_uxubo3.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-13m/technical-2_uxubo3.jpg`,
         originalAlt: 'Технические характеристики автовышки-платформы 13м - 2',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 13м - 2',
@@ -179,7 +163,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 9000,
       delivery: 50,
     },
-    image: 'v1629216042/awp-15m/04.jpg',
+    image: 'awp-15m/04.jpg',
     card: [
       ['Высота подъема', '15 м'],
       ['Вылет максимальный', '11 м'],
@@ -188,59 +172,59 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-15m/01.jpg',
+        original: `${originalPrefix}/awp-15m/01_ftcesv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/01_ftcesv.jpg`,
         originalAlt: 'Автовышка 15м - 1',
-        thumbnail: 'awp-15m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 15м - 1',
       },
       {
-        original: 'awp-15m/02.jpg',
+        original: `${originalPrefix}/awp-15m/02_ixrwno.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/02_ixrwno.jpg`,
         originalAlt: 'Автовышка 15м - 2',
-        thumbnail: 'awp-15m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 15м - 2',
       },
       {
-        original: 'awp-15m/03.jpg',
+        original: `${originalPrefix}/awp-15m/03_ynilrm.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/03_ynilrm.jpg`,
         originalAlt: 'Автовышка 15м - 3',
-        thumbnail: 'awp-15m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 15м - 3',
       },
       {
-        original: 'awp-15m/04.jpg',
+        original: `${originalPrefix}/awp-15m/04.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/04.jpg`,
         originalAlt: 'Автовышка 15м - 4',
-        thumbnail: 'awp-15m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 15м - 4',
       },
       {
-        original: 'awp-15m/05.jpg',
+        original: `${originalPrefix}/awp-15m/05_vjvcu1.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/05_vjvcu1.jpg`,
         originalAlt: 'Автовышка 15м - 5',
-        thumbnail: 'awp-15m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 15м - 5',
       },
       {
-        original: 'awp-15m/06.jpg',
+        original: `${originalPrefix}/awp-15m/06_g9ahan.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/06_g9ahan.jpg`,
         originalAlt: 'Автовышка 15м - 6',
-        thumbnail: 'awp-15m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 15м - 6',
       },
       {
-        original: 'awp-15m/07.jpg',
+        original: `${originalPrefix}/awp-15m/07_z2xgcm.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/07_z2xgcm.jpg`,
         originalAlt: 'Автовышка 15м - 7',
-        thumbnail: 'awp-15m/07-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 15м - 7',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-15m/technical-1.jpg',
+        original: `${originalPrefix}/awp-15m/technical-1_szs4fs.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/technical-1_szs4fs.jpg`,
         originalAlt: 'Технические характеристики автовышки 15м - 1',
-        thumbnail: 'awp-15m/technical-1-thumb.jpg',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 15м - 1',
       },
       {
-        original: 'awp-15m/technical-2.jpg',
+        original: `${originalPrefix}/awp-15m/technical-2_ofq0rp.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-15m/technical-2_ofq0rp.jpg`,
         originalAlt: 'Технические характеристики автовышки 15м - 2',
-        thumbnail: 'awp-15m/technical-2-thumb.jpg',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 15м - 2',
       },
     ],
@@ -292,7 +276,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 10000,
       delivery: 50,
     },
-    image: 'v1629216523/awp-16m/01_r8sual.jpg',
+    image: 'awp-16m/01_r8sual.jpg',
     card: [
       ['Грузоподъемность корзины', '1000 кг'],
       ['Размер корзины (платформы)', '2х4 м'],
@@ -301,42 +285,42 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-16m/01.jpg',
-        originalAlt: 'Автовышка-платформа 16м - 1',
-        thumbnail: 'awp-16m/01-thumb.jpg',
+        original: `${originalPrefix}/awp-16m/01_r8sual.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-16m/01_r8sual.jpg`,
+        originalAlt: 'Автовышка платформа 16м - 1',
         thumbnailAlt: 'Миниатюра автовышки-платформы 16м - 1',
       },
       {
-        original: 'awp-16m/02.jpg',
-        originalAlt: 'Автовышка-платформа 16м - 2',
-        thumbnail: 'awp-16m/02-thumb.jpg',
+        original: `${originalPrefix}/awp-16m/02_vih5x5.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-16m/02_vih5x5.jpg`,
+        originalAlt: 'Автовышка платформа 16м - 2',
         thumbnailAlt: 'Миниатюра автовышки-платформы 16м - 2',
       },
       {
-        original: 'awp-16m/03.jpg',
-        originalAlt: 'Автовышка-платформа 16м - 3',
-        thumbnail: 'awp-16m/03-thumb.jpg',
+        original: `${originalPrefix}/awp-16m/03_cnecep.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-16m/03_cnecep.jpg`,
+        originalAlt: 'Автовышка платформа 16м - 3',
         thumbnailAlt: 'Миниатюра автовышки-платформы 16м - 3',
       },
       {
-        original: 'awp-16m/04.jpg',
-        originalAlt: 'Автовышка-платформа 16м - 4',
-        thumbnail: 'awp-16m/04-thumb.jpg',
+        original: `${originalPrefix}/awp-16m/04_ysnxxc.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-16m/04_ysnxxc.jpg`,
+        originalAlt: 'Автовышка платформа 16м - 4',
         thumbnailAlt: 'Миниатюра автовышки-платформы 16м - 4',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-16m/technical-1.jpg',
+        original: `${originalPrefix}/awp-16m/technical-1_pfdqnk.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-16m/technical-1_pfdqnk.jpg`,
         originalAlt: 'Технические характеристики автовышки-платформы 16м - 1',
-        thumbnail: 'awp-16m/technical-1-thumb.jpg',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 16м - 1',
       },
       {
-        original: 'awp-16m/technical-2.jpg',
+        original: `${originalPrefix}/awp-16m/technical-2_cmeygv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-16m/technical-2_cmeygv.jpg`,
         originalAlt: 'Технические характеристики автовышки-платформы 16м - 2',
-        thumbnail: 'awp-16m/technical-2-thumb.jpg',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 16м - 2',
       },
@@ -376,7 +360,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 9000,
       delivery: 50,
     },
-    image: 'v1629216729/awp-17m/05_guz8df.jpg',
+    image: 'awp-17m/05_guz8df.jpg',
     card: [
       ['Высота подъема', '17 м'],
       ['Вылет максимальный', '10 м'],
@@ -385,70 +369,70 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-17m/01.jpg',
+        original: `${originalPrefix}/awp-17m/01_qrkddw.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/01_qrkddw.jpg`,
         originalAlt: 'Автовышка 17м - 1',
-        thumbnail: 'awp-17m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 1',
       },
       {
-        original: 'awp-17m/02.jpg',
+        original: `${originalPrefix}/awp-17m/02_bwbnai.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/02_bwbnai.jpg`,
         originalAlt: 'Автовышка 17м - 2',
-        thumbnail: 'awp-17m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 2',
       },
       {
-        original: 'awp-17m/03.jpg',
+        original: `${originalPrefix}/awp-17m/03_rmib9v.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/03_rmib9v.jpg`,
         originalAlt: 'Автовышка 17м - 3',
-        thumbnail: 'awp-17m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 3',
       },
       {
-        original: 'awp-17m/04.jpg',
+        original: `${originalPrefix}/awp-17m/04_vi1jb4.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/04_vi1jb4.jpg`,
         originalAlt: 'Автовышка 17м - 4',
-        thumbnail: 'awp-17m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 4',
       },
       {
-        original: 'awp-17m/05.jpg',
+        original: `${originalPrefix}/awp-17m/05_guz8df.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/05_guz8df.jpg`,
         originalAlt: 'Автовышка 17м - 5',
-        thumbnail: 'awp-17m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 5',
       },
       {
-        original: 'awp-17m/06.jpg',
+        original: `${originalPrefix}/awp-17m/06_yhzdmj.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/06_yhzdmj.jpg`,
         originalAlt: 'Автовышка 17м - 6',
-        thumbnail: 'awp-17m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 6',
       },
       {
-        original: 'awp-17m/07.jpg',
+        original: `${originalPrefix}/awp-17m/07_sh5zwv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/07_sh5zwv.jpg`,
         originalAlt: 'Автовышка 17м - 7',
-        thumbnail: 'awp-17m/07-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 7',
       },
       {
-        original: 'awp-17m/08.jpg',
+        original: `${originalPrefix}/awp-17m/08_onnqhd.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/08_onnqhd.jpg`,
         originalAlt: 'Автовышка 17м - 8',
-        thumbnail: 'awp-17m/08-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 8',
       },
       {
-        original: 'awp-17m/09.jpg',
+        original: `${originalPrefix}/awp-17m/09_z1ijnv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/09_z1ijnv.jpg`,
         originalAlt: 'Автовышка 17м - 9',
-        thumbnail: 'awp-17m/09-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 9',
       },
       {
-        original: 'awp-17m/10.jpg',
+        original: `${originalPrefix}/awp-17m/10_mkrjpu.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-17m/10_mkrjpu.jpg`,
         originalAlt: 'Автовышка 17м - 10',
-        thumbnail: 'awp-17m/10-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 17м - 10',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-17m/technical-1.jpg',
-        originalAlt: 'Технические характеристики автовышки 17м - 1',
+        original: `${originalPrefix}/awp-17m/technical-1_ocijwb.jpg`,
+        originalAlt: 'Технические характеристики автовышки',
       },
     ],
     shortSpecs: [
@@ -493,7 +477,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 13000,
       delivery: 50,
     },
-    image: 'v1629216755/awp-21m/01_tdvujd.jpg',
+    image: 'awp-21m/01_tdvujd.jpg',
     card: [
       ['Грузоподъемность', '1000 кг'],
       ['Размеры корзины (платформы)', '2х4 м'],
@@ -502,60 +486,60 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-21m/01.jpg',
+        original: `${originalPrefix}/awp-21m/01_tdvujd.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/01_tdvujd.jpg`,
         originalAlt: 'Автовышка-платформа 21м - 1',
-        thumbnail: 'awp-21m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 1',
       },
       {
-        original: 'awp-21m/02.jpg',
+        original: `${originalPrefix}/awp-21m/02_vdmfqt.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/02_vdmfqt.jpg`,
         originalAlt: 'Автовышка-платформа 21м - 2',
-        thumbnail: 'awp-21m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 2',
       },
       {
-        original: 'awp-21m/03.jpg',
+        original: `${originalPrefix}/awp-21m/03_tb8tbc.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/03_tb8tbc.jpg`,
         originalAlt: 'Автовышка-платформа 21м - 3',
-        thumbnail: 'awp-21m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 3',
       },
       {
-        original: 'awp-21m/04.jpg',
+        original: `${originalPrefix}/awp-21m/04_vhluuf.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/04_vhluuf.jpg`,
         originalAlt: 'Автовышка-платформа 21м - 4',
-        thumbnail: 'awp-21m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 4',
       },
       {
-        original: 'awp-21m/05.jpg',
+        original: `${originalPrefix}/awp-21m/05_tzwkox.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/05_tzwkox.jpg`,
         originalAlt: 'Автовышка-платформа 21м - 5',
-        thumbnail: 'awp-21m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 5',
       },
       {
-        original: 'awp-21m/06.jpg',
+        original: `${originalPrefix}/awp-21m/06_wpxz3c.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/06_wpxz3c.jpg`,
         originalAlt: 'Автовышка-платформа 21м - 6',
-        thumbnail: 'awp-21m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 6',
       },
       {
-        original: 'awp-21m/07.jpg',
+        original: `${originalPrefix}/awp-21m/07_fxfeby.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/07_fxfeby.jpg`,
         originalAlt: 'Автовышка-платформа 21м - 7',
-        thumbnail: 'awp-21m/07-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки-платформы 21м - 7',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-21m/technical-1.jpg',
+        original: `${originalPrefix}/awp-21m/technical-1_xwyuz1.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/technical-1_xwyuz1.jpg`,
         originalAlt: 'Технические характеристики автовышки-платформы 21м - 1',
-        thumbnail: 'awp-21m/technical-1-thumb.jpg',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 21м - 1',
       },
       {
-        original: 'awp-21m/technical-2.jpg',
+        original: `${originalPrefix}/awp-21m/technical-2_vnlxs1.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-21m/technical-2_vnlxs1.jpg`,
         originalAlt: 'Технические характеристики автовышки-платформы 21м - 2',
-        thumbnail: 'awp-21m/technical-2-thumb.jpg',
         thumbnailAlt:
           'Миниатюра технических характеристик автовышки-платформы 21м - 2',
       },
@@ -597,7 +581,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 12000,
       delivery: 50,
     },
-    image: 'v1629216774/awp-24m/01_qtyxo5.jpg',
+    image: 'awp-24m/01_qtyxo5.jpg',
     card: [
       ['Высота подъема', '24 м'],
       ['Вылет максимальный', '15 м'],
@@ -606,41 +590,41 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-24m/01.jpg',
+        original: `${originalPrefix}/awp-24m/01_qtyxo5.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-24m/01_qtyxo5.jpg`,
         originalAlt: 'Автовышка 24м - 1',
-        thumbnail: 'awp-24m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 24м - 1',
       },
       {
-        original: 'awp-24m/02.jpg',
+        original: `${originalPrefix}/awp-24m/02_o2tdwl.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-24m/02_o2tdwl.jpg`,
         originalAlt: 'Автовышка 24м - 2',
-        thumbnail: 'awp-24m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 24м - 2',
       },
       {
-        original: 'awp-24m/03.jpg',
+        original: `${originalPrefix}/awp-24m/03_occ77w.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-24m/03_occ77w.jpg`,
         originalAlt: 'Автовышка 24м - 3',
-        thumbnail: 'awp-24m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 24м - 3',
       },
       {
-        original: 'awp-24m/04.jpg',
+        original: `${originalPrefix}/awp-24m/04_lfg8u1.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-24m/04_lfg8u1.jpg`,
         originalAlt: 'Автовышка 24м - 4',
-        thumbnail: 'awp-24m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 24м - 4',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-24m/technical-1.png',
+        original: `${originalPrefix}/awp-24m/technical-1_cbptpj.png`,
+        thumbnail: `${thumbnailPrefix}/awp-24m/technical-1_cbptpj.png`,
         originalAlt: 'Технические характеристики автовышки 24м - 1',
-        thumbnail: 'awp-24m/technical-1-thumb.png',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 24м - 1',
       },
       {
-        original: 'awp-24m/technical-2.jpg',
+        original: `${originalPrefix}/awp-24m/technical-2_cknqzv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-24m/technical-2_cknqzv.jpg`,
         originalAlt: 'Технические характеристики автовышки 24м - 2',
-        thumbnail: 'awp-24m/technical-2-thumb.jpg',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 24м - 2',
       },
     ],
@@ -682,7 +666,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 13000,
       delivery: 50,
     },
-    image: 'v1629216802/awp-25m/06_px0ah3.jpg',
+    image: 'awp-25m/06_px0ah3.jpg',
     card: [
       ['Высота подъема', '25 м'],
       ['Вылет максимальный', '13,5 м'],
@@ -691,89 +675,89 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-25m/01.jpg',
+        original: `${originalPrefix}/awp-25m/01_ckmoff.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/01_ckmoff.jpg`,
         originalAlt: 'Автовышка 25м - 1',
-        thumbnail: 'awp-25m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 1',
       },
       {
-        original: 'awp-25m/02.jpg',
+        original: `${originalPrefix}/awp-25m/02_r1xa9n.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/02_r1xa9n.jpg`,
         originalAlt: 'Автовышка 25м - 2',
-        thumbnail: 'awp-25m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 2',
       },
       {
-        original: 'awp-25m/03.jpg',
+        original: `${originalPrefix}/awp-25m/03_dubnj2.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/03_dubnj2.jpg`,
         originalAlt: 'Автовышка 25м - 3',
-        thumbnail: 'awp-25m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 3',
       },
       {
-        original: 'awp-25m/04.jpg',
+        original: `${originalPrefix}/awp-25m/04_mxfzte.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/04_mxfzte.jpg`,
         originalAlt: 'Автовышка 25м - 4',
-        thumbnail: 'awp-25m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 4',
       },
       {
-        original: 'awp-25m/05.jpg',
+        original: `${originalPrefix}/awp-25m/05_hwjaem.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/05_hwjaem.jpg`,
         originalAlt: 'Автовышка 25м - 5',
-        thumbnail: 'awp-25m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 5',
       },
       {
-        original: 'awp-25m/06.jpg',
+        original: `${originalPrefix}/awp-25m/06_px0ah3.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/06_px0ah3.jpg`,
         originalAlt: 'Автовышка 25м - 6',
-        thumbnail: 'awp-25m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 6',
       },
       {
-        original: 'awp-25m/07.jpg',
+        original: `${originalPrefix}/awp-25m/07_apjha0.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/07_apjha0.jpg`,
         originalAlt: 'Автовышка 25м - 7',
-        thumbnail: 'awp-25m/07-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 7',
       },
       {
-        original: 'awp-25m/08.jpg',
+        original: `${originalPrefix}/awp-25m/08_efapme.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/08_efapme.jpg`,
         originalAlt: 'Автовышка 25м - 8',
-        thumbnail: 'awp-25m/08-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 8',
       },
       {
-        original: 'awp-25m/09.jpg',
+        original: `${originalPrefix}/awp-25m/09_hkylbk.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/09_hkylbk.jpg`,
         originalAlt: 'Автовышка 25м - 9',
-        thumbnail: 'awp-25m/09-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 9',
       },
       {
-        original: 'awp-25m/10.jpg',
+        original: `${originalPrefix}/awp-25m/10_lbbfcz.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/10_lbbfcz.jpg`,
         originalAlt: 'Автовышка 25м - 10',
-        thumbnail: 'awp-25m/10-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 10',
       },
       {
-        original: 'awp-25m/11.jpg',
+        original: `${originalPrefix}/awp-25m/11_ngi3xn.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/11_ngi3xn.jpg`,
         originalAlt: 'Автовышка 25м - 11',
-        thumbnail: 'awp-25m/11-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 11',
       },
       {
-        original: 'awp-25m/12.jpg',
+        original: `${originalPrefix}/awp-25m/12_vsslxn.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/12_vsslxn.jpg`,
         originalAlt: 'Автовышка 25м - 12',
-        thumbnail: 'awp-25m/12-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 25м - 12',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-25m/technical-1.jpg',
+        original: `${originalPrefix}/awp-25m/technical-1_owm6vp.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/technical-1_owm6vp.jpg`,
         originalAlt: 'Технические характеристики автовышки 25м - 1',
-        thumbnail: 'awp-25m/technical-1-thumb.jpg',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 25м - 1',
       },
       {
-        original: 'awp-25m/technical-2.jpg',
+        original: `${originalPrefix}/awp-25m/technical-2_iy4ang.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-25m/technical-2_iy4ang.jpg`,
         originalAlt: 'Технические характеристики автовышки 25м - 2',
-        thumbnail: 'awp-25m/technical-2-thumb.jpg',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 25м - 2',
       },
     ],
@@ -818,7 +802,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 13000,
       delivery: 45,
     },
-    image: 'v1629216830/awp-29m/01_mevp0v.jpg',
+    image: 'awp-29m/01_mevp0v.jpg',
     card: [
       ['Высота подъема', '29 м'],
       ['Вылет максимальный', '14 м'],
@@ -827,29 +811,29 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-29m/01.jpg',
+        original: `${originalPrefix}/awp-29m/01_mevp0v.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-29m/01_mevp0v.jpg`,
         originalAlt: 'Автовышка 29м - 1',
-        thumbnail: 'awp-29m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 29м - 1',
       },
       {
-        original: 'awp-29m/02.jpg',
+        original: `${originalPrefix}/awp-29m/02_sjzqru.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-29m/02_sjzqru.jpg`,
         originalAlt: 'Автовышка 29м - 2',
-        thumbnail: 'awp-29m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 29м - 2',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-29m/technical-1.png',
+        original: `${originalPrefix}/awp-29m/technical-1_k6b1yz.png`,
+        thumbnail: `${thumbnailPrefix}/awp-29m/technical-1_k6b1yz.png`,
         originalAlt: 'Технические характеристики автовышки 29м - 1',
-        thumbnail: 'awp-29m/technical-1-thumb.png',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 29м - 1',
       },
       {
-        original: 'awp-29m/technical-2.png',
+        original: `${originalPrefix}/awp-29m/technical-2_sozmrd.png`,
+        thumbnail: `${thumbnailPrefix}/awp-29m/technical-2_sozmrd.png`,
         originalAlt: 'Технические характеристики автовышки 29м - 2',
-        thumbnail: 'awp-29m/technical-2-thumb.png',
         thumbnailAlt: 'Миниатюра технических характеристик автовышки 29м - 2',
       },
     ],
@@ -889,7 +873,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 22000,
       delivery: 45,
     },
-    image: 'v1629216854/awp-40m/01_chceiq.jpg',
+    image: 'awp-40m/01_chceiq.jpg',
     card: [
       ['Высота подъема', '40 м'],
       ['Вылет максимальный', '20 м'],
@@ -897,45 +881,45 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-40m/01.jpg',
+        original: `${originalPrefix}/awp-40m/01_chceiq.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-40m/01_chceiq.jpg`,
         originalAlt: 'Автовышка 40м - 1',
-        thumbnail: 'awp-40m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 40м - 1',
       },
       {
-        original: 'awp-40m/02.jpg',
+        original: `${originalPrefix}/awp-40m/02_gpw6q2.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-40m/02_gpw6q2.jpg`,
         originalAlt: 'Автовышка 40м - 2',
-        thumbnail: 'awp-40m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 40м - 2',
       },
       {
-        original: 'awp-40m/03.jpg',
+        original: `${originalPrefix}/awp-40m/03_ru3hsb.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-40m/03_ru3hsb.jpg`,
         originalAlt: 'Автовышка 40м - 3',
-        thumbnail: 'awp-40m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 40м - 3',
       },
       {
-        original: 'awp-40m/04.jpg',
+        original: `${originalPrefix}/awp-40m/04_pn2gue.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-40m/04_pn2gue.jpg`,
         originalAlt: 'Автовышка 40м - 4',
-        thumbnail: 'awp-40m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 40м - 4',
       },
       {
-        original: 'awp-40m/05.jpg',
+        original: `${originalPrefix}/awp-40m/05_l3gaak.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-40m/05_l3gaak.jpg`,
         originalAlt: 'Автовышка 40м - 5',
-        thumbnail: 'awp-40m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 40м - 5',
       },
       {
-        original: 'awp-40m/06.jpg',
+        original: `${originalPrefix}/awp-40m/06_nr5mpv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-40m/06_nr5mpv.jpg`,
         originalAlt: 'Автовышка 40м - 6',
-        thumbnail: 'awp-40m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 40м - 6',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-40m/technical-1.jpg',
+        original: `${originalPrefix}/awp-40m/technical-1_nrgier.jpg`,
         originalAlt: 'Технические характеристики автовышки 40м - 1',
       },
     ],
@@ -979,7 +963,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 25000,
       delivery: 45,
     },
-    image: 'v1629216877/awp-45m/01_vy4gjx.jpg',
+    image: 'awp-45m/01_vy4gjx.jpg',
     card: [
       ['Высота подъема', '45 м'],
       ['Вылет максимальный', '25 м'],
@@ -987,39 +971,39 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-45m/01.jpg',
+        original: `${originalPrefix}/awp-45m/01_vy4gjx.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-45m/01_vy4gjx.jpg`,
         originalAlt: 'Автовышка 45м - 1',
-        thumbnail: 'awp-45m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 45м - 1',
       },
       {
-        original: 'awp-45m/02.jpg',
+        original: `${originalPrefix}/awp-45m/02_ibpccc.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-45m/02_ibpccc.jpg`,
         originalAlt: 'Автовышка 45м - 2',
-        thumbnail: 'awp-45m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 45м - 2',
       },
       {
-        original: 'awp-45m/03.jpg',
+        original: `${originalPrefix}/awp-45m/03_r606sg.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-45m/03_r606sg.jpg`,
         originalAlt: 'Автовышка 45м - 3',
-        thumbnail: 'awp-45m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 45м - 3',
       },
       {
-        original: 'awp-45m/04.jpg',
+        original: `${originalPrefix}/awp-45m/04_i7lnnl.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-45m/04_i7lnnl.jpg`,
         originalAlt: 'Автовышка 45м - 4',
-        thumbnail: 'awp-45m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 45м - 4',
       },
       {
-        original: 'awp-45m/05.jpg',
+        original: `${originalPrefix}/awp-45m/05_vyfjy5.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-45m/05_vyfjy5.jpg`,
         originalAlt: 'Автовышка 45м - 5',
-        thumbnail: 'awp-45m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 45м - 5',
       },
       {
-        original: 'awp-45m/06.jpg',
+        original: `${originalPrefix}/awp-45m/06_gxx4dr.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-45m/06_gxx4dr.jpg`,
         originalAlt: 'Автовышка 45м - 6',
-        thumbnail: 'awp-45m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 45м - 6',
       },
     ],
@@ -1065,7 +1049,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 28000,
       delivery: 45,
     },
-    image: 'v1629216897/awp-50m/01_eotwzh.jpg',
+    image: 'awp-50m/01_eotwzh.jpg',
     card: [
       ['Высота подъема', '50 м'],
       ['Вылет максимальный', '30 м'],
@@ -1073,58 +1057,58 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'awp-50m/01.jpg',
+        original: `${originalPrefix}/awp-50m/01_eotwzh.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/01_eotwzh.jpg`,
         originalAlt: 'Автовышка 50м - 1',
-        thumbnail: 'awp-50m/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 1',
       },
       {
-        original: 'awp-50m/02.jpg',
+        original: `${originalPrefix}/awp-50m/02_jglcmk.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/02_jglcmk.jpg`,
         originalAlt: 'Автовышка 50м - 2',
-        thumbnail: 'awp-50m/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 2',
       },
       {
-        original: 'awp-50m/03.jpg',
+        original: `${originalPrefix}/awp-50m/03_myiaer.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/03_myiaer.jpg`,
         originalAlt: 'Автовышка 50м - 3',
-        thumbnail: 'awp-50m/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 3',
       },
       {
-        original: 'awp-50m/04.jpg',
+        original: `${originalPrefix}/awp-50m/04_w850lv.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/04_w850lv.jpg`,
         originalAlt: 'Автовышка 50м - 4',
-        thumbnail: 'awp-50m/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 4',
       },
       {
-        original: 'awp-50m/05.jpg',
+        original: `${originalPrefix}/awp-50m/05_fekgnu.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/05_fekgnu.jpg`,
         originalAlt: 'Автовышка 50м - 5',
-        thumbnail: 'awp-50m/05-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 5',
       },
       {
-        original: 'awp-50m/06.jpg',
+        original: `${originalPrefix}/awp-50m/06_zjpc2c.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/06_zjpc2c.jpg`,
         originalAlt: 'Автовышка 50м - 6',
-        thumbnail: 'awp-50m/06-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 6',
       },
       {
-        original: 'awp-50m/07.jpg',
+        original: `${originalPrefix}/awp-50m/07_ncllkc.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/07_ncllkc.jpg`,
         originalAlt: 'Автовышка 50м - 7',
-        thumbnail: 'awp-50m/07-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 7',
       },
       {
-        original: 'awp-50m/08.jpg',
+        original: `${originalPrefix}/awp-50m/08_rsper0.jpg`,
+        thumbnail: `${thumbnailPrefix}/awp-50m/08_rsper0.jpg`,
         originalAlt: 'Автовышка 50м - 8',
-        thumbnail: 'awp-50m/08-thumb.jpg',
         thumbnailAlt: 'Миниатюра автовышки 50м - 8',
       },
     ],
     technicalPhotos: [
       {
-        original: 'awp-50m/technical-1.jpg',
-        originalAlt: 'Технические характеристики автовышки 50м - 1',
+        original: `${originalPrefix}/awp-50m/technical-1_asup26.jpg`,
+        originalAlt: 'Технические характеристики автовышки 50м',
       },
     ],
     shortSpecs: [
@@ -1167,7 +1151,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 14000,
       delivery: 45,
     },
-    image: 'v1629216916/truck-crane-ivanovets/01_johmhi.jpg',
+    image: 'truck-crane-ivanovets/01_johmhi.jpg',
     card: [
       ['Грузоподъемность', '25 т'],
       ['Высота подъема', '31 м'],
@@ -1176,44 +1160,44 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'truck-crane-ivanovets/01.jpg',
+        original: `${originalPrefix}/truck-crane-ivanovets/01_johmhi.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-ivanovets/01_johmhi.jpg`,
         originalAlt: 'Автокран 25т Ивановец - 1',
-        thumbnail: 'truck-crane-ivanovets/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автокрана 25т Ивановец - 1',
       },
       {
-        original: 'truck-crane-ivanovets/02.jpg',
+        original: `${originalPrefix}/truck-crane-ivanovets/02_hlwphl.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-ivanovets/02_hlwphl.jpg`,
         originalAlt: 'Автокран 25т Ивановец - 2',
-        thumbnail: 'truck-crane-ivanovets/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автокрана 25т Ивановец - 2',
       },
       {
-        original: 'truck-crane-ivanovets/03.jpg',
+        original: `${originalPrefix}/truck-crane-ivanovets/03_yflqan.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-ivanovets/03_yflqan.jpg`,
         originalAlt: 'Автокран 25т Ивановец - 3',
-        thumbnail: 'truck-crane-ivanovets/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автокрана 25т Ивановец - 3',
       },
       {
-        original: 'truck-crane-ivanovets/04.jpg',
+        original: `${originalPrefix}/truck-crane-ivanovets/04_uw3obs.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-ivanovets/04_uw3obs.jpg`,
         originalAlt: 'Автокран 25т Ивановец - 4',
-        thumbnail: 'truck-crane-ivanovets/04-thumb.jpg',
         thumbnailAlt: 'Миниатюра автокрана 25т Ивановец - 4',
       },
     ],
     technicalPhotos: [
       {
-        original: 'truck-crane-ivanovets/technical-1.jpg',
-        originalAlt: 'Технические характеристики автокрана Ивановец 25 т - 1',
-        thumbnail: 'truck-crane-ivanovets/technical-1-thumb.jpg',
+        original: `${originalPrefix}/truck-crane-ivanovets/technical-1_pxk3tr.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-ivanovets/technical-1_pxk3tr.jpg`,
+        originalAlt: 'Технические характеристики автокрана 25т Ивановец - 1',
         thumbnailAlt:
-          'Миниатюра технических характеристик автокрана Ивановец 25 т - 1',
+          'Миниатюра технических характеристик автокрана 25т Ивановец - 1',
       },
       {
-        original: 'truck-crane-ivanovets/technical-2.jpg',
-        originalAlt: 'Технические характеристики автокрана Ивановец 25 т - 2',
-        thumbnail: 'truck-crane-ivanovets/technical-2-thumb.jpg',
+        original: `${originalPrefix}/truck-crane-ivanovets/technical-2_cvpzil.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-ivanovets/technical-2_cvpzil.jpg`,
+        originalAlt: 'Технические характеристики автокрана 25т Ивановец - 2',
         thumbnailAlt:
-          'Миниатюра технических характеристик автокрана Ивановец 25 т - 2',
+          'Миниатюра технических характеристик автокрана 25т Ивановец - 2',
       },
     ],
     shortSpecs: [
@@ -1250,7 +1234,7 @@ export const vehicles: Record<string, Vehicle> = {
       fullShift: 16000,
       delivery: 45,
     },
-    image: 'v1629216933/truck-crane-kobelco/01_bepdek.jpg',
+    image: 'truck-crane-kobelco/01_bepdek.jpg',
     card: [
       ['Грузоподъемность', '25 т'],
       ['Высота подъема', '42 м'],
@@ -1258,45 +1242,45 @@ export const vehicles: Record<string, Vehicle> = {
     ],
     generalPhotos: [
       {
-        original: 'truck-crane-kobelco/01.jpg',
+        original: `${originalPrefix}/truck-crane-kobelco/01_bepdek.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-kobelco/01_bepdek.jpg`,
         originalAlt: 'Автокран 25т Kobelco - 1',
-        thumbnail: 'truck-crane-kobelco/01-thumb.jpg',
         thumbnailAlt: 'Миниатюра автокрана 25т Kobelco - 1',
       },
       {
-        original: 'truck-crane-kobelco/02.jpg',
+        original: `${originalPrefix}/truck-crane-kobelco/02_uuixip.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-kobelco/02_uuixip.jpg`,
         originalAlt: 'Автокран 25т Kobelco - 2',
-        thumbnail: 'truck-crane-kobelco/02-thumb.jpg',
         thumbnailAlt: 'Миниатюра автокрана 25т Kobelco - 2',
       },
       {
-        original: 'truck-crane-kobelco/03.jpg',
+        original: `${originalPrefix}/truck-crane-kobelco/03_soujjy.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-kobelco/03_soujjy.jpg`,
         originalAlt: 'Автокран 25т Kobelco - 3',
-        thumbnail: 'truck-crane-kobelco/03-thumb.jpg',
         thumbnailAlt: 'Миниатюра автокрана 25т Kobelco - 3',
       },
     ],
     technicalPhotos: [
       {
-        original: 'truck-crane-kobelco/technical-1.jpg',
-        originalAlt: 'Технические характеристики автокрана Kobelco 25 т - 1',
-        thumbnail: 'truck-crane-kobelco/technical-1-thumb.jpg',
+        original: `${originalPrefix}/truck-crane-kobelco/technical-1_m1rkrr.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-kobelco/technical-1_m1rkrr.jpg`,
+        originalAlt: 'Технические характеристики автокрана 25т Kobelco - 1',
         thumbnailAlt:
-          'Миниатюра технических характеристик автокрана Kobelco 25 т - 1',
+          'Миниатюра технических характеристик автокрана 25т Kobelco - 1',
       },
       {
-        original: 'truck-crane-kobelco/technical-2.jpg',
-        originalAlt: 'Технические характеристики автокрана Kobelco 25 т - 2',
-        thumbnail: 'truck-crane-kobelco/technical-2-thumb.jpg',
+        original: `${originalPrefix}/truck-crane-kobelco/technical-2_wtcbbm.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-kobelco/technical-2_wtcbbm.jpg`,
+        originalAlt: 'Технические характеристики автокрана 25т Kobelco - 2',
         thumbnailAlt:
-          'Миниатюра технических характеристик автокрана Kobelco 25 т - 2',
+          'Миниатюра технических характеристик автокрана 25т Kobelco - 2',
       },
       {
-        original: 'truck-crane-kobelco/technical-3.jpg',
-        originalAlt: 'Технические характеристики автокрана Kobelco 25 т - 3',
-        thumbnail: 'truck-crane-kobelco/technical-3-thumb.jpg',
+        original: `${originalPrefix}/truck-crane-kobelco/technical-3_u9m9le.jpg`,
+        thumbnail: `${thumbnailPrefix}/truck-crane-kobelco/technical-3_u9m9le.jpg`,
+        originalAlt: 'Технические характеристики автокрана 25т Kobelco - 3',
         thumbnailAlt:
-          'Миниатюра технических характеристик автокрана Kobelco 25 т - 3',
+          'Миниатюра технических характеристик автокрана 25т Kobelco - 3',
       },
     ],
     shortSpecs: [

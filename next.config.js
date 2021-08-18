@@ -1,7 +1,7 @@
 module.exports = {
   images: {
     loader: 'cloudinary',
-    path: 'https://res.cloudinary.com/djblscylv/image/upload/',
+    path: process.env.NEXT_PUBLIC_CLOUDINARY_URL,
   },
   reactStrictMode: true,
   async redirects() {

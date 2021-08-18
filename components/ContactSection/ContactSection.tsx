@@ -6,6 +6,7 @@ import { ContactForm, ContactItems, SectionHeading } from '..';
 const ContactMap = dynamic(() => import('../ContactMap/ContactMap'));
 
 function ContactSection() {
+  // We use `react-cool-inview` and `next/dynamic` due to performance reasons
   const { observe, inView } = useInView({
     rootMargin: '50px',
     unobserveOnEnter: true,
