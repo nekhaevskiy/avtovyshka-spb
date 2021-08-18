@@ -175,9 +175,9 @@ describe('Homepage - Small mobiles', () => {
         'photo-section'
       );
       cy.findByTestId('photo-section').within(() => {
-        cy.findByRole('heading', { name: 'Наша техника за работой' }).should(
-          'be.visible'
-        );
+        cy.findByRole('heading', {
+          name: 'Наша техника за работой',
+        }).scrollIntoView();
         images.forEach((image, index) => {
           if (index === 0 || index === 1 || index === images.length - 1) {
             cy.findByRole('img', { name: image.originalAlt })
