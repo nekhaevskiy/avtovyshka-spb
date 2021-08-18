@@ -1,6 +1,6 @@
 import { ReactImageGalleryItem } from 'react-image-gallery';
 
-const CLOUDINARY_URL = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
+const CLOUDINARY_URL = process.env.NEXT_PUBLIC_CLOUDINARY_URL || '';
 const ORIGINAL_TRANSFORM = 'f_auto,c_limit,h_630,w_1120';
 const THUMBNAIL_TRANSFORM = 'f_auto,c_thumb,g_auto,h_84,w_150';
 const originalPrefix = `${CLOUDINARY_URL}${ORIGINAL_TRANSFORM}`;

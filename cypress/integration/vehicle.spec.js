@@ -52,7 +52,8 @@ describe('Vehicle - Small mobiles', () => {
           ) {
             cy.findByRole('img', { name: item.originalAlt })
               .should('be.visible')
-              .and('have.attr', 'src', item.original);
+              .and('have.attr', 'src')
+              .and('contain', item.original);
           } else {
             cy.findByRole('img', { name: item.originalAlt }).should(
               'not.exist'
@@ -61,11 +62,13 @@ describe('Vehicle - Small mobiles', () => {
           if (index < 4) {
             cy.findByRole('img', { name: item.thumbnailAlt })
               .should('be.visible')
-              .and('have.attr', 'src', item.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', item.thumbnail);
           } else {
             cy.findByRole('img', { name: item.thumbnailAlt })
               .should('not.be.visible')
-              .and('have.attr', 'src', item.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', item.thumbnail);
           }
         });
       });
@@ -135,7 +138,8 @@ describe('Vehicle - Small mobiles', () => {
           ) {
             cy.findByRole('img', { name: item.originalAlt })
               .should('be.visible')
-              .and('have.attr', 'src', item.original);
+              .and('have.attr', 'src')
+              .and('contain', item.original);
           } else {
             cy.findByRole('img', { name: item.originalAlt }).should(
               'not.exist'
@@ -144,11 +148,13 @@ describe('Vehicle - Small mobiles', () => {
           if (index < 4) {
             cy.findByRole('img', { name: item.thumbnailAlt })
               .should('be.visible')
-              .and('have.attr', 'src', item.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', item.thumbnail);
           } else {
             cy.findByRole('img', { name: item.thumbnailAlt })
               .should('not.be.visible')
-              .and('have.attr', 'src', item.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', item.thumbnail);
           }
         });
       });

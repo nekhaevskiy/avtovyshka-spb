@@ -182,7 +182,8 @@ describe('Homepage - Small mobiles', () => {
           if (index === 0 || index === 1 || index === images.length - 1) {
             cy.findByRole('img', { name: image.originalAlt })
               .should('be.visible')
-              .and('have.attr', 'src', image.original);
+              .and('have.attr', 'src')
+              .and('contain', image.original);
           } else {
             cy.findByRole('img', { name: image.originalAlt }).should(
               'not.exist'
@@ -191,11 +192,13 @@ describe('Homepage - Small mobiles', () => {
           if (index < 4) {
             cy.findByRole('img', { name: image.thumbnailAlt })
               .should('be.visible')
-              .and('have.attr', 'src', image.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', image.thumbnail);
           } else {
             cy.findByRole('img', { name: image.thumbnailAlt })
               .should('not.be.visible')
-              .and('have.attr', 'src', image.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', image.thumbnail);
           }
         });
       });
