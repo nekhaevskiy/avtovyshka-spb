@@ -1,6 +1,17 @@
-import { ContactForm, ContactItems, ContactMap, SectionHeading } from '..';
+import dynamic from 'next/dynamic';
+import React from 'react';
+import useInView from 'react-cool-inview';
+import { ContactForm, ContactItems, SectionHeading } from '..';
+
+const ContactMap = dynamic(() => import('../ContactMap/ContactMap'));
 
 function ContactSection() {
+  // We use `react-cool-inview` and `next/dynamic` due to performance reasons
+  const { observe, inView } = useInView({
+    rootMargin: '50px',
+    unobserveOnEnter: true,
+  });
+
   return (
     <section
       className="mx-auto px-4 py-8 max-w-6xl text-gray-800"
@@ -9,7 +20,7 @@ function ContactSection() {
     >
       <SectionHeading heading="Контакты" />
 
-      <ContactMap />
+      <div ref={observe}>{inView && <ContactMap />}</div>
 
       <div className="sm:flex">
         <div className="mb-4 sm:mb-0 sm:mr-2 sm:w-1/2 lg:w-1/4">

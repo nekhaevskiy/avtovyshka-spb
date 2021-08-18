@@ -2,7 +2,6 @@ import { AboutSection } from './AboutSection/AboutSection';
 import { Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactItems } from './ContactItems/ContactItems';
-import { ContactMap } from './ContactMap/ContactMap';
 import { ContactSection } from './ContactSection/ContactSection';
 import { FooterCopyright } from './FooterCopyright/FooterCopyright';
 import { FooterNavBar } from './FooterNavBar/FooterNavBar';
@@ -26,7 +25,6 @@ export {
   Breadcrumbs,
   ContactForm,
   ContactItems,
-  ContactMap,
   ContactSection,
   FooterCopyright,
   FooterNavBar,

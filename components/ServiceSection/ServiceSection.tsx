@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { SectionHeading } from '..';
 import { services } from '../../data/service-section';
 
@@ -11,7 +10,9 @@ interface Props {
 function ServiceCard({ img, heading, text }: Props) {
   return (
     <article className="mb-4 mx-2 p-4 max-w-xs text-center border border-gray-300 rounded shadow">
-      <Image src={img} alt={heading} width="50" height="50" />
+      {/* Reasons: `/README.md#using-nextimage-for-svg-files` */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={img} alt={heading} width="50" height="50" className="mx-auto" />
       <h3 className="mb-2 mt-3 text-gray-800 text-xl font-bold">{heading}</h3>
       <p className="text-gray-800">{text}</p>
     </article>

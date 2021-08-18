@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        email: "url('/icons/email.svg')",
-        phone: "url('/icons/phone.svg')",
-        quote: "url('/icons/quote.svg')",
+        email: "url('/images/email.svg')",
+        phone: "url('/images/phone.svg')",
+        quote: "url('/images/quote.svg')",
       }),
       zIndex: {
         '-1': '-1',

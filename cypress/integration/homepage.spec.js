@@ -175,14 +175,15 @@ describe('Homepage - Small mobiles', () => {
         'photo-section'
       );
       cy.findByTestId('photo-section').within(() => {
-        cy.findByRole('heading', { name: 'Наша техника за работой' }).should(
-          'be.visible'
-        );
+        cy.findByRole('heading', {
+          name: 'Наша техника за работой',
+        }).scrollIntoView();
         images.forEach((image, index) => {
           if (index === 0 || index === 1 || index === images.length - 1) {
             cy.findByRole('img', { name: image.originalAlt })
               .should('be.visible')
-              .and('have.attr', 'src', image.original);
+              .and('have.attr', 'src')
+              .and('contain', image.original);
           } else {
             cy.findByRole('img', { name: image.originalAlt }).should(
               'not.exist'
@@ -191,11 +192,13 @@ describe('Homepage - Small mobiles', () => {
           if (index < 4) {
             cy.findByRole('img', { name: image.thumbnailAlt })
               .should('be.visible')
-              .and('have.attr', 'src', image.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', image.thumbnail);
           } else {
             cy.findByRole('img', { name: image.thumbnailAlt })
               .should('not.be.visible')
-              .and('have.attr', 'src', image.thumbnail);
+              .and('have.attr', 'src')
+              .and('contain', image.thumbnail);
           }
         });
       });
@@ -238,7 +241,7 @@ describe('Homepage - Small mobiles', () => {
         'contact-section'
       );
       cy.findByTestId('contact-section').within(() => {
-        cy.findByRole('heading', { name: 'Контакты' }).should('be.visible');
+        cy.findByRole('heading', { name: 'Контакты' }).scrollIntoView();
         cy.findByText('Google Maps placeholder').should('be.visible');
         cy.findByRole('heading', { name: 'Телефоны' }).should('be.visible');
         cy.findByRole('link', { name: phones[0].text.join(' ') })
@@ -263,7 +266,7 @@ describe('Homepage - Small mobiles', () => {
       cy.intercept('https://api.emailjs.com/api/v1.0/email/send-form', {
         statusCode: 200,
         body: 'OK',
-        delay: 100,
+        delay: 500,
       });
       cy.findByTestId('contact-section').within(() => {
         cy.findByRole('textbox', { name: 'Сообщение*' })
@@ -350,7 +353,7 @@ describe('Homepage - Small mobiles', () => {
       cy.intercept('https://api.emailjs.com/api/v1.0/email/send-form', {
         statusCode: 400,
         body: 'The user_id parameter is required',
-        delay: 100,
+        delay: 500,
       });
       cy.findByTestId('contact-section').within(() => {
         cy.findByRole('textbox', { name: 'Сообщение*' })

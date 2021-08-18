@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import Image from 'next/image';
 import React from 'react';
 import { Tab, TabList, TabPanel, TabsProps } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -22,8 +21,10 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
         <TabList>
           <Tab>
             <div className="flex">
-              <Image
-                src="/icons/tools.svg"
+              {/* Reasons: `/README.md#using-nextimage-for-svg-files` */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/tools.svg"
                 alt="Технические характеристики"
                 width="20"
                 height="20"
@@ -35,8 +36,10 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
           </Tab>
           <Tab>
             <div className="flex">
-              <Image
-                src="/icons/open-book.svg"
+              {/* Reasons: `/README.md#using-nextimage-for-svg-files` */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/images/open-book.svg"
                 alt="Подробное описание"
                 width="20"
                 height="20"
