@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import Script from 'next/script';
 import React from 'react';
+import ym, { YMInitializer } from 'react-yandex-metrika';
 import 'tailwindcss/tailwind.css';
 
 const YM_COUNTER_ID = process.env.NEXT_PUBLIC_YM_COUNTER_ID || '';
@@ -11,11 +11,9 @@ const ymCounterId = parseInt(YM_COUNTER_ID, 10);
 const isProduction =
   typeof window !== 'undefined' && window.location.host === YM_PRODUCTION_HOST;
 
-declare var ym: any;
-
 function handleRouteChange(url: string) {
   if (isProduction) {
-    ym.hit(ymCounterId, 'hit', url);
+    ym('hit', url);
   }
 }
 
@@ -37,18 +35,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
 
       {isProduction && (
-        <Script
-          id="yandex-metrika"
-          src="https://mc.yandex.ru/metrika/tag.js"
-          onLoad={() => {
-            ym(ymCounterId, 'init', {
-              defer: true,
-              clickmap: true,
-              trackLinks: true,
-              accurateTrackBounce: true,
-              webvisor: true,
-            });
-          }}
+        <YMInitializer
+          accounts={[ymCounterId]}
+          options={{ defer: true, webvisor: true }}
+          version="2"
         />
       )}
     </>
