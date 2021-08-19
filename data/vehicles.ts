@@ -34,7 +34,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-13m': {
     shortName: 'Автовышка-платформа 13м',
     fullName: ['Автовышка-платформа', '13 метров'],
-    pagePath: '/avtopark/avtovyshka-13m',
+    pagePath: '/avtopark/avtovyshka-13m/',
     pageTitle: 'Аренда автовышки-платформы 13м',
     price: {
       halfShift: 7000,
@@ -157,7 +157,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-15m': {
     shortName: 'Автовышка 15м',
     fullName: ['Автовышка', '15 метров'],
-    pagePath: '/avtopark/avtovyshka-15m',
+    pagePath: '/avtopark/avtovyshka-15m/',
     pageTitle: 'Аренда автовышки 15м',
     price: {
       halfShift: 7000,
@@ -270,7 +270,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-16m': {
     shortName: 'Автовышка-платформа 16м',
     fullName: ['Автовышка-платформа', '16 метров'],
-    pagePath: '/avtopark/avtovyshka-16m',
+    pagePath: '/avtopark/avtovyshka-16m/',
     pageTitle: 'Аренда автовышки-платформы 16м',
     price: {
       halfShift: 8000,
@@ -354,7 +354,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-17m': {
     shortName: 'Автовышка 17м',
     fullName: ['Автовышка', '17 метров'],
-    pagePath: '/avtopark/avtovyshka-17m',
+    pagePath: '/avtopark/avtovyshka-17m/',
     pageTitle: 'Аренда автовышки 17м',
     price: {
       halfShift: 7000,
@@ -471,7 +471,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-21m': {
     shortName: 'Автовышка-платформа 21м',
     fullName: ['Автовышка-платформа', '21 метр'],
-    pagePath: '/avtopark/avtovyshka-21m',
+    pagePath: '/avtopark/avtovyshka-21m/',
     pageTitle: 'Аренда автовышки-платформы 21м',
     price: {
       halfShift: 11000,
@@ -575,7 +575,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-24m': {
     shortName: 'Автовышка 24м',
     fullName: ['Автовышка', '24 метра'],
-    pagePath: '/avtopark/avtovyshka-24m',
+    pagePath: '/avtopark/avtovyshka-24m/',
     pageTitle: 'Аренда автовышки 24м',
     price: {
       halfShift: 10000,
@@ -661,7 +661,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-25m': {
     shortName: 'Автовышка 25м',
     fullName: ['Автовышка', '25 метров'],
-    pagePath: '/avtopark/avtovyshka-25m',
+    pagePath: '/avtopark/avtovyshka-25m/',
     pageTitle: 'Аренда автовышки 25м',
     price: {
       fullShift: 13000,
@@ -796,7 +796,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-29m': {
     shortName: 'Автовышка 29м',
     fullName: ['Автовышка', '29 метров'],
-    pagePath: '/avtopark/avtovyshka-29m',
+    pagePath: '/avtopark/avtovyshka-29m/',
     pageTitle: 'Аренда автовышки 29м',
     price: {
       halfShift: 9000,
@@ -868,7 +868,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-40m': {
     shortName: 'Автовышка 40м',
     fullName: ['Автовышка', '40 метров'],
-    pagePath: '/avtopark/avtovyshka-40m',
+    pagePath: '/avtopark/avtovyshka-40m/',
     pageTitle: 'Аренда автовышки 40м',
     price: {
       fullShift: 22000,
@@ -958,7 +958,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-45m': {
     shortName: 'Автовышка 45м',
     fullName: ['Автовышка', '45 метров'],
-    pagePath: '/avtopark/avtovyshka-45m',
+    pagePath: '/avtopark/avtovyshka-45m/',
     pageTitle: 'Аренда автовышки 45м',
     price: {
       fullShift: 25000,
@@ -1044,7 +1044,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtovyshka-50m': {
     shortName: 'Автовышка 50м',
     fullName: ['Автовышка', '50 метров'],
-    pagePath: '/avtopark/avtovyshka-50m',
+    pagePath: '/avtopark/avtovyshka-50m/',
     pageTitle: 'Аренда автовышки 50м',
     price: {
       fullShift: 28000,
@@ -1145,7 +1145,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtokran-25t-ivanovets': {
     shortName: 'Автокран 25т Ивановец',
     fullName: ['Автокран Ивановец', '25 тонн'],
-    pagePath: '/avtopark/avtokran-25t-ivanovets',
+    pagePath: '/avtopark/avtokran-25t-ivanovets/',
     pageTitle: 'Аренда автокрана Ивановец 25т',
     price: {
       halfShift: 8000,
@@ -1229,7 +1229,7 @@ export const vehicles: Record<string, Vehicle> = {
   'avtokran-25t-kobelco': {
     shortName: 'Автокран 25т Kobelco',
     fullName: ['Автокран Kobelco', '25 тонн'],
-    pagePath: '/avtopark/avtokran-25t-kobelco',
+    pagePath: '/avtopark/avtokran-25t-kobelco/',
     pageTitle: 'Аренда автокрана Kobelco 25т',
     price: {
       fullShift: 16000,
