@@ -5,9 +5,11 @@ on:
       - main
       - github-actions
 jobs:
-  write-to-console:
+  deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
         with:
@@ -16,4 +18,4 @@ jobs:
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy with rsync
-        run: rsync -avzn ./public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}
+        run: rsync -avzn public/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}
