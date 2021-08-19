@@ -37,3 +37,10 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy with rsync
         run: rsync -avz out/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }}
+      - name: Notify Telegram
+        uses: yanzay/notify-telegram@v0.1.0
+        if: always()
+        with:
+          chat: ${{ secrets.TELEGRAM_USER_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          status: ${{ job.status }}
