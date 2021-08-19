@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import Script from 'next/script';
 import React from 'react';
 import ym, { YMInitializer } from 'react-yandex-metrika';
 import 'tailwindcss/tailwind.css';
@@ -16,6 +17,8 @@ function handleRouteChange(url: string) {
     ym('hit', url);
   }
 }
+
+declare var VK: any;
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -35,11 +38,19 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
 
       {isProduction && (
-        <YMInitializer
-          accounts={[ymCounterId]}
-          options={{ defer: true, webvisor: true }}
-          version="2"
-        />
+        <>
+          <YMInitializer
+            accounts={[ymCounterId]}
+            options={{ defer: true, webvisor: true }}
+            version="2"
+          />
+          <Script
+            src="https://vk.com/js/api/openapi.js?168"
+            onLoad={() => {
+              VK.Retargeting.Init('VK-RTRG-866816-aTIoS'), VK.Retargeting.Hit();
+            }}
+          />
+        </>
       )}
     </>
   );
