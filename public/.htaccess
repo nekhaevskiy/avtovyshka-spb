@@ -1,4 +1,3 @@
-Redirect 301 /index.html /
 Redirect 301 /avtovyshka-platforma.html /avtopark/avtovyshka-13m
 Redirect 301 /avtovyshka-15m.html /avtopark/avtovyshka-15m
 Redirect 301 /avtovyshka-16m.html /avtopark/avtovyshka-16m
@@ -14,3 +13,4 @@ Redirect 301 /avtokran-25t-kobelco.html /avtopark/avtokran-25t-kobelco
 
 RewriteEngine on
 RewriteRule ^avtopark/?$ / [R=301,L]
+RewriteRule ^index.html$ / [R=301,L]
