@@ -32,7 +32,6 @@
     "react-image-gallery": "1.2.6",
     "react-slick": "0.28.1",
     "react-tabs": "3.2.2",
-    "react-yandex-metrika": "2.6.0",
     "slick-carousel": "1.8.1"
   },
   "devDependencies": {
