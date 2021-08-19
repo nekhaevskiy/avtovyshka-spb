@@ -1,4 +1,3 @@
-Redirect 301 /avtopark /#vehicle-section
 Redirect 301 /avtovyshka-platforma.html /avtopark/avtovyshka-13m
 Redirect 301 /avtovyshka-15m.html /avtopark/avtovyshka-15m
 Redirect 301 /avtovyshka-16m.html /avtopark/avtovyshka-16m
@@ -11,3 +10,7 @@ Redirect 301 /avtovyshka-45m.html /avtopark/avtovyshka-45m
 Redirect 301 /avtovyshka-50m.html /avtopark/avtovyshka-50m
 Redirect 301 /avtokran-25t-ivanovets.html /avtopark/avtokran-25t-ivanovets
 Redirect 301 /avtokran-25t-kobelco.html /avtopark/avtokran-25t-kobelco
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} ^/avtopark$
+RewriteRule ^/avtopark$ /#vehicle-section [R=301,L]
