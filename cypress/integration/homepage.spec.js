@@ -242,7 +242,9 @@ describe('Homepage - Small mobiles', () => {
       );
       cy.findByTestId('contact-section').within(() => {
         cy.findByRole('heading', { name: 'Контакты' }).scrollIntoView();
-        cy.findByText('Google Maps placeholder').should('be.visible');
+        cy.findByText('Google Maps placeholder', { timeout: 10000 }).should(
+          'be.visible'
+        );
         cy.findByRole('heading', { name: 'Телефоны' }).should('be.visible');
         cy.findByRole('link', { name: phones[0].text.join(' ') })
           .should('be.visible')

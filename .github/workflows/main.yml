@@ -28,6 +28,18 @@ jobs:
         with:
           build: yarn build
           start: yarn start
+      - name: Upload screenshots of failing tests
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+      - name: Upload videos of failing tests
+        uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
