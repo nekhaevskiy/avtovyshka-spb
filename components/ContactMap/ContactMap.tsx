@@ -18,13 +18,15 @@ function MarkerWrapper(props: Props) {
   );
 }
 
-const IS_CI = process.env.NEXT_PUBLIC_IS_CI;
 const GOOGLE_MAPS_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
+const PRODUCTION_HOST = process.env.NEXT_PUBLIC_PRODUCTION_HOST;
 
 function ContactMap() {
   return (
     <div className="mb-6 w-full h-80">
-      {!IS_CI && GOOGLE_MAPS_KEY ? (
+      {typeof window !== 'undefined' &&
+      window.location.host === PRODUCTION_HOST &&
+      GOOGLE_MAPS_KEY ? (
         <GoogleMapReact
           bootstrapURLKeys={{
             key: GOOGLE_MAPS_KEY,

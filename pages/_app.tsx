@@ -5,13 +5,13 @@ import React from 'react';
 import ym, { YMInitializer } from 'react-yandex-metrika';
 import 'tailwindcss/tailwind.css';
 
+const PRODUCTION_HOST = process.env.NEXT_PUBLIC_PRODUCTION_HOST || '';
 const VK_PIXEL_ID = process.env.NEXT_PUBLIC_VK_PIXEL_ID || '';
 const YM_COUNTER_ID = process.env.NEXT_PUBLIC_YM_COUNTER_ID || '';
-const YM_PRODUCTION_HOST = process.env.NEXT_PUBLIC_YM_PRODUCTION_HOST || '';
 
 const ymCounterId = parseInt(YM_COUNTER_ID, 10);
 const isProduction =
-  typeof window !== 'undefined' && window.location.host === YM_PRODUCTION_HOST;
+  typeof window !== 'undefined' && window.location.host === PRODUCTION_HOST;
 
 function handleRouteChange(url: string) {
   if (isProduction) {
