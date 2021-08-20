@@ -62,14 +62,6 @@ function MyApp({ Component, pageProps }: AppProps) {
               VK.Retargeting.Init(VK_PIXEL_ID), VK.Retargeting.Hit();
             }}
           />
-          <noscript
-            dangerouslySetInnerHTML={{
-              __html:
-                '<img src="https://vk.com/rtrg?p=' +
-                VK_PIXEL_ID +
-                '" style="position:fixed; left:-999px;" alt=""/>',
-            }}
-          />
           {/* /VK Pixel */}
         </>
       )}
