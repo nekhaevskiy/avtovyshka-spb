@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import React from 'react';
+import ym, { YMInitializer } from 'react-yandex-metrika';
 import 'tailwindcss/tailwind.css';
 
 const VK_PIXEL_ID = process.env.NEXT_PUBLIC_VK_PIXEL_ID || '';
@@ -14,13 +15,12 @@ const isProduction =
 
 function handleRouteChange(url: string) {
   if (isProduction) {
-    window.ym(ymCounterId, 'hit', url);
+    ym('hit', url);
     VK.Retargeting.Hit();
   }
 }
 
 declare global {
-  var ym: any;
   var VK: any;
 }
 
@@ -43,31 +43,34 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       {isProduction && (
         <>
-          <Script id="ym-init">
-            {
-              (window.ym =
-                window.ym ||
-                function ymFunc() {
-                  window.ym.a = window.ym.a || [];
-                  window.ym.a.push(arguments);
-                })
-            }
-            {(window.ym.l = Number(new Date()))}
-            {window.ym(ymCounterId, 'init', {
+          <YMInitializer
+            accounts={[ymCounterId]}
+            options={{
               defer: true,
               clickmap: true,
               trackLinks: true,
               accurateTrackBounce: true,
               webvisor: true,
-            })}
-          </Script>
-          <Script src="https://mc.yandex.ru/metrika/tag.js" />
+            }}
+            version="2"
+          />
+
+          {/* VK Pixel */}
           <Script
             src="https://vk.com/js/api/openapi.js?168"
             onLoad={() => {
               VK.Retargeting.Init(VK_PIXEL_ID), VK.Retargeting.Hit();
             }}
           />
+          <noscript>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={`https://vk.com/rtrg?p=${VK_PIXEL_ID}`}
+              style={{ position: 'fixed', left: '-999px' }}
+              alt=""
+            />
+          </noscript>
+          {/* /VK Pixel */}
         </>
       )}
     </>
