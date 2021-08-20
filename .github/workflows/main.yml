@@ -1,6 +1,6 @@
 # https://zellwk.com/blog/github-actions-deploy/
 
-name: deploy
+name: main
 
 on:
   push:
@@ -27,10 +27,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - name: Install dependencies
-        run: yarn
-      - name: Build static version
-        run: yarn build
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn build
+          start: yarn start
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:

@@ -64,7 +64,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           />
           <noscript
             dangerouslySetInnerHTML={{
-              __html: `<img src="https://vk.com/rtrg?p=${VK_PIXEL_ID}" style="position:fixed; left:-999px;" alt=""/>`,
+              __html:
+                '<img src="https://vk.com/rtrg?p=' +
+                VK_PIXEL_ID +
+                '" style="position:fixed; left:-999px;" alt=""/>',
             }}
           />
           {/* /VK Pixel */}
