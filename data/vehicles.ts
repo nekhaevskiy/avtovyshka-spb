@@ -1,4 +1,3 @@
-/* cSpell:disable */
 import { ReactImageGalleryItem } from 'react-image-gallery';
 
 const CLOUDINARY_URL = process.env.NEXT_PUBLIC_CLOUDINARY_URL || '';

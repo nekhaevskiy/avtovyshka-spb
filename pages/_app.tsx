@@ -2,9 +2,9 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
 import React from 'react';
-import ym, { YMInitializer } from 'react-yandex-metrika';
 import 'tailwindcss/tailwind.css';
 
+const VK_PIXEL_ID = process.env.NEXT_PUBLIC_VK_PIXEL_ID || '';
 const YM_COUNTER_ID = process.env.NEXT_PUBLIC_YM_COUNTER_ID || '';
 const YM_PRODUCTION_HOST = process.env.NEXT_PUBLIC_YM_PRODUCTION_HOST || '';
 
@@ -14,11 +14,15 @@ const isProduction =
 
 function handleRouteChange(url: string) {
   if (isProduction) {
-    ym('hit', url);
+    window.ym(ymCounterId, 'hit', url);
+    VK.Retargeting.Hit();
   }
 }
 
-declare var VK: any;
+declare global {
+  var ym: any;
+  var VK: any;
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -39,15 +43,29 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       {isProduction && (
         <>
-          <YMInitializer
-            accounts={[ymCounterId]}
-            options={{ defer: true, webvisor: true }}
-            version="2"
-          />
+          <Script id="ym-init">
+            {
+              (window.ym =
+                window.ym ||
+                function ymFunc() {
+                  window.ym.a = window.ym.a || [];
+                  window.ym.a.push(arguments);
+                })
+            }
+            {(window.ym.l = Number(new Date()))}
+            {window.ym(ymCounterId, 'init', {
+              defer: true,
+              clickmap: true,
+              trackLinks: true,
+              accurateTrackBounce: true,
+              webvisor: true,
+            })}
+          </Script>
+          <Script src="https://mc.yandex.ru/metrika/tag.js" />
           <Script
             src="https://vk.com/js/api/openapi.js?168"
             onLoad={() => {
-              VK.Retargeting.Init('VK-RTRG-866816-aTIoS'), VK.Retargeting.Hit();
+              VK.Retargeting.Init(VK_PIXEL_ID), VK.Retargeting.Hit();
             }}
           />
         </>
