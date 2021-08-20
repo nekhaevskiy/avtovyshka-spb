@@ -6,7 +6,6 @@
     "prepare": "husky install",
     "dev": "next dev",
     "build": "next build && next export",
-    "prestart": "yarn build",
     "start": "http-server ./out -p 3000 -s",
     "check-types": "tsc",
     "format": "prettier --write .",
@@ -16,6 +15,7 @@
     "cy:open": "cypress open",
     "test": "start-server-and-test dev http://localhost:3000 cy:open",
     "cy:run": "cypress run",
+    "pretest:ci": "yarn build",
     "test:ci": "start-server-and-test start http://localhost:3000 cy:run",
     "validate": "yarn lint && yarn test:ci"
   },
