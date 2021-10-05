@@ -37,7 +37,7 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки-платформы 13м',
     price: {
       halfShift: 7000,
-      fullShift: 9000,
+      fullShift: 10000,
       delivery: 50,
     },
     image: 'awp-13m/01.jpg',
@@ -160,7 +160,7 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки 15м',
     price: {
       halfShift: 7000,
-      fullShift: 9000,
+      fullShift: 10000,
       delivery: 50,
     },
     image: 'awp-15m/04.jpg',
@@ -357,7 +357,7 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки 17м',
     price: {
       halfShift: 7000,
-      fullShift: 9000,
+      fullShift: 10000,
       delivery: 50,
     },
     image: 'awp-17m/05_guz8df.jpg',
