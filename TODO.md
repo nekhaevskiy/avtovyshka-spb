@@ -7,3 +7,4 @@
 - Update README.md
 - Check tsconfig
 - Fix Dependabot alerts
+- Return CodeQL analysis
