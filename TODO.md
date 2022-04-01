@@ -8,3 +8,4 @@
 - Check tsconfig
 - Fix Dependabot alerts
 - Return CodeQL analysis
+- Remove `.vscode` folder
