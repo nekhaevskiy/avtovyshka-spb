@@ -6,5 +6,4 @@
 - Update README.md
 - Check tsconfig
 - Fix Dependabot alerts
-- Remove `.vscode` folder
 - Change package manager to pnpm
