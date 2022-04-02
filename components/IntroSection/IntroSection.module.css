@@ -1,15 +1,19 @@
+/* stylelint-disable-next-line selector-class-pattern */
 .carousel :global .slick-dots {
   bottom: -1.75rem;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .carousel :global .slick-dots li button::before {
   font-size: 10px;
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .carousel :global .slick-dots li button:hover::before {
-  color: rgb(239, 68, 68);
+  color: rgb(239 68 68);
 }
 
+/* stylelint-disable-next-line selector-class-pattern */
 .carousel :global .slick-dots li.slick-active button::before {
-  color: rgb(239, 68, 68);
+  color: rgb(239 68 68);
 }

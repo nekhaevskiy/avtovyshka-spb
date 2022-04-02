@@ -1,7 +1,17 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-css-modules"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-css-modules",
+    "stylelint-config-prettier"
+  ],
   "plugins": ["stylelint-order"],
   "rules": {
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": ["transition"]
+      }
+    ],
     "declaration-colon-newline-after": null,
     "order/order": [
       [
@@ -261,10 +271,12 @@
         "severity": "warning"
       }
     ],
+    "selector-class-pattern": ["^[a-z][a-zA-Z0-9]+$"],
     "value-keyword-case": [
       "lower",
       {
-        "ignoreProperties": ["composes", "height"]
+        "ignoreProperties": ["composes", "height"],
+        "camelCaseSvgKeywords": true
       }
     ],
     "value-list-comma-newline-after": null
