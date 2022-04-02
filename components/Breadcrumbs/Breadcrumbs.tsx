@@ -6,10 +6,10 @@ interface Props {
 
 function Breadcrumbs({ currentPage }: Props) {
   return (
-    <div data-testid="breadcrumbs" className="mb-6 mx-auto px-4 max-w-6xl">
-      <div className="px-4 py-2 text-gray-800 bg-gray-100 rounded">
+    <div data-testid="breadcrumbs" className="mx-auto mb-6 max-w-6xl px-4">
+      <div className="rounded bg-gray-100 px-4 py-2 text-gray-800">
         <Link href="/#vehicle-section">
-          <a className="inline-block align-baseline mr-2 text-red-500">
+          <a className="mr-2 inline-block align-baseline text-red-500">
             Автопарк
           </a>
         </Link>

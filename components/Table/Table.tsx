@@ -10,7 +10,7 @@ function Table({
   return (
     <table
       className={classNames(
-        'w-full text-gray-800 text-sm border-b lg:text-base',
+        'w-full border-b text-sm text-gray-800 lg:text-base',
         className
       )}
     >

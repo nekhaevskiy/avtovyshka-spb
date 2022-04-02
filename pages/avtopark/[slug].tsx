@@ -56,11 +56,11 @@ export default function VehiclePage({ vehicle }: { vehicle: Vehicle }) {
       <main>
         <Breadcrumbs currentPage={shortName} />
 
-        <h2 className="mb-4 mx-auto px-4 max-w-6xl text-center text-2xl font-medium sm:text-3xl">
+        <h2 className="mx-auto mb-4 max-w-6xl px-4 text-center text-2xl font-medium sm:text-3xl">
           {fullName.join(' ')}
         </h2>
 
-        <div className="mb-6 mx-auto px-4 max-w-6xl md:flex">
+        <div className="mx-auto mb-6 max-w-6xl px-4 md:flex">
           <ImageGallery
             items={generalPhotos}
             lazyLoad
@@ -73,7 +73,7 @@ export default function VehiclePage({ vehicle }: { vehicle: Vehicle }) {
             className="mx-auto max-w-md md:ml-1 md:mr-0 md:w-1/2 md:max-w-none xl:ml-4"
           >
             <Table data={shortSpecs} className="mb-4" />
-            <h3 className="mb-3 text-center text-gray-800 text-xl font-semibold">
+            <h3 className="mb-3 text-center text-xl font-semibold text-gray-800">
               Стоимость аренды
             </h3>
             <Table data={priceSpecs} />

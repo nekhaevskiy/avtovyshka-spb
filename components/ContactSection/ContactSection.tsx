@@ -14,7 +14,7 @@ function ContactSection() {
 
   return (
     <section
-      className="mx-auto px-4 py-8 max-w-6xl text-gray-800"
+      className="mx-auto max-w-6xl px-4 py-8 text-gray-800"
       data-testid="contact-section"
       id="contact-section"
     >

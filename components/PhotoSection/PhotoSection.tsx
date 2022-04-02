@@ -13,7 +13,7 @@ function PhotoSection() {
 
   return (
     <section
-      className="mx-auto px-4 py-8 max-w-6xl"
+      className="mx-auto max-w-6xl px-4 py-8"
       data-testid="photo-section"
       id="photo-section"
     >

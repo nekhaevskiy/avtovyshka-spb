@@ -8,16 +8,16 @@ function VehicleSection() {
       data-testid="vehicle-section"
       id="vehicle-section"
     >
-      <div className="mx-auto px-4 py-8 max-w-6xl">
+      <div className="mx-auto max-w-6xl px-4 py-8">
         <SectionHeading
           heading="Наш автопарк"
           subheading="автовышки и автокраны"
         />
-        <div className="sm:flex sm:flex-wrap sm:items-stretch sm:justify-center sm:-mx-2 lg:justify-around">
+        <div className="sm:-mx-2 sm:flex sm:flex-wrap sm:items-stretch sm:justify-center lg:justify-around">
           {Object.keys(vehicles).map((key) => (
             <VehicleCard
               vehicle={vehicles[key]}
-              className="mb-4 hover:shadow-2xl focus:shadow-2xl shadow-sm sm:mx-2 sm:w-80"
+              className="mb-4 shadow-sm hover:shadow-2xl focus:shadow-2xl sm:mx-2 sm:w-80"
               key={key}
             />
           ))}

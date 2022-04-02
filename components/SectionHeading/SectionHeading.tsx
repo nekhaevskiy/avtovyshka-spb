@@ -5,12 +5,12 @@ interface Props {
 
 function SectionHeading({ heading, subheading }: Props) {
   return (
-    <h2 className="mb-6 pb-3 text-gray-800 text-2xl font-bold border-b border-gray-300">
+    <h2 className="mb-6 border-b border-gray-300 pb-3 text-2xl font-bold text-gray-800">
       {heading}
       {subheading ? (
         <>
           {' '}
-          <small className="block text-gray-500 text-lg font-normal sm:inline-block sm:align-baseline">
+          <small className="block text-lg font-normal text-gray-500 sm:inline-block sm:align-baseline">
             {subheading}
           </small>
         </>

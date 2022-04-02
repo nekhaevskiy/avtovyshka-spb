@@ -23,7 +23,7 @@ const PRODUCTION_HOST = process.env.NEXT_PUBLIC_PRODUCTION_HOST;
 
 function ContactMap() {
   return (
-    <div className="mb-6 w-full h-80">
+    <div className="mb-6 h-80 w-full">
       {typeof window !== 'undefined' &&
       window.location.host === PRODUCTION_HOST &&
       GOOGLE_MAPS_KEY ? (
@@ -45,7 +45,7 @@ function ContactMap() {
           <MarkerWrapper lat={59.953386} lng={30.222991} />
         </GoogleMapReact>
       ) : (
-        <div className="flex items-center justify-center w-full h-full bg-gray-300">
+        <div className="flex h-full w-full items-center justify-center bg-gray-300">
           <span>Google Maps placeholder</span>
         </div>
       )}

@@ -34,7 +34,7 @@ function ContactForm() {
 
   return (
     <form onSubmit={onSubmit}>
-      <div className="lg:flex lg:mb-6">
+      <div className="lg:mb-6 lg:flex">
         <div className="mb-4 lg:mb-0 lg:mr-2 lg:w-2/3">
           <label
             htmlFor="contact-message"
@@ -43,7 +43,7 @@ function ContactForm() {
             Сообщение*
           </label>
           <textarea
-            className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             id="contact-message"
             name="user_message"
             placeholder="Текст сообщения"
@@ -58,7 +58,7 @@ function ContactForm() {
               Фамилия Имя Отчество*
             </label>
             <input
-              className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               id="contact-name"
               name="user_name"
               placeholder="Ваше имя"
@@ -75,7 +75,7 @@ function ContactForm() {
               Контактный телефон*
             </label>
             <input
-              className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               id="contact-phone"
               name="user_phone"
               placeholder="Ваш телефон"
@@ -92,7 +92,7 @@ function ContactForm() {
               Email
             </label>
             <input
-              className="block mt-1 w-full border-gray-300 focus:border-indigo-300 rounded-md shadow-sm focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               id="contact-email"
               name="user_email"
               placeholder="Ваш email"
@@ -106,13 +106,13 @@ function ContactForm() {
         <button
           type="submit"
           disabled={sendingForm}
-          className={`px-4 py-2 text-white whitespace-nowrap font-medium bg-red-500 hover:bg-red-700 rounded focus:outline-none shadow-md focus:ring-2 focus:ring-red-400 focus:ring-opacity-75 disabled:bg-gray-500`}
+          className={`whitespace-nowrap rounded bg-red-500 px-4 py-2 font-medium text-white shadow-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-opacity-75 disabled:bg-gray-500`}
         >
           Отправить
         </button>
       </div>
 
-      <div className="pt-1 text-xs border-t border-gray-300">
+      <div className="border-t border-gray-300 pt-1 text-xs">
         Поля, отмеченные звездочкой (*), обязательны для заполнения
       </div>
 

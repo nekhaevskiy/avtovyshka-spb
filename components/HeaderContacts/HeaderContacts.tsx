@@ -6,12 +6,12 @@ function HeaderContacts() {
   return (
     <>
       <div
-        className="z-10 flex items-center justify-center pl-20 pr-11 w-full h-10 bg-white border-b border-gray-300 sm:px-0 md:fixed md:top-0"
+        className="z-10 flex h-10 w-full items-center justify-center border-b border-gray-300 bg-white pl-20 pr-11 sm:px-0 md:fixed md:top-0"
         data-testid="header-contacts"
       >
         <a
           href={phones[0].link}
-          className="pl-5 py-1 whitespace-nowrap text-base font-medium bg-phone bg-no-repeat sm:mx-4"
+          className="whitespace-nowrap bg-phone bg-no-repeat py-1 pl-5 text-base font-medium sm:mx-4"
           style={{ backgroundPosition: '1px 52%' }}
         >
           {phones[0].text[0]}{' '}
@@ -21,7 +21,7 @@ function HeaderContacts() {
 
         <a
           href={phones[1].link}
-          className="hidden mx-4 pl-5 py-1 whitespace-nowrap text-base font-medium bg-phone bg-no-repeat md:block"
+          className="mx-4 hidden whitespace-nowrap bg-phone bg-no-repeat py-1 pl-5 text-base font-medium md:block"
           style={{ backgroundPosition: '1px 52%' }}
         >
           {phones[1].text}
@@ -29,13 +29,13 @@ function HeaderContacts() {
 
         <a
           href={email.link}
-          className="hidden mx-4 pl-5 py-1 whitespace-nowrap text-base font-medium bg-email bg-no-repeat sm:block"
+          className="mx-4 hidden whitespace-nowrap bg-email bg-no-repeat py-1 pl-5 text-base font-medium sm:block"
           style={{ backgroundPosition: '1px 52%' }}
         >
           {email.text}
         </a>
 
-        <span className="hidden mx-4 pl-5 py-1 whitespace-nowrap text-base font-medium lg:block">
+        <span className="mx-4 hidden whitespace-nowrap py-1 pl-5 text-base font-medium lg:block">
           Работаем круглосуточно
         </span>
       </div>

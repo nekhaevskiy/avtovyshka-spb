@@ -11,11 +11,11 @@ function Slide({ review }: Props) {
   return (
     <article className="flex px-2">
       <span
-        className="flex-shrink-0 w-10 h-10 bg-red-500 bg-quote bg-center bg-no-repeat rounded-full"
+        className="h-10 w-10 flex-shrink-0 rounded-full bg-red-500 bg-quote bg-center bg-no-repeat"
         style={{ backgroundSize: 22 }}
       />
       <div className="ml-3">
-        <h3 className="mb-2 text-gray-800 text-lg font-bold">
+        <h3 className="mb-2 text-lg font-bold text-gray-800">
           {review.author}
         </h3>
         <p className="text-gray-800">{review.text}</p>
@@ -31,7 +31,7 @@ function ReviewSection() {
       data-testid="review-section"
       id="review-section"
     >
-      <div className="mx-auto pb-12 pt-8 px-4 max-w-6xl">
+      <div className="mx-auto max-w-6xl px-4 pb-12 pt-8">
         <SectionHeading heading="Отзывы наших клиентов" />
 
         <Slider

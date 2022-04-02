@@ -16,7 +16,7 @@ const Tabs = dynamic<TabsProps>(
 function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
   const { fullSpecs, technicalPhotos, detailedDescription } = vehicle;
   return (
-    <div data-testid="vehicle-tabs" className="mb-6 mx-auto px-4 max-w-6xl">
+    <div data-testid="vehicle-tabs" className="mx-auto mb-6 max-w-6xl px-4">
       <Tabs className="mx-auto max-w-md md:max-w-none">
         <TabList>
           <Tab>
@@ -29,7 +29,7 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
                 width="20"
                 height="20"
               />
-              <span className="hidden ml-2 font-medium md:inline">
+              <span className="ml-2 hidden font-medium md:inline">
                 Технические характеристики
               </span>
             </div>
@@ -44,7 +44,7 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
                 width="20"
                 height="20"
               />
-              <span className="hidden ml-2 font-medium md:inline">
+              <span className="ml-2 hidden font-medium md:inline">
                 Подробное описание
               </span>
             </div>
@@ -52,7 +52,7 @@ function VehicleTabs({ vehicle }: { vehicle: Vehicle }) {
         </TabList>
 
         <TabPanel>
-          <h3 className="mb-3 text-center text-gray-800 text-xl font-semibold md:hidden">
+          <h3 className="mb-3 text-center text-xl font-semibold text-gray-800 md:hidden">
             Подробные технические характеристики
           </h3>
           <div className="md:flex">

@@ -14,11 +14,11 @@ const { phones, email } = contacts;
 function Slide({ vehicle }: { vehicle: Vehicle }) {
   const { image, shortName, fullName, price, pagePath } = vehicle;
   return (
-    <article className="relative w-full h-80 text-white" data-testid="slide">
-      <div className="absolute -z-1 w-full h-full">
+    <article className="relative h-80 w-full text-white" data-testid="slide">
+      <div className="absolute -z-1 h-full w-full">
         <Image src={image} alt={shortName} layout="fill" objectFit="cover" />
       </div>
-      <div className="flex items-center justify-between p-14 h-full bg-black bg-opacity-50">
+      <div className="flex h-full items-center justify-between bg-black bg-opacity-50 p-14">
         <div>
           <h2 className="mb-4 text-3xl font-bold">
             {fullName.map((part) => (
@@ -37,7 +37,7 @@ function Slide({ vehicle }: { vehicle: Vehicle }) {
         <div className="text-right">
           <a
             href={phones[0].link}
-            className="block mb-1 text-lg"
+            className="mb-1 block text-lg"
             style={{ backgroundPosition: '1px 52%' }}
           >
             {phones[0].text[0]} <b>{phones[0].text[1]}</b> {phones[0].text[2]}
@@ -45,7 +45,7 @@ function Slide({ vehicle }: { vehicle: Vehicle }) {
 
           <a
             href={phones[1].link}
-            className="block mb-1 text-lg"
+            className="mb-1 block text-lg"
             style={{ backgroundPosition: '1px 52%' }}
           >
             {phones[1].text}
@@ -68,7 +68,7 @@ function IntroSection() {
   const windowWidth = useWindowWidth();
 
   return windowWidth && windowWidth >= 1024 ? (
-    <div className="mx-auto pb-9 max-w-6xl xl:px-4" data-testid="intro-section">
+    <div className="mx-auto max-w-6xl pb-9 xl:px-4" data-testid="intro-section">
       <Slider arrows={false} autoplay className={styles.carousel} dots>
         {Object.keys(vehicles).map((key) => (
           <Slide vehicle={vehicles[key]} key={key} />

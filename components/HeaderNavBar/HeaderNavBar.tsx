@@ -30,7 +30,7 @@ function HeaderNavBar() {
       data-testid="header-nav-bar"
     >
       <Link href="/">
-        <a className="absolute -top-8 left-0 w-20 h-8 md:relative md:left-auto md:top-auto md:flex-shrink-0 md:w-32 md:h-16">
+        <a className="absolute -top-8 left-0 h-8 w-20 md:relative md:left-auto md:top-auto md:h-16 md:w-32 md:flex-shrink-0">
           {/* Reasons: `/README.md#using-nextimage-for-svg-files` */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -41,7 +41,7 @@ function HeaderNavBar() {
         </a>
       </Link>
 
-      <h1 className="text-center text-red-500 text-3xl md:flex-shrink-0 md:mx-4 md:w-64 md:text-left md:text-base md:leading-none">
+      <h1 className="text-center text-3xl text-red-500 md:mx-4 md:w-64 md:flex-shrink-0 md:text-left md:text-base md:leading-none">
         Аренда автовышки и автокрана
         <span className="hidden text-xl sm:block md:text-base md:leading-none">
           в Санкт-Петербурге и Ленинградской области
@@ -51,7 +51,7 @@ function HeaderNavBar() {
       <div ref={menuWrapperEl} className="md:-mr-4 md:ml-auto">
         <button
           type="button"
-          className="absolute -top-9 right-4 w-7 h-7 text-gray-800 md:hidden"
+          className="absolute -top-9 right-4 h-7 w-7 text-gray-800 md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           <span className="sr-only">

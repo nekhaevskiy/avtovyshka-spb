@@ -3,7 +3,7 @@ import { contacts } from '../../data/contacts';
 function AboutSection() {
   return (
     <section className="border-b border-gray-300" data-testid="about-section">
-      <div className="mx-auto px-4 py-8 max-w-6xl text-sm md:text-base">
+      <div className="mx-auto max-w-6xl px-4 py-8 text-sm md:text-base">
         <p className="mb-3 text-gray-800">
           {contacts.companyName} - Ваш верный партнёр в области аренды
           спецтехники. Мы предлагаем аренду спецтехники как на одну смену, так и
@@ -31,7 +31,7 @@ function AboutSection() {
           аренду японских кранов KOBELCO 25т и Ивановец 25т.
         </p>
         <p className="text-gray-800">Мы предлагаем:</p>
-        <ul className="mb-3 text-gray-800 list-inside list-disc">
+        <ul className="mb-3 list-inside list-disc text-gray-800">
           <li>индивидуальный подход к каждому заказчику;</li>
           <li>
             аренду автовышки и автокрана с водителем в Санкт-Петербурге и Лен.

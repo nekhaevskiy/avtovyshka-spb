@@ -16,9 +16,9 @@ function OtherVehicles({ currentVehiclePath }: { currentVehiclePath: string }) {
   return (
     <section
       data-testid="other-vehicles"
-      className="mb-10 mx-auto px-4 max-w-6xl"
+      className="mx-auto mb-10 max-w-6xl px-4"
     >
-      <h2 className="mb-4 mx-auto px-4 max-w-6xl text-center text-2xl font-medium sm:text-3xl">
+      <h2 className="mx-auto mb-4 max-w-6xl px-4 text-center text-2xl font-medium sm:text-3xl">
         Похожие автовышки и автокраны
       </h2>
 
