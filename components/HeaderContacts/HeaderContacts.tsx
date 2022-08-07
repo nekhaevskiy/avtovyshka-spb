@@ -20,14 +20,6 @@ function HeaderContacts() {
         </a>
 
         <a
-          href={phones[1].link}
-          className="mx-4 hidden whitespace-nowrap bg-phone bg-no-repeat py-1 pl-5 text-base font-medium md:block"
-          style={{ backgroundPosition: '1px 52%' }}
-        >
-          {phones[1].text}
-        </a>
-
-        <a
           href={email.link}
           className="mx-4 hidden whitespace-nowrap bg-email bg-no-repeat py-1 pl-5 text-base font-medium sm:block"
           style={{ backgroundPosition: '1px 52%' }}

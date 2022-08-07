@@ -37,8 +37,8 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки-платформы 13м',
     price: {
       halfShift: 7000,
-      fullShift: 10000,
-      delivery: 50,
+      fullShift: 12000,
+      delivery: 65,
     },
     image: 'awp-13m/01.jpg',
     card: [
@@ -160,8 +160,8 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки 15м',
     price: {
       halfShift: 7000,
-      fullShift: 10000,
-      delivery: 50,
+      fullShift: 12000,
+      delivery: 65,
     },
     image: 'awp-15m/04.jpg',
     card: [
@@ -273,8 +273,8 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки-платформы 16м',
     price: {
       halfShift: 8000,
-      fullShift: 11000,
-      delivery: 50,
+      fullShift: 12000,
+      delivery: 65,
     },
     image: 'awp-16m/01_r8sual.jpg',
     card: [
@@ -357,8 +357,8 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки 17м',
     price: {
       halfShift: 7000,
-      fullShift: 10000,
-      delivery: 50,
+      fullShift: 12000,
+      delivery: 65,
     },
     image: 'awp-17m/05_guz8df.jpg',
     card: [
@@ -474,8 +474,8 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки-платформы 21м',
     price: {
       halfShift: 11000,
-      fullShift: 13000,
-      delivery: 50,
+      fullShift: 14000,
+      delivery: 65,
     },
     image: 'awp-21m/01_tdvujd.jpg',
     card: [
@@ -578,8 +578,8 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки 24м',
     price: {
       halfShift: 10000,
-      fullShift: 12000,
-      delivery: 50,
+      fullShift: 14000,
+      delivery: 65,
     },
     image: 'awp-24m/01_qtyxo5.jpg',
     card: [
@@ -663,8 +663,8 @@ export const vehicles: Record<string, Vehicle> = {
     pagePath: '/avtopark/avtovyshka-25m/',
     pageTitle: 'Аренда автовышки 25м',
     price: {
-      fullShift: 13000,
-      delivery: 50,
+      fullShift: 14000,
+      delivery: 65,
     },
     image: 'awp-25m/06_px0ah3.jpg',
     card: [
@@ -799,8 +799,8 @@ export const vehicles: Record<string, Vehicle> = {
     pageTitle: 'Аренда автовышки 29м',
     price: {
       halfShift: 9000,
-      fullShift: 14000,
-      delivery: 45,
+      fullShift: 15000,
+      delivery: 65,
     },
     image: 'awp-29m/01_mevp0v.jpg',
     card: [

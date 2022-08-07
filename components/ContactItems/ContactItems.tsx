@@ -5,15 +5,10 @@ const { phones, email, companyName, address } = contacts;
 function ContactItems() {
   return (
     <>
-      <h3 className="text-lg font-medium">Телефоны</h3>
+      <h3 className="text-lg font-medium">Телефон</h3>
       <p>
         <a href={phones[0].link} className="text-red-500">
           {phones[0].text[0]} <b>{phones[0].text[1]}</b> {phones[0].text[2]}
-        </a>
-      </p>
-      <p className="mb-4">
-        <a href={phones[1].link} className="text-red-500">
-          {phones[1].text}
         </a>
       </p>
 

@@ -37,7 +37,6 @@ describe('Homepage - Small mobiles', () => {
         cy.findByRole('link', { name: phones[0].text.join(' ') })
           .should('be.visible')
           .and('have.attr', 'href', phones[0].link);
-        cy.findByRole('link', { name: phones[1].text }).should('not.exist');
         cy.findByRole('link', { name: email.text }).should('not.exist');
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
@@ -243,13 +242,10 @@ describe('Homepage - Small mobiles', () => {
       cy.findByTestId('contact-section').within(() => {
         cy.findByRole('heading', { name: 'Контакты' }).scrollIntoView();
         cy.findByText('Google Maps placeholder').should('be.visible');
-        cy.findByRole('heading', { name: 'Телефоны' }).should('be.visible');
+        cy.findByRole('heading', { name: 'Телефон' }).should('be.visible');
         cy.findByRole('link', { name: phones[0].text.join(' ') })
           .should('be.visible')
           .and('have.attr', 'href', phones[0].link);
-        cy.findByRole('link', { name: phones[1].text })
-          .should('be.visible')
-          .and('have.attr', 'href', phones[1].link);
         cy.findByRole('heading', { name: 'Email' }).should('be.visible');
         cy.findByRole('link', { name: email.text })
           .should('be.visible')
@@ -427,7 +423,6 @@ describe('Homepage - Big mobiles', () => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
-        cy.findByRole('link', { name: phones[1].text }).should('not.exist');
         cy.findByRole('link', { name: email.text })
           .should('be.visible')
           .and('have.attr', 'href', email.link);
@@ -478,9 +473,6 @@ describe('Homepage - Tablets', () => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
-        cy.findByRole('link', { name: phones[1].text })
-          .should('be.visible')
-          .and('have.attr', 'href', phones[1].link);
         cy.findByRole('link', { name: email.text }).should('be.visible');
         cy.findByText('Работаем круглосуточно').should('not.be.visible');
       });
@@ -546,7 +538,6 @@ describe('Homepage - Laptops', () => {
         cy.findByRole('link', { name: phones[0].text.join(' ') }).should(
           'be.visible'
         );
-        cy.findByRole('link', { name: phones[1].text }).should('be.visible');
         cy.findByRole('link', { name: email.text }).should('be.visible');
         cy.findByText('Работаем круглосуточно').should('be.visible');
       });
@@ -596,9 +587,6 @@ describe('Homepage - Laptops', () => {
             cy.findByRole('link', { name: phones[0].text.join(' ') })
               .should('be.visible')
               .and('have.attr', 'href', phones[0].link);
-            cy.findByRole('link', { name: phones[1].text })
-              .should('be.visible')
-              .and('have.attr', 'href', phones[1].link);
             cy.findByRole('link', { name: email.text })
               .should('be.visible')
               .and('have.attr', 'href', email.link);
@@ -625,9 +613,6 @@ describe('Homepage - Laptops', () => {
             cy.findByRole('link', { name: phones[0].text.join(' ') })
               .should('be.visible')
               .and('have.attr', 'href', phones[0].link);
-            cy.findByRole('link', { name: phones[1].text })
-              .should('be.visible')
-              .and('have.attr', 'href', phones[1].link);
             cy.findByRole('link', { name: email.text })
               .should('be.visible')
               .and('have.attr', 'href', email.link);

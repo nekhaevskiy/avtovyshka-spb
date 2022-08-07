@@ -44,14 +44,6 @@ function Slide({ vehicle }: { vehicle: Vehicle }) {
           </a>
 
           <a
-            href={phones[1].link}
-            className="mb-1 block text-lg"
-            style={{ backgroundPosition: '1px 52%' }}
-          >
-            {phones[1].text}
-          </a>
-
-          <a
             href={email.link}
             className="block text-lg"
             style={{ backgroundPosition: '1px 52%' }}
