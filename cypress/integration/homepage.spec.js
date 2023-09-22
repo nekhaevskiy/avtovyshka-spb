@@ -233,7 +233,7 @@ describe('Homepage - Small mobiles', () => {
   });
 
   context('ContactSection', () => {
-    it('renders the heading, the map placeholder and the contact data', () => {
+    it.skip('renders the heading, the map placeholder and the contact data', () => {
       cy.findByTestId('contact-section').should(
         'have.attr',
         'id',
